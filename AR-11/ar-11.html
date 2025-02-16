@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button>Verified & Secured</button>
+            <h1>Noncitizen Change of Address Card Preparation</h1>
+            <div class="headerBTNBox">
+                <button>SAVE</button>
+                <button>HELP</button>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="heading">
+                <div class="headingContent">
+                    <h1>First, let's determine your eligibility to prepare Form AR-11, Alien's Change of Address</h1>
+                    <p>Complete the information below to prepare a free Form AR-11. Use the AR-11 to notify USCIS of an
+                        address change.</p>
+                </div>
+                <div>
+                    <select name="pageOption" id="pageOption">
+                        <option value="Page 1 of 3">Page 1 of 3</option>
+                        <option value="Page 2 of 3">Page 2 of 3</option>
+                        <option value="Page 3 of 3">Page 3 of 3</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div id="formContainer">
+        <div id="eligibility">
+            <!-- =====A or G visa===== -->
+            <div class="radioWarpper">
+                <h2 class="radio-Heading">Are you currently in the United States with an A visa or G visa?<span
+                        class="requires">*</span></h2>
+                <div class="radio-Button-Warpper">
+                    <div class="radio-button">
+                        <input type="radio" id="AorGvisa" name="AorGvisa" value="yes" onclick="checkVisaType()">
+                        <label for="AorGvisa">Yes</label>
+                    </div>
+                    <div class="radio-button">
+                        <input type="radio" id="AorGvisa0" name="AorGvisa" value="no" onclick="checkVisaType()"
+                        
+                        >
+                        <label for="AorGvisa0">No</label>
+                    </div>
+                </div>
+                <div class="radio-description">
+                    <p>A and G type visa holders are exempt from this requirement and do not have to submit Form AR-11.
+                    </p>
+                </div>
+            </div>
+            <!-- ====(ESTA)===== -->
+            <div class="radioWarpper hidden" id="ESTA">
+                <h2 class="radio-Heading">Have you been in the United States for less than 30 days through the Visa
+                    Waiver Program (ESTA)?<span class="requires">*</span></h2>
+                <div class="radio-Button-Warpper">
+                    <div class="radio-button">
+                        <input type="radio" id="ESTA1" name="WaiverProgram" value="yes" onclick="checkVisaProgram()">
+                        <label for="ESTA1">Yes</label>
+                    </div>
+                    <div class="radio-button">
+                        <input type="radio" id="ESTA0" name="WaiverProgram" value="no" onclick="checkVisaProgram()">
+                        <label for="ESTA0">No</label>
+                    </div>
+                </div>
+                <div class="radio-description">
+                    <p>Tourists and other visitors using the visa waiver program for trips of less than 30 days do not
+                        need to file Form AR-11.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- =======show response======= -->
+         <div class="responseContainer">
+            <div id="successRes" class="hidden">
+                <div  class="successRess">
+                    <div class="checked">&#9989;</div>
+                    <div>
+                        <p><b>Congratulations, you are likely eligible to file AR-11 Alien's Change of Address.</b></p>
+                        <p>Please click "Next" to continue preparing this form.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="errorRes" class="hidden">
+
+                <div  class="errorRess">
+                    <div class="checked">X</div>
+                    <p><b>Sorry. Based on your answer, you cannot continue.</b>Individuals visiting the U.S. without a visa for a period of less than 30 days are exempt from this requirement and do not have to submit Form AR-11, Alien’s Change of Address.</p>
+                </div>
+            </div>
+
+         </div>
+        <!-- =====next==== -->
+        <div class="container">
+
+            <div class="nextBox">
+                <button id="nextBTN">NEXT &rarr;</button>
+                <p>or <a href="#">Save Your Progress</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============script======= -->
+     <script src="/script.js"></script>
+</body>
+
+</html>

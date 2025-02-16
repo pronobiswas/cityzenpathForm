@@ -1,0 +1,92 @@
+:root {
+  --primary: #1e90ff;
+  --secondery: #00a700;
+  --black:#000;
+  --gray:gray;
+}
+
+header {
+  background-color: rgba(238, 238, 238, 0.9333333333);
+}
+
+#eligibility {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.radioWarpper {
+  background-color: rgba(238, 238, 238, 0.9333333333);
+  border-radius: 5px;
+}
+.radioWarpper .radio-Heading {
+  background-color: var(--primary);
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 12px 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.radioWarpper .radio-Heading .requires {
+  color: red;
+  padding-left: 5px;
+}
+.radioWarpper .radio-Button-Warpper {
+  padding: 15px 0;
+  display: flex;
+  gap: 20px;
+  background-color: #E9F1F9;
+}
+.radioWarpper .radio-description {
+  font-size: 14px;
+  color: var(--gray);
+  padding-bottom: 10px;
+  padding: 8px 5px;
+}
+
+.successRess {
+  width: 95%;
+  margin: 0 auto;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(39, 139, 9, 0.231372549);
+  display: flex;
+  gap: 15px;
+}
+
+.errorRess {
+  width: 95%;
+  margin: 0 auto;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(139, 9, 9, 0.231372549);
+  display: flex;
+  gap: 15px;
+}
+
+.nextBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: end;
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+#nextBTN {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--secondery);
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px 1px gray;
+}
+
+#nextBTN:hover {
+  background-color: green;
+}/*# sourceMappingURL=style.css.map */
