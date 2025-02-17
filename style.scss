@@ -1,86 +1,264 @@
-
 // ***********************************
 :root {
     --primary: #1e90ff;
     --secondery: #00a700;
-    --black:#000;
-    --gray:gray;
-  }
-header{
-    background-color: #eeee;
+    --black: #000;
+    --gray: gray;
 }
-#eligibility{
+
+// ======common========
+.warningRes {
+    width: 100%;
+    padding: 10px;
+    background-color: #E6C0C0;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+
+    // .warningIcon{}
+    .warningTxt {
+        p {
+            line-height: 1.4;
+            color: #3C3C3Cb3;
+            font-size: 16px;
+        }
+    }
+}
+
+.successRes {
+    width: 100%;
+    padding: 10px;
+    background-color: #92D3A8;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+
+    // .seccessIcon{
+    //     padding: 0;
+    // }
+    .successTxt {
+        p {
+            line-height: 1.4;
+            color: #3C3C3Cb3;
+            font-size: 16px;
+        }
+    }
+}
+
+header {
+    background-color: #eeee;
+
+    nav {
+        padding: 10px;
+        background: var(--primary);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .heading {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 8px;
+
+        h2 {
+            padding-bottom: 10px;
+        }
+
+        .pageOption {
+            width: 100px;
+            padding: 4px 12px;
+            height: 30px;
+            background-color: #1e90ff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            border-radius: 5px;
+            position: relative;
+            border: 2px solid gray;
+            cursor: pointer;
+
+            .formPagenetion {
+                position: absolute;
+                width: 120%;
+                top: 29px;
+                right: -2px;
+                border: 2px solid gray;
+                border-radius: 5px;
+                color: #FFF;
+
+                ol {
+                    background-color: gray;
+                    list-style-position: inside;
+
+                    li {
+                        width: 100%;
+                        padding: 4px;
+
+                        &:hover {
+                            background: #0000001e;
+                            color: var(--primary);
+                            cursor: pointer;
+                        }
+                    }
+
+                    :first-child {
+                        background: #004c97;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+#formContainer {
     width: 100%;
     padding: 0 20px;
 }
 
-.radioWarpper{
+
+
+.radioWarpper {
     background-color: #eeee;
     border-radius: 5px;
-    .radio-Heading{
+
+    .radio-Heading {
         background-color: var(--primary);
         font-size: 16px;
         font-weight: 500;
         color: white;
         padding: 12px 5px;
-        .requires{color: red; padding-left: 5px;}
-        border-top-left-radius: 5px ;
-        border-top-right-radius: 5px ;
+
+        .requires {
+            color: red;
+            padding-left: 5px;
+        }
+
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
-    .radio-Button-Warpper{
+
+    .radio-Button-Warpper {
         padding: 15px 0;
         display: flex;
         gap: 20px;
         background-color: #E9F1F9;
     }
-    .radio-description{
+
+    .radio-description {
         font-size: 14px;
         color: var(--gray);
         padding-bottom: 10px;
         padding: 8px 5px;
     }
 }
-// =====response=====
 
-.successRess{
-    width: 95%;
-    margin: 0 auto;
-    padding: 8px;
-    border-radius: 8px;
-    background: #278b093b;
-    display: flex;
-    gap: 15px;
-}
-.errorRess{
-    width: 95%;
-    margin: 0 auto;
-    padding: 8px;
-    border-radius: 8px;
-    background: #8b09093b;
-    display: flex;
-    gap: 15px;
-}
-// ====next section===
-.nextBox{
+// =====button section=======
+.buttonWarpper {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: end;
-    font-size: 14px;
     padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .prevBox {
+        button {
+            width: fit-content;
+            background-color: gray;
+            color: white;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 1px 6px 1px gray;
+
+            &:hover {
+                background-color: green;
+            }
+        }
+    }
+
+    .nextBox {
+
+        #nextBTN {
+            width: fit-content;
+            background-color: var(--secondery);
+            color: white;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 1px 6px 1px gray;
+
+            &:hover {
+                background-color: green;
+            }
+        }
+    }
 }
-#nextBTN{
-width: fit-content;
-background-color: var(--secondery);
-color: white;
-border: none;
-outline: none;
-padding: 10px 20px;
-border-radius: 8px;
-cursor: pointer;
-box-shadow: 0 1px 6px 1px gray;
+
+// *********addressSegment*********
+.addressHeading {
+    width: 100%;
+
+    h2 {
+        color: var(--primary);
+    }
+
+    p {
+        color: #3C3C3Cb3;
+        font-size: 14px;
+    }
 }
-#nextBTN:hover{
-    background-color: green;
+
+.inputRow {
+    width: 100%;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    .labelcol {
+        width: 210px;
+        color: #0099ffb9;
+        font-size: 14px;
+    }
+
+    .inputCol {
+        width: 100%;
+        max-width: 300px;
+
+        input,
+        select {
+            width: 100%;
+            border: 1px solid #80808060;
+            outline: none;
+            border-radius: 5px;
+            padding: 10px;
+
+            &:hover {
+                border: 1px solid var(--primary);
+            }
+
+            &:focus {
+                border: 1px solid var(--primary);
+                outline: 1px solid #7bbdff;
+                -webkit-box-shadow: 0px 0px 14px 0px #7bbdff;
+                -moz-box-shadow: 0px 0px 14px 0px #7bbdff;
+                box-shadow: 0px 0px 6px 0px #7bbdff;
+            }
+        }
+
+        select {
+            width: fit-content;
+        }
+    }
 }

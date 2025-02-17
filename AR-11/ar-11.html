@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="container">
         <nav>
             <button>Verified & Secured</button>
             <h1>Noncitizen Change of Address Card Preparation</h1>
@@ -19,30 +19,34 @@
                 <button>HELP</button>
             </div>
         </nav>
-        <div class="container">
-            <div class="heading">
-                <div class="headingContent">
-                    <h1>First, let's determine your eligibility to prepare Form AR-11, Alien's Change of Address</h1>
-                    <p>Complete the information below to prepare a free Form AR-11. Use the AR-11 to notify USCIS of an
-                        address change.</p>
-                </div>
-                <div>
-                    <select name="pageOption" id="pageOption">
-                        <option value="Page 1 of 3">Page 1 of 3</option>
-                        <option value="Page 2 of 3">Page 2 of 3</option>
-                        <option value="Page 3 of 3">Page 3 of 3</option>
-                    </select>
-                </div>
+        <div class="heading">
+            <div class="headingContent">
+                
+                <h2 id="FormHeading">First, let's determine your eligibility to prepare Form AR-11, Alien's Change of Address</h2>
+                <p id="Formparagraph">Complete the information below to prepare a free Form AR-11. Use the AR-11 to notify USCIS of an
+                    address change.</p>
+            </div>
+            <!-- ===page option=== -->
+            <div class="pageOption" id="pageOptions">
+                    <span id="outoftext">page <span id="pageNum">1</span> of 3</span> <span>&#11206;</span>
+                    <div class="formPagenetion hidden">
+                        <ol>
+                            <li onclick="handlePrevBtn()">Accessibility</li>
+                            <li onclick="handleNextBtn()">Address</li>
+                            <li>Address2</li>
+                        </ol>
+                    </div>
             </div>
         </div>
 
     </header>
-
-    <div id="formContainer">
+    <!-- ======form setion==== -->
+    <div id="formContainer" class="container">
+        <!-- ===eligibility segment=== -->
         <div id="eligibility">
             <!-- =====A or G visa===== -->
             <div class="radioWarpper">
-                <h2 class="radio-Heading">Are you currently in the United States with an A visa or G visa?<span
+                <h2 class="radio-Heading" id="AorGvisaHeading">Are you currently in the United States with an A visa or G visa?<span
                         class="requires">*</span></h2>
                 <div class="radio-Button-Warpper">
                     <div class="radio-button">
@@ -50,9 +54,7 @@
                         <label for="AorGvisa">Yes</label>
                     </div>
                     <div class="radio-button">
-                        <input type="radio" id="AorGvisa0" name="AorGvisa" value="no" onclick="checkVisaType()"
-                        
-                        >
+                        <input type="radio" id="AorGvisa0" name="AorGvisa" value="no" onclick="checkVisaType()">
                         <label for="AorGvisa0">No</label>
                     </div>
                 </div>
@@ -63,7 +65,7 @@
             </div>
             <!-- ====(ESTA)===== -->
             <div class="radioWarpper hidden" id="ESTA">
-                <h2 class="radio-Heading">Have you been in the United States for less than 30 days through the Visa
+                <h2 class="radio-Heading" id="estaHeading">Have you been in the United States for less than 30 days through the Visa
                     Waiver Program (ESTA)?<span class="requires">*</span></h2>
                 <div class="radio-Button-Warpper">
                     <div class="radio-button">
@@ -81,39 +83,225 @@
                 </div>
             </div>
         </div>
-
         <!-- =======show response======= -->
-         <div class="responseContainer">
+        <div class="responseContainer">
+            <!-- ======successResponse here====== -->
             <div id="successRes" class="hidden">
-                <div  class="successRess">
-                    <div class="checked">&#9989;</div>
-                    <div>
+                <div class="successRes">
+                    <div class="seccessIcon">
+                        <img src="./check.png" alt="&#9989;" width="30px">
+                    </div>
+                    <div class="successTxt">
                         <p><b>Congratulations, you are likely eligible to file AR-11 Alien's Change of Address.</b></p>
-                        <p>Please click "Next" to continue preparing this form.</p>
+                        <p>Please click "Next" to continue preparing this form.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div id="errorRes" class="hidden">
-
-                <div  class="errorRess">
-                    <div class="checked">X</div>
-                    <p><b>Sorry. Based on your answer, you cannot continue.</b>Individuals visiting the U.S. without a visa for a period of less than 30 days are exempt from this requirement and do not have to submit Form AR-11, Alien’s Change of Address.</p>
+            <!-- ====warning response are here== -->
+            <div id="errorResAorG" class=" hidden">
+                <div class="warningRes">
+                    <div class="warningIcon">
+                        <img src="./cancelIcon.png" alt="&#10060;" width="30px">
+                    </div>
+                    <div class="warningTxt">
+                        <p><b>Sorry. Based on your answer, you cannot continue.</b> "A" and "G" type visa holders are
+                            exempt from this requirement and do not have to submit Form AR-11, Alien’s Change of
+                            Address.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="errorResESTA" class="hidden">
+                <div class="warningRes">
+                    <div class="warningIcon">
+                        <img src="./cancelIcon.png" alt="&#10060;" width="30px">
+                    </div>
+                    <div class="warningTxt">
+                        <p><b>Sorry. Based on your answer, you cannot continue.</b>Individuals visiting the U.S. without
+                            a
+                            visa for a period of less than 30 days are exempt from this requirement and do not have to
+                            submit Form AR-11, Alien’s Change of Address.</p>
+                    </div>
                 </div>
             </div>
 
-         </div>
+        </div>
+        <!-- ======address segmet===== -->
+         <section id="addressSegment" class="">
+            <!-- =====Previous Physical Address==== -->
+             <div id="PreviousAddress">
+                <div class="addressHeading">
+                    <h2>Previous Physical Address</h2>
+                    <p>Enter your <u>old</u> home address. This should be the location that you physically resided in the United States. Do not list a PO Box.</p>
+                </div>
+                <!-- ===Street Number and Name== -->
+                <div class="inputRow" id="Street_Number_name">
+                    <div class="labelcol">
+                        <label for="StreetNumber">Street Number and Name</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="StreetNumber" name="StreetNumber" oninput="handleInput(event)">
+                    </div>
+                </div>
+                <!-- ===Is there an apartment, suite or floor?== -->
+                <div class="inputRow" id="apartmentRow">
+                    <div class="labelcol">
+                        <label for="isApartmentSuiteorFlor">Is there an apartment, suite or floor?</label>
+                    </div>
+                    <div class="inputCol">
+                        <!-- <input type="text" id="isApartmentSuiteorFlor" name="isApartmentSuiteorFlor"> -->
+                         <select name="isApartmentSuiteorFlor" id="isApartmentSuiteorFlor" oninput="handleInput(event)">
+                            <option value="no" selected>NO</option>
+                            <option value="apartment" >Apt</option>
+                            <option value="suite" >Ste</option>
+                            <option value="Flor" >Flr</option>
+                         </select>
+                    </div>
+                </div>
+                <!-- ===Street Number and Name== -->
+                <div class="inputRow" id="cityORtownRow">
+                    <div class="labelcol">
+                        <label for="CityorTown">City or Town</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="CityorTown" name="CityorTown"  oninput="handleInput(event)">
+                    </div>
+                </div>
+                <!-- ====State (or Territory)=== -->
+                <div class="inputRow" id="TerritoryRow">
+                    <div class="labelcol">
+                        <label for="state">Is there an apartment, suite or floor?</label>
+                    </div>
+                    <div class="inputCol">
+                        <!-- <input type="text" id="isApartmentSuiteorFlor" name="isApartmentSuiteorFlor"> -->
+                         <select name="state" id="state" oninput="handleInput(event)">
+                            <option value="Alabama" selected>Alabama</option>
+                            <option value="Alaska" >Alaska</option>
+                            <option value="Arizona" >Arizona</option>
+                            <option value="Arkansas" >Arkansas</option>
+                            <option value="California" selected>California</option>
+                            <option value="Colorado" >Colorado</option>
+                            <option value="Connecticut" >Connecticut</option>
+                            <option value="Delaware" >Delaware</option>
+                            <option value="District of Columbia" selected>District of Columbia</option>
+                            <option value="Florida" >Florida</option>
+                            <option value="Georgia" >Georgia</option>
+                            <option value="Hawaii" >Hawaii</option>
+                            <option value="Idaho" selected>Idaho</option>
+                            <option value="Illinois" >Illinois</option>
+                            <option value="Kansas" >Kansas</option>
+                            <option value="Louisiana" >Louisiana</option>
+                         </select>
+                    </div>
+                </div>
+                <!-- ===zip code== -->
+                <div class="inputRow" id="ZipCodeRow">
+                    <div class="labelcol">
+                        <label for="zipCode">ZIP Code</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="zipCode" name="zipCode"  oninput="handleInput(event)">
+                    </div>
+                </div>
+             </div>
+             <!-- &&&&&&LINE&&&&&& -->
+             <hr class="line">
+             <!-- &&&&&&LINE&&&&&& -->
+             <!-- =====Present Physical Address==== -->
+             <div id="PresentAddress">
+                <div class="addressHeading">
+                    <h2>Previous Physical Address</h2>
+                    <p>Enter your <u>new</u> home address. This should be the location that you physically resided in the United States. Do not list a PO Box.</p>
+                </div>
+                <!-- ===Street Number and Name== -->
+                <div class="inputRow" id="Street_Number_namePresent">
+                    <div class="labelcol">
+                        <label for="StreetNumberPresent">Street Number and Name</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="StreetNumberPresent" name="StreetNumberPresent" oninput="handleInput(event)">
+                    </div>
+                </div>
+                <!-- ===Is there an apartment, suite or floor?== -->
+                <div class="inputRow" id="apartmentRowPresent">
+                    <div class="labelcol">
+                        <label for="isApartmentSuiteorFlor">Is there an apartment, suite or floor?</label>
+                    </div>
+                    <div class="inputCol">
+                        <!-- <input type="text" id="isApartmentSuiteorFlor" name="isApartmentSuiteorFlor"> -->
+                         <select name="isApartmentSuiteorFlorPresent" id="isApartmentSuiteorFlorPresent" oninput="handleInput(event)">
+                            <option value="no" selected>NO</option>
+                            <option value="apartment" >Apt</option>
+                            <option value="suite" >Ste</option>
+                            <option value="Flor" >Flr</option>
+                         </select>
+                    </div>
+                </div>
+                <!-- ===Street Number and Name== -->
+                <div class="inputRow" id="cityORtownRowPresent">
+                    <div class="labelcol">
+                        <label for="CityorTownPresent">City or Town</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="CityorTownPresent" name="CityorTownPresent"  oninput="handleInput(event)">
+                    </div>
+                </div>
+                <!-- ====State (or Territory)=== -->
+                <div class="inputRow" id="TerritoryRowPresent">
+                    <div class="labelcol">
+                        <label for="statePresent">Is there an apartment, suite or floor?</label>
+                    </div>
+                    <div class="inputCol">
+                        <!-- <input type="text" id="isApartmentSuiteorFlor" name="isApartmentSuiteorFlor"> -->
+                         <select name="statePresent" id="statePresent" oninput="handleInput(event)">
+                            <option value="Alabama" selected>Alabama</option>
+                            <option value="Alaska" >Alaska</option>
+                            <option value="Arizona" >Arizona</option>
+                            <option value="Arkansas" >Arkansas</option>
+                            <option value="California" selected>California</option>
+                            <option value="Colorado" >Colorado</option>
+                            <option value="Connecticut" >Connecticut</option>
+                            <option value="Delaware" >Delaware</option>
+                            <option value="District of Columbia" selected>District of Columbia</option>
+                            <option value="Florida" >Florida</option>
+                            <option value="Georgia" >Georgia</option>
+                            <option value="Hawaii" >Hawaii</option>
+                            <option value="Idaho" selected>Idaho</option>
+                            <option value="Illinois" >Illinois</option>
+                            <option value="Kansas" >Kansas</option>
+                            <option value="Louisiana" >Louisiana</option>
+                         </select>
+                    </div>
+                </div>
+                <!-- ===zip code== -->
+                <div class="inputRow" id="ZipCodeRowPresent">
+                    <div class="labelcol">
+                        <label for="zipCodePresent">ZIP Code</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="zipCodePresent" name="zipCodePresent"  oninput="handleInput(event)">
+                    </div>
+                </div>
+             </div>
+         </section>
         <!-- =====next==== -->
         <div class="container">
+            <div class="buttonWarpper">
+                <div class="prevBox">
+                    <button id="prevBTN" class="hidden" onclick="handlePrevBtn()">&#8592; PREV</button>
+                </div>
 
-            <div class="nextBox">
-                <button id="nextBTN">NEXT &rarr;</button>
-                <p>or <a href="#">Save Your Progress</a></p>
+                <div class="nextBox">
+                    <button id="nextBTN" onclick="handleNextBtn()">NEXT &rarr;</button>
+                    <p>or <a href="#">Save Your Progress</a></p>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- ============script======= -->
-     <script src="/script.js"></script>
+    <script src="/script.js"></script>
 </body>
 
 </html>
