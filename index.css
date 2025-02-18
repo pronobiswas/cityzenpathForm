@@ -22,7 +22,11 @@ h2{
 /* ul,ol{
     list-style-type: none;
 } */
-a,button{display: inline-block; text-decoration: none;line-height: normal;}
+a{display: inline-block; text-decoration: none;line-height: normal;}
+button{
+    outline: none;
+    border: none;
+}
 .container{
     width: 100%;
     max-width: 1120px;
@@ -55,4 +59,10 @@ a,button{display: inline-block; text-decoration: none;line-height: normal;}
 .pagenetionActive{
     background-color: #1e90ff;
     color: white;
+}
+/* ++++++++++++++++++++++ */
+.ErrorRow{
+    border: 1px solid #ffb1b1;
+    background-color: #ff00001a;
+    border-radius: 5px;
 }

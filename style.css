@@ -37,11 +37,43 @@ header {
   background-color: rgba(238, 238, 238, 0.9333333333);
 }
 header nav {
-  padding: 10px;
+  padding: 0;
+  padding-left: 10px;
   background: var(--primary);
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+header nav .veryfiedANDscecuredBTN {
+  padding: 0px 10px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 300;
+  color: var(--secondery);
+  background-color: white;
+  transition: 0.1s all linear;
+  border-radius: 10px;
+  cursor: pointer;
+}
+header nav .veryfiedANDscecuredBTN:hover {
+  background-color: var(--secondery);
+  color: white;
+}
+header nav .headerBTNBox {
+  display: flex;
+}
+header nav .headerBTNBox button {
+  background-color: #0061bb;
+  height: 100%;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #0043a7;
+  color: #fff;
+  transition: 0.1s all linear;
+}
+header nav .headerBTNBox button:hover {
+  background: var(--secondery);
 }
 header .heading {
   width: 100%;
@@ -98,6 +130,10 @@ header .heading .pageOption .formPagenetion ol :first-child {
   padding: 0 20px;
 }
 
+#PreviousAddress {
+  padding: 10px 0;
+}
+
 .radioWarpper {
   background-color: rgba(238, 238, 238, 0.9333333333);
   border-radius: 5px;
@@ -149,7 +185,7 @@ header .heading .pageOption .formPagenetion ol :first-child {
 .buttonWarpper .prevBox button:hover {
   background-color: green;
 }
-.buttonWarpper .nextBox #nextBTN {
+.buttonWarpper .nextBox #nextBTN, .buttonWarpper .nextBox #nextBTN2 {
   width: -moz-fit-content;
   width: fit-content;
   background-color: var(--secondery);
@@ -161,8 +197,17 @@ header .heading .pageOption .formPagenetion ol :first-child {
   cursor: pointer;
   box-shadow: 0 1px 6px 1px gray;
 }
-.buttonWarpper .nextBox #nextBTN:hover {
+.buttonWarpper .nextBox #nextBTN:hover, .buttonWarpper .nextBox #nextBTN2:hover {
   background-color: green;
+}
+.buttonWarpper .nextBox p {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.buttonWarpper .nextBox p a {
+  color: #0061bb;
+  font-weight: 200;
 }
 
 .addressHeading {
@@ -182,8 +227,6 @@ header .heading .pageOption .formPagenetion ol :first-child {
   display: flex;
   align-items: center;
   justify-content: start;
-  border: 1px solid transparent;
-  background-color: transparent;
 }
 .inputRow .labelcol {
   width: 210px;
@@ -215,4 +258,21 @@ header .heading .pageOption .formPagenetion ol :first-child {
 .inputRow .inputCol select {
   width: -moz-fit-content;
   width: fit-content;
+}
+
+input[type=date] {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.3764705882);
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+}
+input[type=date]:hover {
+  border: 1px solid var(--primary);
+}
+input[type=date]:focus {
+  border: 1px solid var(--primary);
+  outline: 1px solid #7bbdff;
+  box-shadow: 0px 0px 6px 0px #7bbdff;
 }/*# sourceMappingURL=style.css.map */

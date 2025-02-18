@@ -12,7 +12,7 @@
 <body>
     <header class="container">
         <nav>
-            <button>Verified & Secured</button>
+            <button class="veryfiedANDscecuredBTN">Verified & Secured</button>
             <h1>Noncitizen Change of Address Card Preparation</h1>
             <div class="headerBTNBox">
                 <button>SAVE</button>
@@ -43,7 +43,7 @@
     <!-- ======form setion==== -->
     <div id="formContainer" class="container">
         <!-- ===eligibility segment=== -->
-        <div id="eligibility">
+        <div id="eligibility" class="">
             <!-- =====A or G visa===== -->
             <div class="radioWarpper">
                 <h2 class="radio-Heading" id="AorGvisaHeading">Are you currently in the United States with an A visa or G visa?<span
@@ -127,8 +127,9 @@
             </div>
 
         </div>
+        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
         <!-- ======address segmet===== -->
-         <section id="addressSegment" class="">
+         <section id="addressSegment" class="hidden">
             <!-- =====Previous Physical Address==== -->
              <div id="PreviousAddress">
                 <div class="addressHeading">
@@ -136,12 +137,12 @@
                     <p>Enter your <u>old</u> home address. This should be the location that you physically resided in the United States. Do not list a PO Box.</p>
                 </div>
                 <!-- ===Street Number and Name== -->
-                <div class="inputRow" id="Street_Number_name">
+                <div class="inputRow" id="streetNumberName">
                     <div class="labelcol">
-                        <label for="StreetNumber">Street Number and Name</label>
+                        <label for="streetNumber">Street Number and Name</label>
                     </div>
                     <div class="inputCol">
-                        <input type="text" id="StreetNumber" name="StreetNumber" oninput="handleInput(event)">
+                        <input type="text" id="streetNumber" name="streetNumber" oninput="handleInput(event)">
                     </div>
                 </div>
                 <!-- ===Is there an apartment, suite or floor?== -->
@@ -162,16 +163,16 @@
                 <!-- ===Street Number and Name== -->
                 <div class="inputRow" id="cityORtownRow">
                     <div class="labelcol">
-                        <label for="CityorTown">City or Town</label>
+                        <label for="cityorTown">City or Town</label>
                     </div>
                     <div class="inputCol">
-                        <input type="text" id="CityorTown" name="CityorTown"  oninput="handleInput(event)">
+                        <input type="text" id="cityorTown" name="cityorTown"  oninput="handleInput(event)">
                     </div>
                 </div>
                 <!-- ====State (or Territory)=== -->
                 <div class="inputRow" id="TerritoryRow">
                     <div class="labelcol">
-                        <label for="state">Is there an apartment, suite or floor?</label>
+                        <label for="state">State (or Territory)</label>
                     </div>
                     <div class="inputCol">
                         <!-- <input type="text" id="isApartmentSuiteorFlor" name="isApartmentSuiteorFlor"> -->
@@ -201,7 +202,7 @@
                         <label for="zipCode">ZIP Code</label>
                     </div>
                     <div class="inputCol">
-                        <input type="text" id="zipCode" name="zipCode"  oninput="handleInput(event)">
+                        <input type="text" id="zipCode" name="zipCode" placeholder="#####"  oninput="handleInput(event)">
                     </div>
                 </div>
              </div>
@@ -215,7 +216,7 @@
                     <p>Enter your <u>new</u> home address. This should be the location that you physically resided in the United States. Do not list a PO Box.</p>
                 </div>
                 <!-- ===Street Number and Name== -->
-                <div class="inputRow" id="Street_Number_namePresent">
+                <div class="inputRow" id="StreetNumbernamePresent">
                     <div class="labelcol">
                         <label for="StreetNumberPresent">Street Number and Name</label>
                     </div>
@@ -250,7 +251,7 @@
                 <!-- ====State (or Territory)=== -->
                 <div class="inputRow" id="TerritoryRowPresent">
                     <div class="labelcol">
-                        <label for="statePresent">Is there an apartment, suite or floor?</label>
+                        <label for="statePresent">State (or Territory)</label>
                     </div>
                     <div class="inputCol">
                         <!-- <input type="text" id="isApartmentSuiteorFlor" name="isApartmentSuiteorFlor"> -->
@@ -285,6 +286,56 @@
                 </div>
              </div>
          </section>
+         <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+          <section id="personalInfoSegment">
+            <div class="nameSegment">
+                <div class="addressHeading">
+                    <h2>Full Name</h2>
+                    <p>Enter your full legal name. Unless you have legally changed your name, your name should be exactly as it appears on your existing immigration documents like a Permanent Resident Card or I-94 Arrival/Departure Record. Spell out names completely. If you do not have a middle name, you may leave this field blank.</p>
+                </div>
+                <!-- ===First Name== -->
+                <div class="inputRow" id="firstNameRow">
+                    <div class="labelcol">
+                        <label for="firstName">Given Name (First Name)</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="firstName" name="firstName" oninput="handleInput(event)">
+                    </div>
+                </div>
+                <!-- ===Middle Name(s)== -->
+                <div class="inputRow" id="middleNameRow">
+                    <div class="labelcol">
+                        <label for="middleName">Middle Name(s)</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="middleName" name="middleName" oninput="handleInput(event)">
+                    </div>
+                </div>
+                <!-- ===Middle Name(s)== -->
+                <div class="inputRow" id="lastNameRow">
+                    <div class="labelcol">
+                        <label for="lastName">Family Name (Last Name)</label>
+                    </div>
+                    <div class="inputCol">
+                        <input type="text" id="lastName" name="lastName" oninput="handleInput(event)">
+                    </div>
+                </div>
+                <!-- ======Date of Birth====== -->
+                <div class="radioWarpper">
+                    <h2 class="radio-Heading" id=""><label for="Citizenship">Country of Citizenship</label><span
+                            class="requires">*</span></h2>
+                    <div class="radio-Button-Warpper">
+                        <select name="Citizenship" id="Citizenship">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="radio-description">
+                        <p>Enter the date of birth in the month-day-year (mm/dd/yyyy) format.</p>
+                    </div>
+                </div>
+
+            </div>
+          </section>
         <!-- =====next==== -->
         <div class="container">
             <div class="buttonWarpper">
@@ -294,6 +345,7 @@
 
                 <div class="nextBox">
                     <button id="nextBTN" onclick="handleNextBtn()">NEXT &rarr;</button>
+                    <button id="nextBTN2" class="hidden" onclick="handleNextBtn2()">NEXT &rarr;</button>
                     <p>or <a href="#">Save Your Progress</a></p>
                 </div>
             </div>
