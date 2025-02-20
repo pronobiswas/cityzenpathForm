@@ -5,12 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- *********google font******* -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+    <!-- *********google font******* -->
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <header class="container">
+        <div class="mainHeader">
+            <div class="logo">
+                <img src="./logo.png" alt="logo">
+            </div>
+            <div class="login"><img src="./user1.png" alt="png" width="16"> Login</div>
+        </div>
         <nav>
             <button class="veryfiedANDscecuredBTN">Verified & Secured</button>
             <h1>Noncitizen Change of Address Card Preparation</h1>
@@ -31,8 +42,8 @@
                     <span id="outoftext">page <span id="pageNum">1</span> of 3</span> <span>&#11206;</span>
                     <div class="formPagenetion hidden">
                         <ol>
-                            <li onclick="handlePrevBtn()">Accessibility</li>
-                            <li onclick="handleNextBtn()">Address</li>
+                            <li onclick="pageOne()">Accessibility</li>
+                            <li onclick="pageTwo()">Address</li>
                             <li>Address2</li>
                         </ol>
                     </div>
@@ -41,7 +52,7 @@
 
     </header>
     <!-- ======form setion==== -->
-    <div id="formContainer" class="container">
+    <div id="formContainer" class="container ">
         <!-- ===eligibility segment=== -->
         <div id="eligibility" class="">
             <!-- =====A or G visa===== -->
@@ -212,7 +223,7 @@
              <!-- =====Present Physical Address==== -->
              <div id="PresentAddress">
                 <div class="addressHeading">
-                    <h2>Previous Physical Address</h2>
+                    <h2>Present Physical Address</h2>
                     <p>Enter your <u>new</u> home address. This should be the location that you physically resided in the United States. Do not list a PO Box.</p>
                 </div>
                 <!-- ===Street Number and Name== -->
@@ -284,10 +295,103 @@
                         <input type="text" id="zipCodePresent" name="zipCodePresent"  oninput="handleInput(event)">
                     </div>
                 </div>
+                <!-- =======  same as Present Physical Address above ======== -->
+                <div class="radioWarpper">
+                    <h2 class="radio-Heading" id="AorGvisaHeading">Is your mailing address the same as your Present Physical Address above?<span
+                            class="requires">*</span></h2>
+                    <div class="radio-Button-Warpper">
+                        <div class="radio-button">
+                            <input type="radio" id="isSameMailaddress" name="isSameMailaddress" value="yes" onclick="displayMailingForm()">
+                            <label for="isSameMailaddress">Yes</label>
+                        </div>
+                        <div class="radio-button">
+                            <input type="radio" id="isSameMailaddressNo" name="isSameMailaddress" value="no" onclick="displayMailingForm()">
+                            <label for="isSameMailaddressNo">No</label>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- =============mailing address================= -->
+                <!-- =============mailing address================= -->
+                <div id="mailingAddress" class="hidden">
+                    <div class="addressHeading">
+                        <h2>Mailing Address</h2>
+                        <p>Enter the address where you prefer to receive your mail.</p>
+                    </div>
+                    <!-- ===Street Number and Name== -->
+                    <div class="inputRow" id="streetNumberName">
+                        <div class="labelcol">
+                            <label for="streetNumber">Street Number and Name</label>
+                        </div>
+                        <div class="inputCol">
+                            <input type="text" id="streetNumber" name="streetNumber" oninput="handleInput(event)">
+                        </div>
+                    </div>
+                    <!-- ===Is there an apartment, suite or floor?== -->
+                    <div class="inputRow" id="apartmentRow">
+                        <div class="labelcol">
+                            <label for="isApartmentSuiteorFlor">Is there an apartment, suite or floor?</label>
+                        </div>
+                        <div class="inputCol">
+                            <!-- <input type="text" id="isApartmentSuiteorFlor" name="isApartmentSuiteorFlor"> -->
+                             <select name="isApartmentSuiteorFlor" id="isApartmentSuiteorFlor" oninput="handleInput(event)">
+                                <option value="no" selected>NO</option>
+                                <option value="apartment" >Apt</option>
+                                <option value="suite" >Ste</option>
+                                <option value="Flor" >Flr</option>
+                             </select>
+                        </div>
+                    </div>
+                    <!-- ===Street Number and Name== -->
+                    <div class="inputRow" id="cityORtownRow">
+                        <div class="labelcol">
+                            <label for="cityorTown">City or Town</label>
+                        </div>
+                        <div class="inputCol">
+                            <input type="text" id="cityorTown" name="cityorTown"  oninput="handleInput(event)">
+                        </div>
+                    </div>
+                    <!-- ====State (or Territory)=== -->
+                    <div class="inputRow" id="TerritoryRow">
+                        <div class="labelcol">
+                            <label for="state">State (or Territory)</label>
+                        </div>
+                        <div class="inputCol">
+                            <!-- <input type="text" id="isApartmentSuiteorFlor" name="isApartmentSuiteorFlor"> -->
+                             <select name="state" id="state" oninput="handleInput(event)">
+                                <option value="Alabama" selected>Alabama</option>
+                                <option value="Alaska" >Alaska</option>
+                                <option value="Arizona" >Arizona</option>
+                                <option value="Arkansas" >Arkansas</option>
+                                <option value="California" selected>California</option>
+                                <option value="Colorado" >Colorado</option>
+                                <option value="Connecticut" >Connecticut</option>
+                                <option value="Delaware" >Delaware</option>
+                                <option value="District of Columbia" selected>District of Columbia</option>
+                                <option value="Florida" >Florida</option>
+                                <option value="Georgia" >Georgia</option>
+                                <option value="Hawaii" >Hawaii</option>
+                                <option value="Idaho" selected>Idaho</option>
+                                <option value="Illinois" >Illinois</option>
+                                <option value="Kansas" >Kansas</option>
+                                <option value="Louisiana" >Louisiana</option>
+                             </select>
+                        </div>
+                    </div>
+                    <!-- ===zip code== -->
+                    <div class="inputRow" id="ZipCodeRow">
+                        <div class="labelcol">
+                            <label for="zipCode">ZIP Code</label>
+                        </div>
+                        <div class="inputCol">
+                            <input type="text" id="zipCode" name="zipCode" placeholder="#####"  oninput="handleInput(event)">
+                        </div>
+                    </div>
+                 </div>
              </div>
          </section>
          <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-          <section id="personalInfoSegment">
+          <section id="personalInfoSegment" class="hidden">
             <div class="nameSegment">
                 <div class="addressHeading">
                     <h2>Full Name</h2>
@@ -320,24 +424,74 @@
                         <input type="text" id="lastName" name="lastName" oninput="handleInput(event)">
                     </div>
                 </div>
+                <br>
                 <!-- ======Date of Birth====== -->
+                <div class="radioWarpper">
+                    <h2 class="radio-Heading" id=""><label for="Citizenship">Date of Birth</label><span
+                            class="requires">*</span></h2>
+                    <div class="radio-Button-Warpper">
+                        <input type="date">
+                    </div>
+                    <div class="radio-description">
+                        <p>Enter the date of birth in the month-day-year (mm/dd/yyyy) format.</p>
+                    </div>
+                </div>
+                <!-- ======Country of Citizenship====== -->
                 <div class="radioWarpper">
                     <h2 class="radio-Heading" id=""><label for="Citizenship">Country of Citizenship</label><span
                             class="requires">*</span></h2>
                     <div class="radio-Button-Warpper">
                         <select name="Citizenship" id="Citizenship">
-                            <option value=""></option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
                         </select>
                     </div>
                     <div class="radio-description">
                         <p>Enter the date of birth in the month-day-year (mm/dd/yyyy) format.</p>
                     </div>
                 </div>
+                <!-- ======I am in the United States as a===== -->
+                <div class="radioWarpper">
+                    <h2 class="radio-Heading" id=""><label for="PermanentResident">I am in the United States as a: </label><span
+                            class="requires">*</span></h2>
+                    <div class="radio-Button-Warpper">
+                        <select name="PermanentResident" id="PermanentResident">
+                            <option value="Permanent Resident (green card holder)">Permanent Resident (green card holder)</option>
+                            <option value="Visitor">Visitor</option>
+                            <option value="Student">Student</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="radio-description">
+                        <p>If you have an immigration status other than Permanent Resident, Visitor, or Student, choose "Other" and select your status from the drop down list. If you have an Adjustment of Status (AOS) application (I-485) pending with USCIS, choose "Other" and select "AOS applicant" from the drop down list. Once you file form I-485, your status is "AOS" regardless of whether your nonimmigrant status is valid or expired..</p>
+                    </div>
+                </div>
+                <!-- ======Alien Registration Number ======== -->
+                 <div class="A_numberWarpper">
+                    <h4 class="Aheading">Alien Registration Number (A-Number)</h4>
+                    <div class="inputWarpper">
+                        <span>A-</span>
+                        <input type="text">
+                    </div>
+                    <p class="Adescription">If you do not have an A-Number, leave this field blank.</p>
+                    <p class="Adisclimer">If your A-Number only has 8 numbers then please put a '0' at the front.</p>
+
+                 </div>
 
             </div>
           </section>
         <!-- =====next==== -->
-        <div class="container">
+        <div id="formStaper" class="container">
             <div class="buttonWarpper">
                 <div class="prevBox">
                     <button id="prevBTN" class="hidden" onclick="handlePrevBtn()">&#8592; PREV</button>
@@ -350,7 +504,39 @@
                 </div>
             </div>
         </div>
+        <!-- =======footer======== -->
+         <div id="complitionBox" class="hidden">
+             <h3 class="complitionText">You've finished preparing this form. It's time to finalize and generate the documents.</h3>
+             <div class="craeteMyFiles">
+                <button>CREATE MY FILES</button>
+             </div>
+         </div>
+        <footer>
+            
+                <div class="footerWarpper">
+    
+                    <div class="imgBox">
+                        <img src="./SafeandSecure.png" alt="png">
+                    </div>
+                    <div class="footerContent">
+                        <p><b>This entire form and all your answers are secured using 128-bit SSL encryption.
+                        </b></p>
+                        <p>We are sensitive to your concerns about how we use the information we collect, for more details see our <a href="#">Privacy Policy.</a></p>
+                    </div>
+                    <div class="imgBox">
+                        <img src="./SafeandSecure.png" alt="png" style="display: none;">
+                    </div>
+                </div>
+            
+        </footer>
     </div>
+    <div class="container">
+        <div class="footnote">
+            <p>© Copyright 2013-2025, CitizenPath, LLC. All rights reserved. Version 2.21.0</p>
+            <p>CitizenPath is a private company that provides self-directed immigration services at your direction. We are not affiliated with USCIS or any government agency. The information provided in this site is not legal advice, but general information on issues commonly encountered in immigration. CitizenPath is not a law firm and is not a substitute for an attorney or law firm. Your access to and use of this site is subject to additional Terms of Use.</p>
+        </div>
+    </div>
+
 
     <!-- ============script======= -->
     <script src="/script.js"></script>

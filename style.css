@@ -26,15 +26,42 @@
   display: flex;
   align-items: start;
   gap: 10px;
+  border-radius: 10px;
 }
 .successRes .successTxt p {
   line-height: 1.4;
   color: rgba(60, 60, 60, 0.7019607843);
-  font-size: 16px;
+  font-size: 14px;
 }
 
 header {
   background-color: rgba(238, 238, 238, 0.9333333333);
+}
+header .mainHeader {
+  padding: 15px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary);
+}
+header .mainHeader .logo {
+  width: 282px;
+  cursor: pointer;
+}
+header .mainHeader .logo img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header .mainHeader .login {
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+header .mainHeader .login span {
+  font-size: 20px;
 }
 header nav {
   padding: 0;
@@ -44,6 +71,9 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header nav h1 {
+  color: white;
 }
 header nav .veryfiedANDscecuredBTN {
   padding: 0px 10px;
@@ -128,6 +158,9 @@ header .heading .pageOption .formPagenetion ol :first-child {
 #formContainer {
   width: 100%;
   padding: 0 20px;
+  box-shadow: 0px 7px 9px 0px rgba(138, 138, 138, 0.6156862745);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #PreviousAddress {
@@ -137,13 +170,14 @@ header .heading .pageOption .formPagenetion ol :first-child {
 .radioWarpper {
   background-color: rgba(238, 238, 238, 0.9333333333);
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 .radioWarpper .radio-Heading {
-  background-color: var(--primary);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
+  background-color: #0072bc;
   color: white;
-  padding: 12px 5px;
+  padding: 10px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -152,16 +186,18 @@ header .heading .pageOption .formPagenetion ol :first-child {
   padding-left: 5px;
 }
 .radioWarpper .radio-Button-Warpper {
-  padding: 15px 0;
+  padding: 10px;
+  margin-bottom: 5px;
+  padding-left: 5px;
   display: flex;
   gap: 20px;
   background-color: #E9F1F9;
 }
-.radioWarpper .radio-description {
+.radioWarpper .radio-Button-Warpper .radio-button {
   font-size: 14px;
-  color: var(--gray);
-  padding-bottom: 10px;
-  padding: 8px 5px;
+}
+.radioWarpper .radio-description {
+  padding: 3px 10px;
 }
 
 .buttonWarpper {
@@ -185,7 +221,8 @@ header .heading .pageOption .formPagenetion ol :first-child {
 .buttonWarpper .prevBox button:hover {
   background-color: green;
 }
-.buttonWarpper .nextBox #nextBTN, .buttonWarpper .nextBox #nextBTN2 {
+.buttonWarpper .nextBox #nextBTN,
+.buttonWarpper .nextBox #nextBTN2 {
   width: -moz-fit-content;
   width: fit-content;
   background-color: var(--secondery);
@@ -197,7 +234,8 @@ header .heading .pageOption .formPagenetion ol :first-child {
   cursor: pointer;
   box-shadow: 0 1px 6px 1px gray;
 }
-.buttonWarpper .nextBox #nextBTN:hover, .buttonWarpper .nextBox #nextBTN2:hover {
+.buttonWarpper .nextBox #nextBTN:hover,
+.buttonWarpper .nextBox #nextBTN2:hover {
   background-color: green;
 }
 .buttonWarpper .nextBox p {
@@ -212,9 +250,11 @@ header .heading .pageOption .formPagenetion ol :first-child {
 
 .addressHeading {
   width: 100%;
+  margin-top: 20px;
 }
 .addressHeading h2 {
   color: var(--primary);
+  margin-bottom: 8px;
 }
 .addressHeading p {
   color: rgba(60, 60, 60, 0.7019607843);
@@ -243,7 +283,7 @@ header .heading .pageOption .formPagenetion ol :first-child {
   border: 1px solid rgba(128, 128, 128, 0.3764705882);
   outline: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 6px 12px;
 }
 .inputRow .inputCol input:hover,
 .inputRow .inputCol select:hover {
@@ -275,4 +315,128 @@ input[type=date]:focus {
   border: 1px solid var(--primary);
   outline: 1px solid #7bbdff;
   box-shadow: 0px 0px 6px 0px #7bbdff;
+}
+
+select {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.3764705882);
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+}
+select:hover {
+  border: 1px solid var(--primary);
+}
+select:focus {
+  border: 1px solid var(--primary);
+  outline: 1px solid #7bbdff;
+  box-shadow: 0px 0px 6px 0px #7bbdff;
+}
+
+.A_numberWarpper {
+  background-color: rgba(238, 238, 238, 0.9333333333);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.A_numberWarpper .Aheading {
+  background-color: red;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 12px 5px;
+}
+.A_numberWarpper .inputWarpper {
+  padding: 5px 0;
+  display: flex;
+  background-color: #E9F1F9;
+  max-width: 300px;
+}
+.A_numberWarpper .inputWarpper span {
+  padding: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.3764705882);
+  border-right: transparent;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.A_numberWarpper .inputWarpper input {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.3764705882);
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+.A_numberWarpper .inputWarpper input:hover {
+  border: 1px solid var(--primary);
+}
+.A_numberWarpper .inputWarpper input:focus {
+  border: 1px solid var(--primary);
+  outline: 1px solid #7bbdff;
+  box-shadow: 0px 0px 6px 0px #7bbdff;
+}
+.A_numberWarpper .Adescription {
+  padding-bottom: 10px;
+  padding: 8px 5px;
+}
+.A_numberWarpper .Adisclimer {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  background-color: #FFD9D9;
+  color: #D46161;
+  line-height: 20px;
+}
+
+.complitionText {
+  text-align: center;
+  padding: 48px;
+}
+
+.craeteMyFiles {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.craeteMyFiles button {
+  background-color: var(--primary);
+  padding: 6px 12px;
+  width: 50%;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  background-color: #eee;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: #7c7c7c;
+}
+footer .footerWarpper {
+  width: 100%;
+  display: flex;
+  padding: 16px;
+  align-items: center;
+}
+footer .footerWarpper .imgBox {
+  width: 20%;
+}
+footer .footerWarpper .footerContent {
+  width: 80%;
+  text-align: center;
+}
+footer .footerWarpper .footerContent p {
+  font-size: 12px;
+}
+footer .footerWarpper .footerContent p b {
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.footnote {
+  padding: 48px 0;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

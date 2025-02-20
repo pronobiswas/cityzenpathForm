@@ -1,6 +1,8 @@
 // ======form======
 // ======state variable=====
 let isShowError = "false"
+let k= 0;
+let flag =false;
 // ====select element by id=====
 const eligibility = document.getElementById('eligibility');
 const ESTA = document.getElementById('ESTA');
@@ -9,11 +11,16 @@ const successRes = document.getElementById('successRes');
 const errorResAorG = document.getElementById('errorResAorG');
 const errorResESTA = document.getElementById('errorResESTA');
 const addressSegment = document.getElementById('addressSegment');
+const personalInfoSegment = document.getElementById('personalInfoSegment');
+const formStaper = document.getElementById('formStaper');
+const complitionBox = document.getElementById('complitionBox');
+const mailingAddress = document.getElementById('mailingAddress');
 const nextBTN = document.getElementById('nextBTN');
 const nextBTN2 = document.getElementById('nextBTN2');
 const prevBTN = document.getElementById('prevBTN');
 const pageNum = document.getElementById('pageNum');
 const AorGvisaHeading = document.getElementById('AorGvisaHeading');
+const Formparagraph = document.getElementById('Formparagraph');
 const estaHeading = document.getElementById('estaHeading');
 // ====querySelector class===
 const formPagenetion = document.querySelector('.formPagenetion')
@@ -32,10 +39,13 @@ let ZipCodeRowPresent = document.getElementById("ZipCodeRowPresent");
 
 // =====eventlistener========
 pageOptions.addEventListener('click',()=>{
-    if (formPagenetion.style.display === "none") {
+
+    if (flag === false) {
         formPagenetion.style.display = "block";
+        flag = true;
     } else {
         formPagenetion.style.display = "none";
+        flag = false;
     }
 })
 
@@ -90,6 +100,7 @@ function handleInput(event){
     // ====remove warning====
     if(event.target.name ==="streetNumber"){
         streetNumberNameRow.classList.remove("ErrorRow");
+
     }
     if(event.target.name ==="cityorTown"){
         cityORtownRow.classList.remove("ErrorRow");
@@ -103,6 +114,8 @@ function handleInput(event){
     if(event.target.name ==="zipCode"){
         ZipCodeRow.classList.remove("ErrorRow");
     }
+    
+
 }
 // ====form validation===
 
@@ -160,14 +173,17 @@ function handleNextBtn(){
     if(applicantInfo.haveAorGvisa ==="no" && applicantInfo.visaProgram === "no"){
         isNext="true"
     }
+    
     if(isNext){
         eligibility.classList.add("hidden");
         successRes.classList.add("hidden");
         addressSegment.classList.remove("hidden");
         FormHeading.innerText = "Let's get started with information about your addresses";
         prevBTN.classList.remove("hidden");
-        pageNum.innerText="2"
-        nextBTN.classList.add("hidden")
+        pageNum.innerText="2";
+        nextBTN.classList.add("hidden");
+        successRes.classList.add("hidden");
+        nextBTN2.classList.remove("hidden");
     }else{
         FormHeading.innerText = "First, let's determine your eligibility to prepare Form AR-11, Alien's Change of Address";
          prevBTN.classList.add("hidden")
@@ -181,17 +197,36 @@ function handleNextBtn(){
         estaHeading.style.backgroundColor = "red"
     }
     
-    nextBTN2.classList.remove("hidden")
+    
     
     
 
 }
+// ====mailing function=====
+function displayMailingForm (){
+    let mailingAddressIsSame = document.querySelector(
+        'input[name="isSameMailaddress"]:checked'
+    ).value;
+    if(mailingAddressIsSame ==="no"){
+        mailingAddress.classList.remove("hidden");
+    }else{
+        mailingAddress.classList.add("hidden")
+    }
+    
+    
+}
 function handleNextBtn2(){
     // ========validate form======
-    addressFormValidation();
-    showError ();
-    console.log(applicantInfo);
-    console.log(applicantFormError);
+    // addressFormValidation();
+    // showError ();
+    personalInfoSegment.classList.remove("hidden");
+    addressSegment.classList.add("hidden");
+    eligibility.classList.add("hidden");
+    formStaper.classList.add("hidden");
+    complitionBox.classList.remove("hidden")
+    pageNum.innerText="3";
+    
+    
     
 }
 
@@ -210,7 +245,8 @@ function handlePrevBtn(){
 function addressFormValidation(){
     // --StreetNumber--
     if(!applicantInfo.streetNumber){
-        applicantFormError.streetNumberError ="must be fild"
+        applicantFormError.streetNumberError ="must be fild";
+        streetNumberNameRow.classList.add("ErrorRow")
     }else{
         applicantFormError.streetNumberError=""
     }
@@ -333,4 +369,40 @@ function showError (){
     }else{
         ZipCodeRowPresent.classList.remove("ErrorRow")
     }
+}
+
+
+// =======navigation=======
+function pageOne(){
+    console.log("success page one");
+    addressSegment.classList.add("hidden");
+    personalInfoSegment.classList.add("hidden");
+    complitionBox.classList.add("hidden");
+    personalInfoSegment.classList.add("hidden");
+    prevBTN.classList.add("hidden");
+    eligibility.classList.remove("hidden");
+    formStaper.classList.remove("hidden");
+    pageNum.innerText="1"
+    
+
+}
+function pageTwo(){
+    console.log("success page two");
+    eligibility.classList.add("hidden");
+    personalInfoSegment.classList.add("hidden");
+    complitionBox.classList.add("hidden");
+    formStaper.classList.remove("hidden");
+    addressSegment.classList.remove("hidden");
+    pageNum.innerText="2";
+    FormHeading.innerText="You're almost done. We just need some information about you."
+    Formparagraph.innerText="Complete the information below to prepare a free Form AR-11. Use the AR-11 to notify USCIS of an address change."
+}
+function pageThree(){
+    console.log("success page three");
+    // eligibility.classList.add("hidden");
+    // personalInfoSegment.classList.add("hidden");
+    // complitionBox.classList.add("hidden");
+    // formStaper.classList.remove("hidden");
+    // addressSegment.classList.remove("hidden");
+    pageNum.innerText="3";
 }
