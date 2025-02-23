@@ -1,8 +1,8 @@
 // ======form======
 // ======state variable=====
 let isShowError = "false"
-let k= 0;
-let flag =false;
+let k = 0;
+let flag = false;
 // ====select element by id=====
 const eligibility = document.getElementById('eligibility');
 const ESTA = document.getElementById('ESTA');
@@ -22,6 +22,7 @@ const pageNum = document.getElementById('pageNum');
 const AorGvisaHeading = document.getElementById('AorGvisaHeading');
 const Formparagraph = document.getElementById('Formparagraph');
 const estaHeading = document.getElementById('estaHeading');
+const inputs = document.querySelectorAll('#mainAddress input');
 // ====querySelector class===
 const formPagenetion = document.querySelector('.formPagenetion')
 // ====selected required row======
@@ -37,8 +38,21 @@ let cityORtownRowPresent = document.getElementById("cityORtownRowPresent");
 let TerritoryRowPresent = document.getElementById("TerritoryRowPresent");
 let ZipCodeRowPresent = document.getElementById("ZipCodeRowPresent");
 
+// ==========requiretext=======
+let streetNumberNameError = document.getElementById("streetNumberNameError");
+let apartmentRowError = document.getElementById("apartmentRowError");
+let cityORtownRowError = document.getElementById("cityORtownRowError");
+let TerritoryRowError = document.getElementById("TerritoryRowError");
+let ZipCodeRowError = document.getElementById("ZipCodeRowError");
+
+let StreetNumbernamePresentError = document.getElementById("StreetNumbernamePresentError");
+let apartmentRowPresentError = document.getElementById("apartmentRowPresentError");
+let cityORtownRowPresentError = document.getElementById("cityORtownRowPresentError");
+let TerritoryRowPresentError = document.getElementById("TerritoryRowPresentError");
+let ZipCodeRowPresentError = document.getElementById("ZipCodeRowPresentError");
+
 // =====eventlistener========
-pageOptions.addEventListener('click',()=>{
+pageOptions.addEventListener('click', () => {
 
     if (flag === false) {
         formPagenetion.style.display = "block";
@@ -51,107 +65,135 @@ pageOptions.addEventListener('click',()=>{
 
 // =====Applicant information=====
 let applicantInfo = {
-    haveAorGvisa : "",
-    visaProgram : "",
+    haveAorGvisa: "",
+    visaProgram: "",
     // previous
-    streetNumber : "",
-    cityorTown :"",
-    isApartmentSuiteorFlor:"",
-    state:"",
-    zipCode:"",
+    streetNumber: "",
+    cityorTown: "",
+    isApartmentSuiteorFlor: "",
+    state: "",
+    zipCode: "",
     // present
     StreetNumberPresent: "",
-    CityorTownPresent :"",
-    isApartmentSuiteorFlorPresent:"",
-    statePresent:"",
-    zipCodePresent:"",
+    CityorTownPresent: "",
+    isApartmentSuiteorFlorPresent: "",
+    statePresent: "",
+    zipCodePresent: "",
     // personal
-    firstName:"",
-    middleName:"",
-    lastName:"",
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    birthday:"",
+    citizenship:"",
+    permanentResident:"",
+    alienRegistrationNumber:"",
 }
 
 // =====applicant form error object=====
-let applicantFormError ={
-    haveAorGvisaError : "",
-    visaProgramError : "",
+let applicantFormError = {
+    haveAorGvisaError: "",
+    visaProgramError: "",
     // previous
-    streetNumberError : "",
-    cityorTownError :"",
-    isApartmentSuiteorFlorError:"",
-    stateError:"",
-    zipCodeError:"",
+    streetNumberError: "",
+    cityorTownError: "",
+    isApartmentSuiteorFlorError: "",
+    stateError: "",
+    zipCodeError: "",
     // present
     StreetNumberPresentError: "",
-    CityorTownPresentError :"",
-    isApartmentSuiteorFlorPresentError:"",
-    statePresentError:"",
-    zipCodePresentError:"",
+    CityorTownPresentError: "",
+    isApartmentSuiteorFlorPresentError: "",
+    statePresentError: "",
+    zipCodePresentError: "",
 };
 
 
 
 // =====oniput function======
-function handleInput(event){
-    applicantInfo={
+function handleInput(event) {
+    applicantInfo = {
         ...applicantInfo,
-        [event.target.name] : event.target.value.trim()
+        [event.target.name]: event.target.value.trim()
     }
     // ====remove warning====
-    if(event.target.name ==="streetNumber"){
+    if (event.target.name === "streetNumber") {
         streetNumberNameRow.classList.remove("ErrorRow");
-
+        streetNumberNameError.innerText = "";
     }
-    if(event.target.name ==="cityorTown"){
+    if (event.target.name === "cityorTown") {
         cityORtownRow.classList.remove("ErrorRow");
+        cityORtownRowError.innerText = "";
     }
-    if(event.target.name ==="isApartmentSuiteorFlor"){
+    if (event.target.name === "isApartmentSuiteorFlor") {
         apartmentRow.classList.remove("ErrorRow");
+        apartmentRowError.innerText = "";
     }
-    if(event.target.name ==="state"){
+    if (event.target.name === "state") {
         TerritoryRow.classList.remove("ErrorRow");
+        TerritoryRowError.innerText = "";
     }
-    if(event.target.name ==="zipCode"){
+    if (event.target.name === "zipCode") {
         ZipCodeRow.classList.remove("ErrorRow");
+        ZipCodeRowError.innerText = "";
     }
-    
+    // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    if (event.target.name === "StreetNumberPresent") {
+        StreetNumbernamePresent.classList.remove("ErrorRow");
+        StreetNumbernamePresentError.innerText = "";
+    }
+    if (event.target.name === "CityorTownPresent") {
+        cityORtownRowPresent.classList.remove("ErrorRow");
+        cityORtownRowPresentError.innerText = "";
+    }
+    if (event.target.name === "isApartmentSuiteorFlorPresent") {
+        apartmentRowPresent.classList.remove("ErrorRow");
+        apartmentRowPresentError.innerText = "";
+    }
+    if (event.target.name === "statePresent") {
+        TerritoryRowPresent.classList.remove("ErrorRow");
+        TerritoryRowPresentError.innerText = "";
+    }
+    if (event.target.name === "zipCodePresent") {
+        ZipCodeRowPresent.classList.remove("ErrorRow");
+        ZipCodeRowPresentError.innerText = "";
+    }
 
 }
 // ====form validation===
 
 // =====functions are append here======
-function checkVisaType(){
-    
+function checkVisaType() {
+
     let visatype = document.querySelector(
         'input[name="AorGvisa"]:checked'
-      ).value;
+    ).value;
 
-    if(visatype === "yes"){
+    if (visatype === "yes") {
         applicantInfo.haveAorGvisa = "yes";
         errorResAorG.classList.remove('hidden');
         ESTA.classList.add('hidden');
         successRes.classList.add('hidden');
         errorResESTA.classList.add('hidden');
         AorGvisaHeading.style.backgroundColor = "#1e90ff"
-    }else if (visatype === "no") {
+    } else if (visatype === "no") {
         applicantInfo.haveAorGvisa = "no"
         errorResAorG.classList.add('hidden');
         ESTA.classList.remove('hidden');
         AorGvisaHeading.style.backgroundColor = "#1e90ff"
-        
+
     }
 }
 // =====visa program====
-function checkVisaProgram(){
+function checkVisaProgram() {
     let visaProgram = document.querySelector(
         'input[name="WaiverProgram"]:checked'
-      ).value;
-    if(visaProgram === "yes"){
+    ).value;
+    if (visaProgram === "yes") {
         applicantInfo.visaProgram = "yes"
         errorResESTA.classList.remove('hidden');
         successRes.classList.add('hidden');
         estaHeading.style.backgroundColor = "#1e90ff";
-    }else if (visaProgram === "no") {
+    } else if (visaProgram === "no") {
         applicantInfo.visaProgram = "no"
         errorResESTA.classList.add('hidden');
         successRes.classList.remove('hidden');
@@ -161,80 +203,105 @@ function checkVisaProgram(){
 
 
 // ====handle next button======
-function handleNextBtn(){
+function handleNextBtn() {
     let FormHeading = document.getElementById("FormHeading");
-    let isShowError ="false"
+    let isShowError = "false"
     let isNext = "";
     // --DisplayError---
-    if(addressSegment.style.display !=="none"){
+    if (addressSegment.style.display !== "none") {
         isShowError = "true"
     }
 
-    if(applicantInfo.haveAorGvisa ==="no" && applicantInfo.visaProgram === "no"){
-        isNext="true"
+    if (applicantInfo.haveAorGvisa === "no" && applicantInfo.visaProgram === "no") {
+        isNext = "true"
     }
-    
-    if(isNext){
+
+    if (isNext) {
         eligibility.classList.add("hidden");
         successRes.classList.add("hidden");
         addressSegment.classList.remove("hidden");
         FormHeading.innerText = "Let's get started with information about your addresses";
         prevBTN.classList.remove("hidden");
-        pageNum.innerText="2";
+        pageNum.innerText = "2";
         nextBTN.classList.add("hidden");
         successRes.classList.add("hidden");
         nextBTN2.classList.remove("hidden");
-    }else{
+    } else {
         FormHeading.innerText = "First, let's determine your eligibility to prepare Form AR-11, Alien's Change of Address";
-         prevBTN.classList.add("hidden")
-         pageNum.innerText="1"
+        prevBTN.classList.add("hidden")
+        pageNum.innerText = "1"
     }
 
-    if(applicantInfo.haveAorGvisa ===""){
+    if (applicantInfo.haveAorGvisa === "") {
         AorGvisaHeading.style.backgroundColor = "red"
     }
-    if(applicantInfo.visaProgram ===""){
+    if (applicantInfo.visaProgram === "") {
         estaHeading.style.backgroundColor = "red"
     }
-    
-    
-    
-    
-
 }
 // ====mailing function=====
-function displayMailingForm (){
+function displayMailingForm() {
     let mailingAddressIsSame = document.querySelector(
         'input[name="isSameMailaddress"]:checked'
     ).value;
-    if(mailingAddressIsSame ==="no"){
+    if (mailingAddressIsSame === "no") {
         mailingAddress.classList.remove("hidden");
-    }else{
+    } else {
         mailingAddress.classList.add("hidden")
     }
-    
-    
+
+
 }
-function handleNextBtn2(){
-    // ========validate form======
+function checkallinput() {
+    inputs.forEach((input) => {
+        console.log(input.value === "");
+
+    })
+}
+// ========validate form======
+function handleNextBtn2() {
+    let isvalidate = "false";
     // addressFormValidation();
-    // showError ();
-    personalInfoSegment.classList.remove("hidden");
-    addressSegment.classList.add("hidden");
-    eligibility.classList.add("hidden");
-    formStaper.classList.add("hidden");
-    complitionBox.classList.remove("hidden")
-    pageNum.innerText="3";
+    // showError();
+    // personalInfoSegment.classList.remove("hidden");
+    // addressSegment.classList.add("hidden");
+    // eligibility.classList.add("hidden");
+    // formStaper.classList.add("hidden");
+    // complitionBox.classList.remove("hidden")
+    // pageNum.innerText = "3";
+    inputs.forEach((input) => {
+        if (input.value.trim() === "") {
+            isvalidate = "false"
+        } else {
+            isvalidate = "true"
+        }
+        console.log(input.value);
+        
+    })
+    console.log(isvalidate);
+    console.log(inputs);
     
-    
-    
+    if (isvalidate ==="true") {
+        personalInfoSegment.classList.remove("hidden");
+        addressSegment.classList.add("hidden");
+        eligibility.classList.add("hidden");
+        formStaper.classList.add("hidden");
+        complitionBox.classList.remove("hidden")
+        pageNum.innerText = "3";
+    } else {
+        addressFormValidation();
+        showError();
+    }
+
+
+
 }
 
 // ====handle prev button====
-function handlePrevBtn(){
+function handlePrevBtn() {
     eligibility.classList.remove("hidden");
     addressSegment.classList.add("hidden");
-    if(eligibility.style.display !=="none"){
+    if (eligibility.style.display !== "none") {
         prevBTN.classList.add("hidden");
     }
     nextBTN.classList.remove("hidden");
@@ -242,138 +309,151 @@ function handlePrevBtn(){
 }
 
 // =======form validation======
-function addressFormValidation(){
+function addressFormValidation() {
     // --StreetNumber--
-    if(!applicantInfo.streetNumber){
-        applicantFormError.streetNumberError ="must be fild";
-        streetNumberNameRow.classList.add("ErrorRow")
-    }else{
-        applicantFormError.streetNumberError=""
+    if (!applicantInfo.streetNumber) {
+        applicantFormError.streetNumberError = "This field is require";
+    } else if (applicantInfo.streetNumber < 4) {
+        applicantFormError.streetNumberError = "input a valid address";
+    } else {
+        applicantFormError.streetNumberError = "";
     }
     // --isApartment Suite or Flor Present--
-    if(!applicantInfo.isApartmentSuiteorFlor){
-        applicantFormError.isApartmentSuiteorFlorError ="must be fild"
-    }else{
-        applicantFormError.isApartmentSuiteorFlorError=""
+    if (!applicantInfo.isApartmentSuiteorFlor) {
+        applicantFormError.isApartmentSuiteorFlorError = "This field is require";
+    } else {
+        applicantFormError.isApartmentSuiteorFlorError = "";
     }
     // --City or Town--
-    if(!applicantInfo.cityorTown){
-        applicantFormError.cityorTownError ="must be fild"
-    }else{
-        applicantFormError.cityorTownError=""
+    if (!applicantInfo.cityorTown) {
+        applicantFormError.cityorTownError = "This field is require";
+    } else {
+        applicantFormError.cityorTownError = "";
     }
     // --state or triotori--
-    if(!applicantInfo.state){
-        applicantFormError.stateError ="must be fild"
-    }else{
-        applicantFormError.stateError=""
+    if (!applicantInfo.state) {
+        applicantFormError.stateError = "This field is require";
+    } else {
+        applicantFormError.stateError = "";
     }
-     // --CZip Code--
-     if(!applicantInfo.zipCode){
-        applicantFormError.zipCodeError ="must be fild"
-    }else{
-        applicantFormError.zipCodeError=""
+    // --CZip Code--
+    if (!applicantInfo.zipCode) {
+        applicantFormError.zipCodeError = "This field is require";
+    } else {
+        applicantFormError.zipCodeError = "";
     }
     // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
     // --Present-StreetNumber--
-    if(!applicantInfo.StreetNumberPresent){
-        applicantFormError.StreetNumberPresentError ="must be fild"
-    }else{
-        applicantFormError.StreetNumberPresentError=""
+    if (!applicantInfo.StreetNumberPresent) {
+        applicantFormError.StreetNumberPresentError = "This field is require";
+    } else {
+        applicantFormError.StreetNumberPresentError = "";
     }
     // --Present-CityorTownPresentError--
-    if(!applicantInfo.CityorTownPresent){
-        applicantFormError.CityorTownPresentError ="must be fild"
-    }else{
-        applicantFormError.CityorTownPresentError=""
+    if (!applicantInfo.CityorTownPresent) {
+        applicantFormError.CityorTownPresentError = "This field is require";
+    } else {
+        applicantFormError.CityorTownPresentError = "";
     }
-     // --Present-isApartmentSuiteorFlorPresentError--
-     if(!applicantInfo.isApartmentSuiteorFlorPresent){
-        applicantFormError.isApartmentSuiteorFlorPresentError ="must be fild"
-    }else{
-        applicantFormError.isApartmentSuiteorFlorPresentError=""
-    }
-    // --Present-statePresentError--
-    if(!applicantInfo.statePresent){
-        applicantFormError.statePresentError ="must be fild"
-    }else{
-        applicantFormError.statePresentError=""
+    // --Present-isApartmentSuiteorFlorPresentError--
+    if (!applicantInfo.isApartmentSuiteorFlorPresent) {
+        applicantFormError.isApartmentSuiteorFlorPresentError = "This field is require";
+    } else {
+        applicantFormError.isApartmentSuiteorFlorPresentError = "";
     }
     // --Present-statePresentError--
-    if(!applicantInfo.zipCodePresent){
-        applicantFormError.zipCodePresentError ="must be fild"
-    }else{
-        applicantFormError.zipCodePresentError=""
+    if (!applicantInfo.statePresent) {
+        applicantFormError.statePresentError = "This field is require";
+    } else {
+        applicantFormError.statePresentError = "";
     }
+    // --Present-statePresentError--
+    if (!applicantInfo.zipCodePresent) {
+        applicantFormError.zipCodePresentError = "This field is require";
+    } else {
+        applicantFormError.zipCodePresentError = "";
+    }
+    showError()
 }
 // ======show error=====
-function showError (){
+function showError() {
     // =====StreetNumberError====
-    if(applicantFormError.streetNumberError){
-        streetNumberNameRow.classList.add("ErrorRow")
-    }else{
-        streetNumberNameRow.classList.remove("ErrorRow")
+    if (applicantFormError.streetNumberError) {
+        streetNumberNameRow.classList.add("ErrorRow");
+        streetNumberNameError.innerText = applicantFormError.streetNumberError;
+    } else {
+        streetNumberNameRow.classList.remove("ErrorRow");
+        streetNumberNameError.innerText = "";
     }
     // =====isApartmentSuiteorFlorError====
-    if(applicantFormError.isApartmentSuiteorFlorError){
-        apartmentRow.classList.add("ErrorRow")
-    }else{
-        apartmentRow.classList.remove("ErrorRow")
+    if (applicantFormError.isApartmentSuiteorFlorError) {
+        apartmentRow.classList.add("ErrorRow");
+        apartmentRowError.innerText = applicantFormError.isApartmentSuiteorFlorError;
+    } else {
+        apartmentRow.classList.remove("ErrorRow");
+        apartmentRowError.innerText = "";
     }
     // =====CityorTownError====
-    if(applicantFormError.cityorTownError){
-        cityORtownRow.classList.add("ErrorRow")
-    }else{
-        cityORtownRow.classList.remove("ErrorRow")
+    if (applicantFormError.cityorTownError) {
+        cityORtownRow.classList.add("ErrorRow");
+        cityORtownRowError.innerText = applicantFormError.cityorTownError;
     }
-     // =====state or tiriotory====
-     if(applicantFormError.stateError){
-        TerritoryRow.classList.add("ErrorRow")
-    }else{
-        TerritoryRow.classList.remove("ErrorRow")
+    // =====state or tiriotory====
+    if (applicantFormError.stateError) {
+        TerritoryRow.classList.add("ErrorRow");
+        TerritoryRowError.innerText = applicantFormError.stateError;
     }
     // =====state or zipCodeError====
-    if(applicantFormError.zipCodeError){
-        ZipCodeRow.classList.add("ErrorRow")
-    }else{
-        ZipCodeRow.classList.remove("ErrorRow")
+    if (applicantFormError.zipCodeError) {
+        ZipCodeRow.classList.add("ErrorRow");
+        ZipCodeRowError.innerText = applicantFormError.zipCodeError;
     }
     // ====$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$===
-     // =====Street Number Present Error====
-     if(applicantFormError.StreetNumberPresentError){
-        StreetNumbernamePresent.classList.add("ErrorRow")
-    }else{
-        StreetNumbernamePresent.classList.remove("ErrorRow")
+    // =====Street Number Present Error====
+    if (applicantFormError.StreetNumberPresentError) {
+        StreetNumbernamePresent.classList.add("ErrorRow");
+        StreetNumbernamePresentError.innerText = applicantFormError.StreetNumberPresentError;
+    } else {
+        StreetNumbernamePresent.classList.remove("ErrorRow");
+        StreetNumbernamePresentError.innerText = "";
     }
-     // =====cityORtownRowPresent====
-     if(applicantFormError.CityorTownPresentError){
+    // =====cityORtownRowPresent====
+    if (applicantFormError.CityorTownPresentError) {
         cityORtownRowPresent.classList.add("ErrorRow")
-    }else{
-        cityORtownRowPresent.classList.remove("ErrorRow")
+        cityORtownRowPresentError.innerText = applicantFormError.CityorTownPresentError;
+    } else {
+        cityORtownRowPresent.classList.remove("ErrorRow");
+        cityORtownRowPresentError.innerText = "";
     }
     // =====isApartmentSuiteorFlorPresentError====
-    if(applicantFormError.isApartmentSuiteorFlorPresentError){
-        apartmentRowPresent.classList.add("ErrorRow")
-    }else{
-        apartmentRowPresent.classList.remove("ErrorRow")
+    if (applicantFormError.isApartmentSuiteorFlorPresentError) {
+        apartmentRowPresent.classList.add("ErrorRow");
+        apartmentRowPresentError.innerText = applicantFormError.isApartmentSuiteorFlorPresentError;
+    } else {
+        apartmentRowPresent.classList.remove("ErrorRow");
+        apartmentRowPresentError.innerText = "";
     }
     // =====statePresentError====
-    if(applicantFormError.statePresentError){
-        TerritoryRowPresent.classList.add("ErrorRow")
-    }else{
-        TerritoryRowPresent.classList.remove("ErrorRow")
+    if (applicantFormError.statePresentError) {
+        TerritoryRowPresent.classList.add("ErrorRow");
+        TerritoryRowPresentError.innerText = applicantFormError.statePresentError;
+    } else {
+        TerritoryRowPresent.classList.remove("ErrorRow");
+        TerritoryRowPresentError.innerText = "";
     }
     // =====statePresentError====
-    if(applicantFormError.zipCodePresentError){
-        ZipCodeRowPresent.classList.add("ErrorRow")
-    }else{
-        ZipCodeRowPresent.classList.remove("ErrorRow")
+    if (applicantFormError.zipCodePresentError) {
+        ZipCodeRowPresent.classList.add("ErrorRow");
+        ZipCodeRowPresentError.innerText = applicantFormError.zipCodePresentError;
+    } else {
+        ZipCodeRowPresent.classList.remove("ErrorRow");
+        ZipCodeRowPresentError.innerText = "";
     }
 }
 
 
 // =======navigation=======
-function pageOne(){
+function pageOne() {
     console.log("success page one");
     addressSegment.classList.add("hidden");
     personalInfoSegment.classList.add("hidden");
@@ -382,27 +462,36 @@ function pageOne(){
     prevBTN.classList.add("hidden");
     eligibility.classList.remove("hidden");
     formStaper.classList.remove("hidden");
-    pageNum.innerText="1"
-    
+    pageNum.innerText = "1"
+    FormHeading.innerText = "First, let's determine your eligibility to prepare Form AR-11, Alien's Change of Address"
+}
+function pageTwo() {
+    console.log("success page two");
+    let isNavigatePage2 = "false";
+    if (applicantInfo.haveAorGvisa === "no" && applicantInfo.visaProgram === "no") {
+        eligibility.classList.add("hidden");
+        personalInfoSegment.classList.add("hidden");
+        complitionBox.classList.add("hidden");
+        formStaper.classList.remove("hidden");
+        addressSegment.classList.remove("hidden");
+        pageNum.innerText = "2";
+        FormHeading.innerText = "Noncitizen Change of Address Card Preparation"
+        Formparagraph.innerText = "Complete the information below to prepare a free Form AR-11. Use the AR-11 to notify USCIS of an address change."
+    }
 
 }
-function pageTwo(){
-    console.log("success page two");
-    eligibility.classList.add("hidden");
-    personalInfoSegment.classList.add("hidden");
-    complitionBox.classList.add("hidden");
-    formStaper.classList.remove("hidden");
-    addressSegment.classList.remove("hidden");
-    pageNum.innerText="2";
-    FormHeading.innerText="You're almost done. We just need some information about you."
-    Formparagraph.innerText="Complete the information below to prepare a free Form AR-11. Use the AR-11 to notify USCIS of an address change."
-}
-function pageThree(){
+function pageThree() {
     console.log("success page three");
-    // eligibility.classList.add("hidden");
-    // personalInfoSegment.classList.add("hidden");
-    // complitionBox.classList.add("hidden");
-    // formStaper.classList.remove("hidden");
-    // addressSegment.classList.remove("hidden");
-    pageNum.innerText="3";
+    eligibility.classList.add("hidden");
+    personalInfoSegment.classList.remove("hidden");
+    complitionBox.classList.remove("hidden");
+    formStaper.classList.add("hidden");
+    addressSegment.classList.add("hidden");
+    pageNum.innerText = "3";
+     FormHeading.innerText = "You're almost done. We just need some information about you."
+}
+
+function createMyFileFun(){
+    console.log(applicantInfo);
+    
 }
