@@ -17,6 +17,7 @@ const complitionBox = document.getElementById('complitionBox');
 const mailingAddress = document.getElementById('mailingAddress');
 const nextBTN = document.getElementById('nextBTN');
 const nextBTN2 = document.getElementById('nextBTN2');
+const nextWithmailingAddress = document.getElementById('nextWithmailingAddress');
 const prevBTN = document.getElementById('prevBTN');
 const pageNum = document.getElementById('pageNum');
 const AorGvisaHeading = document.getElementById('AorGvisaHeading');
@@ -44,6 +45,18 @@ let apartmentRowError = document.getElementById("apartmentRowError");
 let cityORtownRowError = document.getElementById("cityORtownRowError");
 let TerritoryRowError = document.getElementById("TerritoryRowError");
 let ZipCodeRowError = document.getElementById("ZipCodeRowError");
+// ===========mailing address row===========
+let mailingStreetNumberNameRow = document.getElementById("mailingStreetNumberNameRow");
+let mailingApartmentRow = document.getElementById("mailingApartmentRow");
+let mailingcityORtownRow = document.getElementById("mailingcityORtownRow");
+let mailingTerritoryRow = document.getElementById("mailingTerritoryRow");
+let mailingZipCodeRow = document.getElementById("mailingZipCodeRow");
+// --------------
+let mailingStreetNumberNameError = document.getElementById("mailingStreetNumberNameError");
+let mailingApartmentError = document.getElementById("mailingApartmentError");
+let mailingcityORtownError = document.getElementById("mailingcityORtownError");
+let mailingTerritoryError = document.getElementById("mailingTerritoryError");
+let mailingZipCodeError = document.getElementById("mailingZipCodeError");
 
 let StreetNumbernamePresentError = document.getElementById("StreetNumbernamePresentError");
 let apartmentRowPresentError = document.getElementById("apartmentRowPresentError");
@@ -79,14 +92,22 @@ let applicantInfo = {
     isApartmentSuiteorFlorPresent: "",
     statePresent: "",
     zipCodePresent: "",
+    //mailingAddress
+    isMailaddress: "",
+    // mailingAddress
+    mailingStreetNumberName: "",
+    isMailingApartmentSuiteorFlor: "",
+    mailingcityORtown: "",
+    mailingstate: "",
+    mailingZipCode: "",
     // personal
     firstName: "",
     middleName: "",
     lastName: "",
-    birthday:"",
-    citizenship:"",
-    permanentResident:"",
-    alienRegistrationNumber:"",
+    birthday: "",
+    citizenship: "",
+    permanentResident: "",
+    alienRegistrationNumber: "",
 }
 
 // =====applicant form error object=====
@@ -105,6 +126,12 @@ let applicantFormError = {
     isApartmentSuiteorFlorPresentError: "",
     statePresentError: "",
     zipCodePresentError: "",
+    // mailing
+    mailingStreetNumberNameRowError: "",
+    mailingApartmentRowError: "",
+    mailingcityORtownRowError: "",
+    mailingTerritoryRowError: "",
+    mailingZipCodeRowError: "",
 };
 
 
@@ -157,6 +184,28 @@ function handleInput(event) {
         ZipCodeRowPresent.classList.remove("ErrorRow");
         ZipCodeRowPresentError.innerText = "";
     }
+    // %%%%%%%%%%%%%%%%mailingAddress%%%%%%%%%%%%%%%%%%%%%%
+    if (event.target.name === "mailingStreetNumberName") {
+        mailingStreetNumberNameRow.classList.remove("ErrorRow");
+        mailingStreetNumberNameError.innerText = "";
+    }
+    if (event.target.name === "isMailingApartmentSuiteorFlor") {
+        mailingApartmentRow.classList.remove("ErrorRow");
+        mailingApartmentError.innerText = "";
+    }
+    if (event.target.name === "mailingcityORtown") {
+        mailingcityORtownRow.classList.remove("ErrorRow");
+        mailingcityORtownError.innerText = "";
+    }
+    if (event.target.name === "mailingstate") {
+        mailingTerritoryRow.classList.remove("ErrorRow");
+        mailingTerritoryError.innerText = "";
+    }
+    if (event.target.name === "mailingZipCode") {
+        mailingZipCodeRow.classList.remove("ErrorRow");
+        mailingZipCodeError.innerText = "";
+    }
+    
 
 }
 // ====form validation===
@@ -244,23 +293,82 @@ function displayMailingForm() {
     let mailingAddressIsSame = document.querySelector(
         'input[name="isSameMailaddress"]:checked'
     ).value;
+    applicantInfo.isMailaddress = mailingAddressIsSame;
+
     if (mailingAddressIsSame === "no") {
         mailingAddress.classList.remove("hidden");
+        nextWithmailingAddress.classList.remove("hidden");
+        nextBTN2.classList.add("hidden");
     } else {
         mailingAddress.classList.add("hidden")
+        nextWithmailingAddress.classList.add("hidden")
+        nextBTN2.classList.remove("hidden")
     }
 
 
 }
-function checkallinput() {
-    inputs.forEach((input) => {
-        console.log(input.value === "");
 
-    })
-}
 // ========validate form======
 function handleNextBtn2() {
+    console.log(applicantFormError);
+    
     let isvalidate = "false";
+    let requiredPreviousAddress = "false";
+    let requiredPresentAddress = "false";
+    let bothAddress = "false";
+    // lets check previous address
+    if (!applicantInfo.streetNumber || !applicantInfo.cityorTown || !applicantInfo.isApartmentSuiteorFlor || !applicantInfo.state || !applicantInfo.zipCode) {
+        requiredPreviousAddress = "false"
+    } else {
+        requiredPreviousAddress = "true"
+    }
+    console.log(requiredPreviousAddress);
+
+    // lets check present address
+    if (!applicantInfo.StreetNumberPresent || !applicantInfo.CityorTownPresent || !applicantInfo.isApartmentSuiteorFlorPresent || !applicantInfo.statePresent || !applicantInfo.zipCodePresent) {
+        requiredPresentAddress = "false"
+    } else {
+        requiredPresentAddress = "true"
+    }
+    console.log(requiredPreviousAddress);
+
+    if (requiredPreviousAddress === "true" && requiredPresentAddress === "true") {
+        bothAddress = "true";
+        // lets check mailing address is same as present
+
+        if (!applicantInfo.isMailaddress) {
+            alert("fill the mailing form");
+        }
+        if (applicantInfo.isMailaddress === "yes") {
+            personalInfoSegment.classList.remove("hidden");
+            addressSegment.classList.add("hidden");
+            eligibility.classList.add("hidden");
+            formStaper.classList.add("hidden");
+            complitionBox.classList.remove("hidden")
+            pageNum.innerText = "3";
+        }else if((applicantInfo.isMailaddress === "no")){
+            // ======validate mailing form======
+            function validateMailingAddress(){
+                console.log("validate mailing address");
+            }
+            function mailingAddressWarn() {
+                console.log("warn mailing address");
+            }
+            function nextForm(){
+                console.log("oh next"); 
+            }
+        }
+        
+
+    } else {
+        addressFormValidation();
+        showError();
+    }
+    console.log(bothAddress);
+
+
+
+    // lets check mailing address
     // addressFormValidation();
     // showError();
     // personalInfoSegment.classList.remove("hidden");
@@ -269,32 +377,53 @@ function handleNextBtn2() {
     // formStaper.classList.add("hidden");
     // complitionBox.classList.remove("hidden")
     // pageNum.innerText = "3";
-    inputs.forEach((input) => {
-        if (input.value.trim() === "") {
-            isvalidate = "false"
-        } else {
-            isvalidate = "true"
-        }
-        console.log(input.value);
-        
-    })
-    console.log(isvalidate);
-    console.log(inputs);
+    // inputs.forEach((input) => {
+    //     if (input.value.trim() === "") {
+    //         isvalidate = "false"
+    //     } else {
+    //         isvalidate = "true"
+    //     }
+    //     console.log(input.value);
+
+    // })
+    // console.log(isvalidate);
+    // console.log(inputs);
+
+    // lets check previous address
+    // const requiredPreviousAddress = "false"
+    // if(!applicantInfo.streetNumber || !applicantInfo.cityorTown || !applicantInfo.isApartmentSuiteorFlor || !applicantInfo.state || !applicantInfo.zipCode){
+    //     requiredPreviousAddress = "false"
+    // }else{
+    //     requiredPreviousAddress = "true"
+    // }
+    // lets check present address
+    // lets check mailing address is same as present
+    // lets check mailing address
+
+    // if (isvalidate === "true") {
+    //     console.log(applicantInfo.isSameMailaddress);
+
+    //     if (applicantInfo.isSameMailaddress === "true") {
+    //         personalInfoSegment.classList.remove("hidden");
+    //         addressSegment.classList.add("hidden");
+    //         eligibility.classList.add("hidden");
+    //         formStaper.classList.add("hidden");
+    //         complitionBox.classList.remove("hidden");
+    //         pageNum.innerText = "3";
+    //     } else {
+    //         alert("fill the form carefully");
+    //     }
+    // } else {
+    //     addressFormValidation();
+    //     showError();
+    // }
+
+
+
+}
+function handleNextWithMailingADD(){
+    console.log("hello world");
     
-    if (isvalidate ==="true") {
-        personalInfoSegment.classList.remove("hidden");
-        addressSegment.classList.add("hidden");
-        eligibility.classList.add("hidden");
-        formStaper.classList.add("hidden");
-        complitionBox.classList.remove("hidden")
-        pageNum.innerText = "3";
-    } else {
-        addressFormValidation();
-        showError();
-    }
-
-
-
 }
 
 // ====handle prev button====
@@ -342,7 +471,7 @@ function addressFormValidation() {
     } else {
         applicantFormError.zipCodeError = "";
     }
-    // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    // $$$$$$$$$$$$$$$$_PRESENT_$$$$$$$$$$$$$$$$$$$$$
     // --Present-StreetNumber--
     if (!applicantInfo.StreetNumberPresent) {
         applicantFormError.StreetNumberPresentError = "This field is require";
@@ -373,6 +502,39 @@ function addressFormValidation() {
     } else {
         applicantFormError.zipCodePresentError = "";
     }
+    // $$$$$$$$$$$$$$$$$$$$$$$$(MAILING)$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    // --mailing-Street-Number-Name--
+    if (!applicantInfo.mailingStreetNumberName) {
+        applicantFormError.mailingStreetNumberNameRowError = "This field is require";
+    } else {
+        applicantFormError.mailingStreetNumberNameRowError = "";
+    }
+    // --mailing-city-OR-townRow-Error--
+    if (!applicantInfo.mailingcityORtown) {
+        applicantFormError.mailingcityORtownRowError = "This field is require";
+    } else {
+        applicantFormError.mailingcityORtownRowError = "";
+    }
+    // --is-Mailing-Apartment-Suite-or-Flor--
+    if (!applicantInfo.isMailingApartmentSuiteorFlor) {
+        applicantFormError.mailingApartmentRowError = "This field is require";
+    } else {
+        applicantFormError.mailingApartmentRowError = "";
+    }
+    // --mailings-tate-Error--
+    if (!applicantInfo.mailingstate) {
+        applicantFormError.mailingTerritoryRowError = "This field is require";
+    } else {
+        applicantFormError.mailingTerritoryRowError = "";
+    }
+    // --mailing-Zip-Code-RowError--
+    if (!applicantInfo.mailingZipCode) {
+        applicantFormError.mailingZipCodeRowError = "This field is require";
+    } else {
+        applicantFormError.mailingZipCodeRowError = "";
+    }
+
+    // &&&&&&&&&&&
     showError()
 }
 // ======show error=====
@@ -408,7 +570,7 @@ function showError() {
         ZipCodeRow.classList.add("ErrorRow");
         ZipCodeRowError.innerText = applicantFormError.zipCodeError;
     }
-    // ====$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$===
+    // ====$$$$$$$$$$$$$$$$present$$$$$$$$$$$$$$$$$$===
     // =====Street Number Present Error====
     if (applicantFormError.StreetNumberPresentError) {
         StreetNumbernamePresent.classList.add("ErrorRow");
@@ -449,6 +611,47 @@ function showError() {
         ZipCodeRowPresent.classList.remove("ErrorRow");
         ZipCodeRowPresentError.innerText = "";
     }
+    // ====$$$$$$$$$$$$$$$(mailing)$$$$$$$$$$$$$$$$$$===
+    // =====mailing Street Number NameRow Error====
+    if (applicantFormError.mailingStreetNumberNameRowError) {
+        mailingStreetNumberNameRow.classList.add("ErrorRow");
+        mailingStreetNumberNameError.innerText = applicantFormError.mailingStreetNumberNameRowError;
+    } else {
+        mailingStreetNumberNameRow.classList.remove("ErrorRow");
+        mailingStreetNumberNameError.innerText = "";
+    }
+    // =====mailing city OR town Row====
+    if (applicantFormError.mailingcityORtownRowError) {
+        mailingcityORtownRow.classList.add("ErrorRow");
+        mailingcityORtownError.innerText = applicantFormError.mailingcityORtownRowError;
+    } else {
+        mailingcityORtownRow.classList.remove("ErrorRow");
+        mailingcityORtownError.innerText = "";
+    }
+    // =====mailingApartmentRowError====
+    if (applicantFormError.mailingApartmentRowError) {
+        mailingApartmentRow.classList.add("ErrorRow");
+        mailingApartmentError.innerText = applicantFormError.mailingApartmentRowError;
+    } else {
+        mailingApartmentRow.classList.remove("ErrorRow");
+        mailingApartmentError.innerText = "";
+    }
+    // =====mailing Territory Row====
+    if (applicantFormError.mailingTerritoryRowError) {
+        mailingTerritoryRow.classList.add("ErrorRow");
+        mailingTerritoryError.innerText = applicantFormError.mailingTerritoryRowError;
+    } else {
+        mailingTerritoryRow.classList.remove("ErrorRow");
+        mailingTerritoryError.innerText = "";
+    }
+    // =====mailing Zip CodeRow====
+    if (applicantFormError.mailingZipCodeRowError) {
+        mailingZipCodeRow.classList.add("ErrorRow");
+        mailingZipCodeError.innerText = applicantFormError.mailingZipCodeRowError;
+    } else {
+        mailingZipCodeRow.classList.remove("ErrorRow");
+        mailingZipCodeError.innerText = "";
+    }
 }
 
 
@@ -488,10 +691,10 @@ function pageThree() {
     formStaper.classList.add("hidden");
     addressSegment.classList.add("hidden");
     pageNum.innerText = "3";
-     FormHeading.innerText = "You're almost done. We just need some information about you."
+    FormHeading.innerText = "You're almost done. We just need some information about you."
 }
 
-function createMyFileFun(){
+function createMyFileFun() {
     console.log(applicantInfo);
-    
+
 }

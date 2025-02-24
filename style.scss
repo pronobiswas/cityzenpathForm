@@ -499,3 +499,64 @@ footer {
     padding: 48px 0;
     text-align: center;
 }
+@media (max-width: 768px) {
+    header {
+        background-color: #eeee;
+        .mainHeader{
+            padding: 15px;
+            padding-top: 30px;
+            display: flex; justify-content: space-between; align-items: center;
+            .logo{
+                width: 282px;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            color: var(--primary);
+            .login{
+                font-size: 14px;
+                span{font-size: 20px;}
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            h1{
+                width: 100%;
+                order: 2;
+                text-align: center;
+                padding-top: 2px;
+            }
+            .veryfiedANDscecuredBTN {
+              width: 180px;
+            }
+        }
+    
+        .heading {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 8px;
+    
+            h2 {
+                padding-bottom: 10px;
+            }
+    
+            .pageOption {
+                width: 100px ;
+                min-width: 100px;
+            }
+        }
+    
+    }
+    .footnote{
+        background-color: #004c97;
+    }
+}

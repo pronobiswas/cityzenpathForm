@@ -447,4 +447,67 @@ footer .footerWarpper .footerContent p b {
 .footnote {
   padding: 48px 0;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  header {
+    background-color: rgba(238, 238, 238, 0.9333333333);
+  }
+  header .mainHeader {
+    padding: 15px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary);
+  }
+  header .mainHeader .logo {
+    width: 282px;
+    cursor: pointer;
+  }
+  header .mainHeader .logo img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  header .mainHeader .login {
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  header .mainHeader .login span {
+    font-size: 20px;
+  }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  header nav h1 {
+    width: 100%;
+    order: 2;
+    text-align: center;
+    padding-top: 2px;
+  }
+  header nav .veryfiedANDscecuredBTN {
+    width: 180px;
+  }
+  header .heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 8px;
+  }
+  header .heading h2 {
+    padding-bottom: 10px;
+  }
+  header .heading .pageOption {
+    width: 100px;
+    min-width: 100px;
+  }
+  .footnote {
+    background-color: #004c97;
+  }
 }/*# sourceMappingURL=style.css.map */
