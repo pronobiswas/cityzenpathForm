@@ -1,0 +1,259 @@
+:root {
+  --primary: #1e90ff;
+  --secondery: #00a700;
+  --black: #000;
+  --gray: gray;
+  --textPrimery:0072bc ;
+}
+
+#immigration_form * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.pro_container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto !important;
+  padding: 0 20px;
+}
+
+#immigration_form {
+  width: 100%;
+}
+#immigration_form .hidden {
+  display: none;
+}
+#immigration_form button {
+  display: inline-block;
+  border: none;
+  outline: none;
+}
+#immigration_form header {
+  background-color: rgba(238, 238, 238, 0.9333333333);
+  border-bottom: 3px solid #cccccc;
+}
+#immigration_form header .mainHeader {
+  padding: 15px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary);
+}
+#immigration_form header .mainHeader .logo {
+  width: 282px;
+  cursor: pointer;
+}
+#immigration_form header .mainHeader .logo img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#immigration_form header .mainHeader .login {
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+#immigration_form header .mainHeader .login span {
+  font-size: 20px;
+}
+#immigration_form header nav {
+  padding: 0px;
+  padding-left: 10px;
+  background: var(--primary);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#immigration_form header nav h1 {
+  color: white;
+  font-size: 16pt;
+}
+#immigration_form header nav .veryfiedANDscecuredBTN {
+  padding: 0px 10px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 300;
+  color: var(--secondery);
+  background-color: white;
+  transition: 0.1s all linear;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#immigration_form header nav .veryfiedANDscecuredBTN:hover {
+  background-color: var(--secondery);
+  color: white;
+}
+#immigration_form header nav .headerBTNBox {
+  display: flex;
+}
+#immigration_form header nav .headerBTNBox button {
+  background-color: #0061bb;
+  height: 100%;
+  cursor: pointer;
+  padding: 14px;
+  border: 1px solid #0043a7;
+  color: #fff;
+  transition: 0.1s all linear;
+}
+#immigration_form header nav .headerBTNBox button:hover {
+  background: var(--secondery);
+}
+#immigration_form header .heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px 8px;
+}
+#immigration_form header .heading h2 {
+  padding-bottom: 10px;
+}
+@media (max-width: 1115px) {
+  #immigration_form header .heading {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #immigration_form header .heading .headingContent {
+    order: 2;
+  }
+  #immigration_form header .heading .pageOption {
+    order: 1;
+  }
+}
+#immigration_form header .heading .pageOption {
+  width: 100px;
+  padding: 4px 12px;
+  height: 30px;
+  background-color: #1e90ff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 5px;
+  position: relative;
+  border: 2px solid gray;
+  cursor: pointer;
+}
+#immigration_form header .heading .pageOption .formPagenetion {
+  position: absolute;
+  width: 120%;
+  top: 29px;
+  right: -2px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  color: #FFF;
+}
+#immigration_form header .heading .pageOption .formPagenetion ol {
+  background-color: gray;
+  list-style-position: inside;
+}
+#immigration_form header .heading .pageOption .formPagenetion ol li {
+  width: 100%;
+  padding: 4px;
+}
+#immigration_form header .heading .pageOption .formPagenetion ol li:hover {
+  background: rgba(0, 0, 0, 0.1176470588);
+  color: var(--primary);
+  cursor: pointer;
+}
+#immigration_form header .heading .pageOption .formPagenetion ol :first-child {
+  background: #004c97;
+}
+#immigration_form .pro_container .pro_form {
+  width: 100%;
+  padding: 20px 30px;
+  box-shadow: 0px 4px 11px 0px rgb(112, 112, 112);
+}
+#immigration_form .pro_container .pro_form #phase1 {
+  display: flex;
+  gap: 40px;
+}
+#immigration_form .pro_container .pro_form #phase1 .genaralInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#immigration_form .pro_container .pro_form #phase1 .personalInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#immigration_form .pro_container .pro_form #phase1 h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#immigration_form .pro_container .pro_form #phase1 .inputRow {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+#immigration_form .pro_container .pro_form #phase1 .inputRow label {
+  display: inline-block;
+  white-space: wrap;
+  max-width: 210px;
+  width: 35%;
+  color: #0072bc;
+  font-weight: 600;
+}
+#immigration_form .pro_container .pro_form #phase1 .inputRow input {
+  width: 65%;
+  padding: 8px;
+  outline: 1px solid transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase1 .inputRow input:focus {
+  padding: 8px;
+  border-color: var(--primary);
+  outline-color: #004c97;
+  box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+}
+
+@media screen and (max-width: 768px) {
+  #immigration_form header .mainHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #immigration_form header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #immigration_form header nav .headerBTNBox {
+    width: 100%;
+    justify-content: center;
+  }
+  .pro_container .pro_form {
+    padding: 10px 20px;
+  }
+  .pro_container .pro_form #phase1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pro_container .pro_form #phase1 .genaralInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pro_container .pro_form #phase1 .personalInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}/*# sourceMappingURL=style.css.map */

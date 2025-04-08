@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    
+    <div id="immigration_form">
+        
+        <header class="pro_container">
+            <div class="mainHeader">
+                <div class="logo">
+                    <img src="./assets/images/logo.png" alt="logo">
+                </div>
+                <div class="login"><img src="./assets/images/user1.png" alt="png" width="16"> Login</div>
+            </div>
+            <nav>
+                <button class="veryfiedANDscecuredBTN">Verified & Secured</button>
+                <h1>Noncitizen Change of Address Card Preparation</h1>
+                <div class="headerBTNBox">
+                    <button>SAVE</button>
+                    <button>HELP</button>
+                </div>
+            </nav>
+            <div class="heading">
+                <div class="headingContent">
+    
+                    <h2 id="FormHeading">First, let's determine your eligibility to prepare Form AR-11, Alien's Change of
+                        Address</h2>
+                    <p id="Formparagraph">Complete the information below to prepare a free Form AR-11. Use the AR-11 to
+                        notify USCIS of an
+                        address change.</p>
+                </div>
+                <!-- ===page option=== -->
+                <div class="pageOption" id="pageOptions">
+                    <span id="outoftext">page <span id="pageNum">1</span> of 3</span> <span>&#11206;</span>
+                    <div class="formPagenetion hidden">
+                        <ol>
+                            <li onclick="pageOne()">Accessibility</li>
+                            <li onclick="pageTwo()">Address</li>
+                            <li onclick="pageThree()">Personal Info</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- *******form start here************ -->
+        <div class="pro_container">
+            <div class="pro_form">
+                <h2 style="text-align: center; margin:30px;">PERSONAL INFORMATION </h2>
+                <!-- =========PERSONAL INFORMATION========= -->
+                <section id="phase1">
+                    <!-- $$$$$$$$$genaralInfo$$$$$$$$$$$ -->
+                    <div class="genaralInfo">
+                         <!-- full_name -->
+                         <div class="inputRow">
+                             <label for="full_name">Full Name (First, Middle, Last)</label>
+                             <input type="text" id="full_name" name="full_name" required />
+                         </div>
+                         <!-- other_name -->
+                         <div class="inputRow">
+                             <label for="other_name">Other Names Used (First, Middle, Last):</label>
+                             <input type="other_name" id="other_name" name="other_name" required />
+                         </div>
+                         <!-- mailing_address -->
+                         <div class="inputRow">
+                             <label for="mailing_address">Mailing Address</label>
+                             <input type="text" id="mailing_address" name="mailing_address" required />
+                         </div>
+                         <!-- city -->
+                         <div class="inputRow">
+                             <label for="city">City</label>
+                             <input type="text" id="city" name="city" required />
+                         </div>
+                         <!-- state -->
+                         <div class="inputRow">
+                             <label for="state">State</label>
+                             <input type="text" id="state" name="state" required />
+                         </div>
+                         <!-- zip_code -->
+                         <div class="inputRow">
+                             <label for="zip_code">Zip Code</label>
+                             <input type="text" id="zip_code" name="zip_code" required />
+                         </div>
+                         <!-- phone_number -->
+                         <div class="inputRow">
+                             <label for="phone_number">Phone Number</label>
+                             <input type="text" id="phone_number" name="phone_number" required />
+                         </div>
+                         <!-- email_address -->
+                         <div class="inputRow">
+                             <label for="email_address">Email Address</label>
+                             <input type="email" id="email_address" name="email_address" required />
+                         </div>
+                         <!-- Height -->
+                         <div class="inputRow">
+                             <label for="Height">Height</label>
+                             <input type="number" id="Height" name="Height" required />
+                         </div>
+                         <!-- Weight -->
+                         <div class="inputRow">
+                             <label for="Weight">Weight</label>
+                             <input type="number" id="Weight" name="Weight" required />
+                         </div>
+                     </div>
+                    <!-- $$$$$$personalInfo$$$$$$ -->
+                    <div class="personalInfo">
+                        <!-- date_of_birth -->
+                        <div class="inputRow">
+                            <label for="date_of_birth">Date of Birth</label>
+                            <input type="date" id="date_of_birth" name="date_of_birth" required />
+                        </div>
+                        <!-- place_of_birth -->
+                        <div class="inputRow">
+                            <label for="place_of_birth">Place of Birth</label>
+                            <input type="text" id="place_of_birth" name="place_of_birth" required />
+                        </div>
+                        <!-- Country of Citizenship -->
+                        <div class="inputRow">
+                            <label for="Country_of_Citizenship">Place of Birth (city/town, state/province/country):</label>
+                            <input type="text" id="Country_of_Citizenship" name="Country_of_Citizenship" required />
+                        </div>
+                        <!-- Marital Status -->
+                        <div class="inputRow">
+                            <label for="Marital_Status">Marital Status</label>
+                            <select id="Marital_Status" name="Marital_Status" required>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="widowed">Widowed</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+                <!-- =====ENTRY INTO UNITED STATES ======== -->
+                <section id="phase2">
+                    <h2>ENTRY INTO UNITED STATES</h2>
+                    <!-- date_of_entry -->
+                    <div class="inputRow">
+                        <label for="date_of_entry">Date of original entry into the United States:</label>
+                        <input type="date" id="date_of_entry" name="date_of_entry" required />
+                    </div>
+                    <!-- how_to_enter -->
+                    <div class="inputRow">
+                        <label for="how_to_enter">How did you enter the United States (e.g., I-94, Visa, EWI, etc.):</label>
+                        <input type="text" id="how_to_enter" name="how_to_enter" required />
+                    </div>
+                    <!-- place_of_entry -->
+                    <div class="inputRow">
+                        <label for="place_of_entry">Place of entry</label>
+                        <input type="text" id="place_of_entry" name="place_of_entry" required />
+                    </div>
+                    <!-- Have you ever left the U.S -->
+                    <div class="inputRow">
+                        <label for="have_you_ever_left_the_US">Have you ever left the U.S. since your original entry</label>
+                        <select id="have_you_ever_left_the_US" name="have_you_ever_left_the_US" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <!-- If yes, please provide the following information -->
+                    <!-- Reason for Leaving table -->
+                    <div class="inputRow">
+                        <label for="reason_for_leaving">If yes, please provide the following information:</label>
+                        <table id="reason_for_leaving">
+                            <tr>
+                                <th>Reason for Leaving</th>
+                                <th>
+                                    <p>Date You Left</p>
+                                    <p>(month/year)</p>
+                                </th>
+                                <th>
+                                    <p>Date of Return </p>
+                                    <p>(month/year)</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="reason1" /></td>
+                                <td><input type="date" name="departure_date1" /></td>
+                                <td><input type="date" name="return_date1" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="reason2" /></td>
+                                <td><input type="date" name="departure_date2" /></td>
+                                <td><input type="date" name="return_date2" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <!-- ======CONTINUOUS RESIDENCE IN THE UNITED STATES ======= -->
+                <section id="phase3">
+                    <h2>CONTINUOUS RESIDENCE IN THE UNITED STATES</h2>
+                    <p>List all of your residences since your arrival in the U.S: </p>
+                    <table id="residences">
+                        <tr>
+                            <th>Address</th>
+                            <th>
+                                <p>From</p>
+                                <p>(month/year)</p>
+                            </th>
+                            <th>
+                                <p>To</p>
+                                <p>(month/year)</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="address1" /></td>
+                            <td><input type="date" name="from_date1" /></td>
+                            <td><input type="date" name="to_date1" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="address2" /></td>
+                            <td><input type="date" name="from_date2" /></td>
+                            <td><input type="date" name="to_date2" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="address3" /></td>
+                            <td><input type="date" name="from_date3" /></td>
+                            <td><input type="date" name="to_date3" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="address4" /></td>
+                            <td><input type="date" name="from_date4" /></td>
+                            <td><input type="date" name="to_date4" /></td>
+                        </tr>
+                    </table>
+                    <p>Have you left the United States at any time between June 15, 2007 to present? If so,</p>
+                    <div class="radio_toogle">
+                        <input type="radio" id="yes" name="left_US" value="yes" required />
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="no" name="left_US" value="no" required />
+                        <label for="no">No</label>
+                    </div>
+                    <div class="inputRow">
+                        <label for="why_left_us">Please Explain</label>
+                        <textarea name="why_left_us" id="why_left_us"></textarea>
+                    </div>
+                    <!-- SCHOOL/MILITARY STATUS -->
+                    <h2>SCHOOL/MILITARY STATUS</h2>
+                    <!-- Current Education Status -->
+                    <div class="inputRow">
+                        <label for="current_education_status">Current Education Status</label>
+                        <select id="current_education_status" name="current_education_status" required>
+                            <option value="high_school">High School</option>
+                            <option value="college">College</option>
+                            <option value="university">University</option>
+                            <option value="graduate_school">Graduate School</option>
+                        </select>
+                    </div>
+                    <!-- Where Education Received -->
+                    <div class="inputRow">
+                        <label for="where_education_received">Name, City, and State of School Currently Attending or Where
+                            Education Received:</label>
+                        <input type="text" id="where_education_received" name="where_education_received" required />
+                    </div>
+                    <!-- Were you a member in the US military -->
+                    <div class="inputRow">
+                        <label for="us_military">Were you a member of the U.S. military?</label>
+                        <select id="us_military" name="us_military" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+    
+    
+    
+    
+    
+                </section>
+                <!-- =======Employment Authorization =========== -->
+                <section id="phase4">
+                    <h4>EMPLOYMENT AUTHORIZATION</h4>
+                    <!-- current_annual_income -->
+                    <div class="inputRow">
+                        <label for="current_annual_income">Current Annual Income</label>
+                        <input type="number" id="current_annual_income" name="current_annual_income" required />
+                    </div>
+                    <!-- current_annual_expenses -->
+                    <div class="inputRow">
+                        <label for="current_annual_expenses">Employer Name</label>
+                        <input type="text" id="current_annual_expenses" name="current_annual_expenses" required />
+                    </div>
+                    <!-- current_value_of_assets -->
+                    <div class="inputRow">
+                        <label for="current_value_of_assets">Employer Address</label>
+                        <input type="text" id="current_value_of_assets" name="current_value_of_assets" required />
+                    </div>
+                    <!-- Why do you want your Work Authorization -->
+                    <div class="inputRow">
+                        <label for="why_work_auth">Why do you want your Work Authorization?</label>
+                        <textarea name="why_work_auth" id="why_work_auth"></textarea>
+                    </div>
+                </section>
+                <!-- =======INFORMATION ABOUT YOUR CURRENT SPOUSE====== -->
+                <section id="phase5">
+                    <h2>INFORMATION ABOUT YOUR CURRENT SPOUSE</h2>
+                    <hr>
+                    <p>Information about all your current spouse :</p>
+                    <table>
+                        <tr>
+                            <th>NAme of Spouse :(last,First,Middle):</th>
+                            <th>Spouse Cityzenship of What Country:</th>
+                            <th>Spouse Current Address(City and Country):</th>
+                            <th>Immigration Status of Spouse</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="spouse_name" required />
+                            </td>
+                            <td><input type="text" id="cityzenship_of_spouse" name="cityzenship_of_spouse"></td>
+                            <td><input type="text" id="current_address_of_spouse" name="current_address_of_spouse"></td>
+                        </tr>
+                        <tr>
+                            <td>Spouse Aline Registration Number</td>
+                            <td>Spouse Birth Date :(Month,Day,Year)</td>
+                            <td>Spouse Country of Birth :(City and Country)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="spouse_aline_registration_number"></td>
+                            <td><input type="text" name="spouse_birth_date"></td>
+                            <td><input type="text" name="spouse_country_of_birth"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="spouse_earn_per_week">Spouse's Aaverage Earnings per Week:$</label>
+                                <input type="text" id="spouse_earn_per_week" name="spouse_earn_per_week" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="spouse_social_security_number">Spouse's US Social Scecurity Number :<label>
+                                        <input type="text" id="spouse_social_security_number"
+                                            name="spouse_social_security_number" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date of Marriage :</td>
+                            <td>Place of Marriage :</td>
+                            <td>Spouse MAiden NAme :</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="date_of_marriage"></td>
+                            <td><input type="text" name="place_of_marriage"></td>
+                            <td><input type="text" name="spouse_maiden_name"></td>
+                        </tr>
+                        <tr>
+                            <td>Place Spouse First Entered the Us</td>
+                            <td>Date Spouse First Entered the Us</td>
+                            <td>
+                                <p>-Date Spouse Become a US Citizen:</p>
+                                <p>-What City and State She Become A US Citizen In :</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="place_spouse_first_entered_us"></td>
+                            <td><input type="text" name="date_spouse_first_entered_us"></td>
+                            <td><input type="text" name="date_spouse_become_us_citizen"></td>
+                        </tr>
+                    </table>
+                    <h2>CURRENT SPOUSE'S EMPLOYMENT INFORMATION :</h2>
+                    <hr>
+                    <p>Information about your spouse's employment in the US</p>
+                    <table>
+                        <tr>
+                            <th>Full Name of Spouse's Emloyer</th>
+                            <th>Full address of Spouse's Employer</th>
+                            <th>Earnning Per week:(Approximate)</th>
+                            <th>Type of Work Preformed</th>
+                            <th>Start of Employment:(Month,Day,Year)</th>
+                            <th>End of Employment :(Month,Day,Year)</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_spouse_employer"></td>
+                            <td><input type="text" name="full_address_of_spouse_employer"></td>
+                            <td><input type="text" name="earning_per_week_of_spouse"></td>
+                            <td><input type="text" name="type_of_work_preformed_by_spouse"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                    </table>
+    
+    
+                </section>
+                <!-- =====INFORMATION ABOUT YOUR CURRENT SPOUSE==== -->
+                <section id="phase6">
+                    <h2>INFORMATION ABOUT YOUR PRIOR MARRIAGE</h2>
+                    <hr>
+                    <P>Information about your prior mariage</P>
+                    <table>
+                        <tr>
+                            <td>Full Name of your Prior Spouse(Last,First,Middle)</td>
+                            <td>Date Marrige Began:</td>
+                            <td>Date Marriage Ended:</td>
+                            <td>Place Marriage Ended(City and Country)</td>
+                            <td>Description of why Marrige Ended</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_prior_spouse"></td>
+                            <td><input type="text" name="date_marrige_began"></td>
+                            <td><input type="text" name="date_marrige_ended"></td>
+                            <td><input type="text" name="place_marrige_ended"></td>
+                            <td><input type="text" name="description_of_why_marrige_ended"></td>
+                    </table>
+                    <P>Information about your prior mariage</P>
+                    <table>
+                        <tr>
+                            <td>Full Name of your Prior Spouse(Last,First,Middle)</td>
+                            <td>Date Marrige Began:</td>
+                            <td>Date Marriage Ended:</td>
+                            <td>Place Marriage Ended(City and Country)</td>
+                            <td>Description of why Marrige Ended</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_prior_spouse"></td>
+                            <td><input type="text" name="date_marrige_began"></td>
+                            <td><input type="text" name="date_marrige_ended"></td>
+                            <td><input type="text" name="place_marrige_ended"></td>
+                            <td><input type="text" name="description_of_why_marrige_ended"></td>
+                    </table>
+                    <br>
+                    <h2>INFORMATION ABOUT YOUR PRIOR MARRIAGE</h2>
+                    <hr>
+                    <P>Information about your prior mariage</P>
+                    <table>
+                        <tr>
+                            <td>Full Name of your Prior Spouse(Last,First,Middle)</td>
+                            <td>Date Marrige Began:</td>
+                            <td>Date Marriage Ended:</td>
+                            <td>Place Marriage Ended(City and Country)</td>
+                            <td>Description of why Marrige Ended</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_prior_spouse"></td>
+                            <td><input type="text" name="date_marrige_began"></td>
+                            <td><input type="text" name="date_marrige_ended"></td>
+                            <td><input type="text" name="place_marrige_ended"></td>
+                            <td><input type="text" name="description_of_why_marrige_ended"></td>
+                    </table>
+                    <P>Information about your prior mariage</P>
+                    <table>
+                        <tr>
+                            <td>Full Name of your Prior Spouse(Last,First,Middle)</td>
+                            <td>Date Marrige Began:</td>
+                            <td>Date Marriage Ended:</td>
+                            <td>Place Marriage Ended(City and Country)</td>
+                            <td>Description of why Marrige Ended</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_prior_spouse"></td>
+                            <td><input type="text" name="date_marrige_began"></td>
+                            <td><input type="text" name="date_marrige_ended"></td>
+                            <td><input type="text" name="place_marrige_ended"></td>
+                            <td><input type="text" name="description_of_why_marrige_ended"></td>
+                    </table>
+    
+                </section>
+                <!-- ==========INFORMATION ABOUT YOUR CHILDREN================= -->
+                <section id="phase7">
+                    <h2>INFORMATION ABOUT YOUR CHILDREN</h2>
+                    <hr>
+                    <p>Information about all your children</p>
+                    <table>
+                        <tr>
+                            <td>Name of Child:(Last,First,Middle)</td>
+                            <td>Child's Citizenship of What Country</td>
+                            <td>Child's Current Address:(City and Country)</td>
+                            <td>Immigration Status of child</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="name_of_child"></td>
+                            <td><input type="text" name="child_citizenship"></td>
+                            <td><input type="text" name="child_current_address"></td>
+                        </tr>
+                        <tr>
+                            <td>Child's Alien Registration Number</td>
+                            <td>Child's Birth Date:(Month,Day,Year)</td>
+                            <td>Child's Country of Birth:(City and Country)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="child_alien_registration_number"></td>
+                            <td><input type="text" name="child_birth_date"></td>
+                            <td><input type="text" name="child_country_of_birth"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="child_average_earnings">Child's Average Earnings Per Week: $</label>
+                                <input type="text" id="child_average_earnings" name="child_average_earnings" required />
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Name of Child:(Last,First,Middle)</td>
+                            <td>Child's Citizenship of What Country</td>
+                            <td>Child's Current Address:(City and Country)</td>
+                            <td>Immigration Status of child</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="name_of_child"></td>
+                            <td><input type="text" name="child_citizenship"></td>
+                            <td><input type="text" name="child_current_address"></td>
+                        </tr>
+                        <tr>
+                            <td>Child's Alien Registration Number</td>
+                            <td>Child's Birth Date:(Month,Day,Year)</td>
+                            <td>Child's Country of Birth:(City and Country)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="child_alien_registration_number"></td>
+                            <td><input type="text" name="child_birth_date"></td>
+                            <td><input type="text" name="child_country_of_birth"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="child_average_earnings">Child's Average Earnings Per Week: $</label>
+                                <input type="text" id="child_average_earnings" name="child_average_earnings" required />
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Name of Child:(Last,First,Middle)</td>
+                            <td>Child's Citizenship of What Country</td>
+                            <td>Child's Current Address:(City and Country)</td>
+                            <td>Immigration Status of child</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="name_of_child"></td>
+                            <td><input type="text" name="child_citizenship"></td>
+                            <td><input type="text" name="child_current_address"></td>
+                        </tr>
+                        <tr>
+                            <td>Child's Alien Registration Number</td>
+                            <td>Child's Birth Date:(Month,Day,Year)</td>
+                            <td>Child's Country of Birth:(City and Country)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="child_alien_registration_number"></td>
+                            <td><input type="text" name="child_birth_date"></td>
+                            <td><input type="text" name="child_country_of_birth"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="child_average_earnings">Child's Average Earnings Per Week: $</label>
+                                <input type="text" id="child_average_earnings" name="child_average_earnings" required />
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Name of Child:(Last,First,Middle)</td>
+                            <td>Child's Citizenship of What Country</td>
+                            <td>Child's Current Address:(City and Country)</td>
+                            <td>Immigration Status of child</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="name_of_child"></td>
+                            <td><input type="text" name="child_citizenship"></td>
+                            <td><input type="text" name="child_current_address"></td>
+                        </tr>
+                        <tr>
+                            <td>Child's Alien Registration Number</td>
+                            <td>Child's Birth Date:(Month,Day,Year)</td>
+                            <td>Child's Country of Birth:(City and Country)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="child_alien_registration_number"></td>
+                            <td><input type="text" name="child_birth_date"></td>
+                            <td><input type="text" name="child_country_of_birth"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="child_average_earnings">Child's Average Earnings Per Week: $</label>
+                                <input type="text" id="child_average_earnings" name="child_average_earnings" required />
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <!-- ======INFORMATION ABOUT WHERE YOU LIVED SINCE BEING IN THE US====== -->
+                <section id="phase8">
+                    <h2>INFORMATION ABOUT WHERE YOU LIVED SINCE BEING IN THE US</h2>
+                    <hr>
+                    <p>Part 1 ,Number 16 - Place Where Lived Since Being In US</p>
+                    <table>
+                        <tr>
+                            <td>Street and Number - Apt.or Room # - City or Town-State-Zip Code</td>
+                            <td>Resided From:(Month,Day,Year)</td>
+                            <td>Resided To:(Month,Day,Year)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="street_and_number"></td>
+                            <td><input type="text" name="resided_from"></td>
+                            <td><input type="text" name="resided_to"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Street and Number - Apt.or Room # - City or Town-State-Zip Code</td>
+                            <td>Resided From:(Month,Day,Year)</td>
+                            <td>Resided To:(Month,Day,Year)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="street_and_number"></td>
+                            <td><input type="text" name="resided_from"></td>
+                            <td><input type="text" name="resided_to"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Street and Number - Apt.or Room # - City or Town-State-Zip Code</td>
+                            <td>Resided From:(Month,Day,Year)</td>
+                            <td>Resided To:(Month,Day,Year)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="street_and_number"></td>
+                            <td><input type="text" name="resided_from"></td>
+                            <td><input type="text" name="resided_to"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Street and Number - Apt.or Room # - City or Town-State-Zip Code</td>
+                            <td>Resided From:(Month,Day,Year)</td>
+                            <td>Resided To:(Month,Day,Year)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="street_and_number"></td>
+                            <td><input type="text" name="resided_from"></td>
+                            <td><input type="text" name="resided_to"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Street and Number - Apt.or Room # - City or Town-State-Zip Code</td>
+                            <td>Resided From:(Month,Day,Year)</td>
+                            <td>Resided To:(Month,Day,Year)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="street_and_number"></td>
+                            <td><input type="text" name="resided_from"></td>
+                            <td><input type="text" name="resided_to"></td>
+                        </tr>
+                    </table>
+                </section>
+                <!-- =======EMPLOYMENT INFORMATION FOR LAST 10 YEARS======== -->
+                 <section id="phase9">
+                    <h2>EMPLOYMENT INFORMATION FOR LAST 10 YEARS</h2>
+                    <hr>
+                    <p>Information about your emplymewnt form the first time you entered the US </p>
+                    <table>
+                        <tr>
+                            <td>Full NAme of Employer:</td>
+                            <td>Full Address of Employer</td>
+                            <td>Earning Per Week:(Aproximate)</td>
+                            <td>Type of Work Preformed</td>
+                            <td>Start of Employment:(Month,Day,Year)</td>
+                            <td>End of Employment:(Month,Day,Year)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="full_name_of_employer"></td>
+                            <td><input type="text" name="full_address_of_employer"></td>
+                            <td><input type="text" name="earning_per_week"></td>
+                            <td><input type="text" name="type_of_work_preformed"></td>
+                            <td><input type="text" name="start_of_employment"></td>
+                            <td><input type="text" name="end_of_employment"></td>
+                        </tr>
+                    </table>
+                 </section>
+                 <!-- ======INFORMATION ABOUT YOUR FAMILY :========== -->
+                  <section id="phase10">
+                    <h2>INFORMATION ABOUT YOUR FAMILY :</h2>
+                    <hr>
+                    <p>Information on your father, mother, brother , sister, aunt, uncle, grandfather, grandmother:</p>
+                    <h2>FATHER</h2>
+                    <table>
+                        <tr>
+                            <td>NAME:</td>
+                            <td>Cityzen of what Country</td>
+                            <td>Relationship to me</td>
+                            <td>imigration status</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="father_name"></td>
+                            <td><input type="text" name="father_cityzen_of_what_country"></td>
+                            <td><input type="text" name="father_relationship_to_me"></td>
+                            <td><input type="text" name="father_imigration_status"></td>
+                        </tr>
+                        <tr>
+                            <td>Father's Alien Registration Number</td>
+                            <td>Father's Birth Date:(Month,Day,Year)</td>
+                            <td>Father's Birth Country</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="father_alien_registration_number"></td>
+                            <td><input type="text" name="father_birth_date"></td>
+                            <td><input type="text" name="father_birth_country"></td>
+                        </tr>
+                    </table>
+                    <h2>MOTHER</h2>
+                    <table>
+                        <tr>
+                            <td>NAME:</td>
+                            <td>Cityzen of what Country</td>
+                            <td>Relationship to me</td>
+                            <td>imigration status</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="mother_name"></td>
+                            <td><input type="text" name="mother_cityzen_of_what_country"></td>
+                            <td><input type="text" name="mother_relationship_to_me"></td>
+                            <td><input type="text" name="mother_imigration_status"></td>
+                        </tr>
+                        <tr>
+                            <td>Mother's Alien Registration Number</td>
+                            <td>Mother's Birth Date:(Month,Day,Year)</td>
+                            <td>Mother's Birth Country</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="mother_alien_registration_number"></td>
+                            <td><input type="text" name="mother_birth_date"></td>
+                            <td><input type="text" name="mother_birth_country"></td>
+                        </tr>
+                    </table>
+                    <h2>GRANDFATHER ON FATHER'S SIDE:</h2>
+                    <table>
+                        <tr>
+                            <td>NAME:</td>
+                            <td>Cityzen of what Country</td>
+                            <td>Relationship to me</td>
+                            <td>imigration status</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="grandfather_name"></td>
+                            <td><input type="text" name="grandfather_cityzen_of_what_country"></td>
+                            <td><input type="text" name="grandfather_relationship_to_me"></td>
+                            <td><input type="text" name="grandfather_imigration_status"></td>
+                        </tr>
+                        <tr>
+                            <td>Grandfather's Alien Registration Number</td>
+                            <td>Grandfather's Birth Date:(Month,Day,Year)</td>
+                            <td>Grandfather's Birth Country</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="grandfather_alien_registration_number"></td>
+                            <td><input type="text" name="grandfather_birth_date"></td>
+                            <td><input type="text" name="grandfather_birth_country"></td>
+                        </tr>
+                    </table>
+                    <h2>GRANDMOTHER ON FATHER'S SIDE</h2>
+                    <table>
+                        <tr>
+                            <td>NAME:</td>
+                            <td>Cityzen of what Country</td>
+                            <td>Relationship to me</td>
+                            <td>imigration status</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="grandmother_name"></td>
+                            <td><input type="text" name="grandmother_cityzen_of_what_country"></td>
+                            <td><input type="text" name="grandmother_relationship_to_me"></td>
+                            <td><input type="text" name="grandmother_imigration_status"></td>
+                        </tr>
+                        <tr>
+                            <td>Grandmother's Alien Registration Number</td>
+                            <td>Grandmother's Birth Date:(Month,Day,Year)</td>
+                            <td>Grandmother's Birth Country</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="grandmother_alien_registration_number"></td>
+                            <td><input type="text" name="grandmother_birth_date"></td>
+                            <td><input type="text" name="grandmother_birth_country"></td>
+                        </tr>
+                    </table>
+                    <h2>GRANDFATHER ON MOTHER'S SIDE:</h2>
+                    <table>
+                        <tr>
+                            <td>NAME:</td>
+                            <td>Cityzen of what Country</td>
+                            <td>Relationship to me</td>
+                            <td>imigration status</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="grandfather_name_mother_side"></td>
+                            <td><input type="text" name="grandfather_cityzen_of_what_country_mother_side"></td>
+                            <td><input type="text" name="grandfather_relationship_to_me_mother_side"></td>
+                            <td><input type="text" name="grandfather_imigration_status_mother_side"></td>
+                        </tr>
+                        <tr>
+                            <td>Grandfather's Alien Registration Number</td>
+                            <td>Grandfather's Birth Date:(Month,Day,Year)</td>
+                            <td>Grandfather's Birth Country</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="grandfather_alien_registration_number_mother_side"></td>
+                            <td><input type="text" name="grandfather_birth_date_mother_side"></td>
+                            <td><input type="text" name="grandfather_birth_country_mother_side"></td>
+                        </tr>
+                    </table>
+                    <h2>GRANDMOTHER ON MOTHER'S SIDE</h2>
+                    <table>
+                        <tr>
+                            <td>NAME:</td>
+                            <td>Cityzen of what Country</td>
+                            <td>Relationship to me</td>
+                            <td>imigration status</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="grandmother_name_mother_side"></td>
+                            <td><input type="text" name="grandmother_cityzen_of_what_country_mother_side"></td>
+                            <td><input type="text" name="grandmother_relationship_to_me_mother_side"></td>
+                            <td><input type="text" name="grandmother_imigration_status_mother_side"></td>
+                        </tr>
+                        <tr>
+                            <td>Grandmother's Alien Registration Number</td>
+                            <td>Grandmother's Birth Date:(Month,Day,Year)</td>
+                            <td>Grandmother's Birth Country</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="grandmother_alien_registration_number_mother_side"></td>
+                            <td><input type="text" name="grandmother_birth_date_mother_side"></td>
+                            <td><input type="text" name="grandmother_birth_country_mother_side"></td>
+                        </tr>
+                    </table>
+                    <h2>BROTHERS</h2>
+                    <table>
+                        <tr>
+                            <td>NAME:</td>
+                            <td>Cityzen of what Country</td>
+                            <td>Relationship to me</td>
+                            <td>imigration status</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="brother_name"></td>
+                            <td><input type="text" name="brother_cityzen_of_what_country"></td>
+                            <td><input type="text" name="brother_relationship_to_me"></td>
+                            <td><input type="text" name="brother_imigration_status"></td>
+                        </tr>
+                        <tr>
+                            <td>Brother's Alien Registration Number</td>
+                            <td>Brother's Birth Date:(Month,Day,Year)</td>
+                            <td>Brother's Birth Country</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="brother_alien_registration_number"></td>
+                            <td><input type="text" name="brother_birth_date"></td>
+                            <td><input type="text" name="brother_birth_country"></td>
+                        </tr>
+                    </table>
+                    <tr>
+                        <td>
+                            <label for="complete_address">COMPLETE ADDRESS</label>
+                            <input type="text" id="complete_address" name="complete_address" required />
+                        </td>
+                    </tr>
+                  </section>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+        <!-- *******form end here************ -->
+    <div class="container">
+        <div class="footnote">
+            <p>© Copyright 2013-2025, CitizenPath, LLC. All rights reserved. Version 2.21.0</p>
+            <p>CitizenPath is a private company that provides self-directed immigration services at your direction. We
+                are not affiliated with USCIS or any government agency. The information provided in this site is not
+                legal advice, but general information on issues commonly encountered in immigration. CitizenPath is not
+                a law firm and is not a substitute for an attorney or law firm. Your access to and use of this site is
+                subject to additional Terms of Use.</p>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
