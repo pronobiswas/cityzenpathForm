@@ -3,7 +3,16 @@
   --secondery: #00a700;
   --black: #000;
   --gray: gray;
-  --textPrimery:0072bc ;
+  --textPrimery: 0072bc;
+  --white: #fff;
+}
+
+.pro-hidden {
+  display: none;
+}
+
+input {
+  border-color: #0061bb !important;
 }
 
 #immigration_form * {
@@ -30,6 +39,19 @@
   display: inline-block;
   border: none;
   outline: none;
+}
+#immigration_form h2 {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 8px 0;
+  margin-bottom: 30px;
+  color: var(--white);
+}
+#immigration_form .radioRow {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin: 25px 0;
 }
 #immigration_form header {
   background-color: rgba(238, 238, 238, 0.9333333333);
@@ -149,7 +171,7 @@
   right: -2px;
   border: 2px solid gray;
   border-radius: 5px;
-  color: #FFF;
+  color: #fff;
 }
 #immigration_form header .heading .pageOption .formPagenetion ol {
   background-color: gray;
@@ -188,10 +210,6 @@
   flex-direction: column;
   gap: 12px;
 }
-#immigration_form .pro_container .pro_form #phase1 h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
 #immigration_form .pro_container .pro_form #phase1 .inputRow {
   width: 100%;
   display: flex;
@@ -221,11 +239,11 @@
   -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
 }
 #immigration_form .pro_container .pro_form #phase2 {
-  padding-top: 20px;
+  padding-top: 50px;
 }
 #immigration_form .pro_container .pro_form #phase2 h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 #immigration_form .pro_container .pro_form #phase2 .inputRow {
   width: 100%;
@@ -257,39 +275,171 @@
   -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
   -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
 }
-#immigration_form .pro_container .pro_form #phase2 .inputTable {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable {
   width: 100%;
 }
-#immigration_form .pro_container .pro_form #phase2 .inputTable table {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table {
   width: 100%;
   border: 1px solid rgb(235, 3, 3);
   border-spacing: 0px;
   border-collapse: collapse;
 }
-#immigration_form .pro_container .pro_form #phase2 .inputTable table tbody {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody {
   border: 1px solid gray;
 }
-#immigration_form .pro_container .pro_form #phase2 .inputTable table tbody tr th {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody tr th {
   border: 1px solid gray;
   border-collapse: collapse;
 }
-#immigration_form .pro_container .pro_form #phase2 .inputTable table tbody tr td {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody tr td {
   border: 1px solid gray;
 }
-#immigration_form .pro_container .pro_form #phase2 .inputTable table tbody tr td input {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody tr td input {
   width: 100%;
   padding: 8px;
   outline: 1px solid transparent;
   border: 1px solid gray;
   border-radius: 5px;
 }
-#immigration_form .pro_container .pro_form #phase2 .inputTable table tbody tr td input:focus {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody tr td input:focus {
   padding: 8px;
   border-color: var(--primary);
   outline-color: #004c97;
   box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
   -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
   -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+}
+#immigration_form .pro_container .pro_form #phase3 {
+  padding: 60px 0;
+}
+#immigration_form .pro_container .pro_form #phase3 h2 {
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+#immigration_form .pro_container .pro_form #phase3 h2::after {
+  position: absolute;
+  content: "";
+  top: 40px;
+  left: 50%;
+  width: 70%;
+  height: 2px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+#immigration_form .pro_container .pro_form #phase3 #residences {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase3 #residences tr {
+  width: 100%;
+  border-collapse: collapse;
+}
+#immigration_form .pro_container .pro_form #phase3 #residences td {
+  padding: 0;
+  border: 1px solid black;
+}
+#immigration_form .pro_container .pro_form #phase3 #residences td:first-child {
+  width: 50%;
+}
+#immigration_form .pro_container .pro_form #phase3 #residences td:nth-child(2) {
+  width: 25%;
+}
+#immigration_form .pro_container .pro_form #phase3 #residences td:nth-child(3) {
+  width: 25%;
+}
+#immigration_form .pro_container .pro_form #phase3 #residences input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  outline: none;
+}
+#immigration_form .pro_container .pro_form #phase3 .educationORmilitary {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+#immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow label {
+  display: inline-block;
+  white-space: wrap;
+  max-width: 210px;
+  width: 35%;
+  color: #0072bc;
+  font-weight: 600;
+}
+#immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow input,
+#immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow select {
+  width: 65%;
+  padding: 8px;
+  outline: 1px solid transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow input:focus,
+#immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow select:focus {
+  padding: 8px;
+  border-color: var(--primary);
+  outline-color: #004c97;
+  box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+}
+#immigration_form .pro_container .pro_form #phase3 #leftUS {
+  background: #000;
+}
+#immigration_form .pro_container .pro_form #phase4 {
+  padding: 20px 0;
+}
+#immigration_form .pro_container .pro_form #phase4 h4 {
+  margin-bottom: 20px;
+}
+#immigration_form .pro_container .pro_form #phase4 .employmentAuth {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#immigration_form .pro_container .pro_form #phase4 .employmentAuth .inputRow {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+#immigration_form .pro_container .pro_form #phase4 .employmentAuth .inputRow label {
+  display: inline-block;
+  white-space: wrap;
+  max-width: 210px;
+  width: 35%;
+  color: #0072bc;
+  font-weight: 600;
+}
+#immigration_form .pro_container .pro_form #phase4 .employmentAuth .inputRow input {
+  width: 65%;
+  padding: 8px;
+  outline: 1px solid transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase4 .employmentAuth .inputRow input:focus {
+  padding: 8px;
+  border-color: var(--primary);
+  outline-color: #004c97;
+  box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+}
+#immigration_form .pro_container .pro_form #phase4 .employmentAuth .inputRow textarea {
+  width: 65%;
 }
 
 @media screen and (max-width: 768px) {
