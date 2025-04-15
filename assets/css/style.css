@@ -11,8 +11,8 @@
   display: none;
 }
 
-input {
-  border-color: #0061bb !important;
+.warnInput {
+  border-color: red !important;
 }
 
 #immigration_form * {
@@ -50,7 +50,7 @@ input {
 #immigration_form .radioRow {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
   margin: 25px 0;
 }
 #immigration_form header {
@@ -194,28 +194,29 @@ input {
   padding: 20px 30px;
   box-shadow: 0px 4px 11px 0px rgb(112, 112, 112);
 }
-#immigration_form .pro_container .pro_form #phase1 {
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent {
+  width: 100%;
   display: flex;
   gap: 40px;
 }
-#immigration_form .pro_container .pro_form #phase1 .genaralInfo {
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent .genaralInfo {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-#immigration_form .pro_container .pro_form #phase1 .personalInfo {
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent .personalInfo {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-#immigration_form .pro_container .pro_form #phase1 .inputRow {
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent .inputRow {
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
 }
-#immigration_form .pro_container .pro_form #phase1 .inputRow label {
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent .inputRow label {
   display: inline-block;
   white-space: wrap;
   max-width: 210px;
@@ -223,14 +224,14 @@ input {
   color: #0072bc;
   font-weight: 600;
 }
-#immigration_form .pro_container .pro_form #phase1 .inputRow input {
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent .inputRow input {
   width: 65%;
   padding: 8px;
-  outline: 1px solid transparent;
-  border: 1px solid gray;
+  outline: 1px solid #e2e2e2;
+  border: 1px solid #b6b6b6;
   border-radius: 5px;
 }
-#immigration_form .pro_container .pro_form #phase1 .inputRow input:focus {
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent .inputRow input:focus {
   padding: 8px;
   border-color: var(--primary);
   outline-color: #004c97;
@@ -238,8 +239,32 @@ input {
   -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
   -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
 }
-#immigration_form .pro_container .pro_form #phase2 {
-  padding-top: 50px;
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent .inputRow select {
+  width: 65%;
+  padding: 8px;
+  border-radius: 5px;
+  outline: 1px solid #e2e2e2;
+  border: 1px solid #b6b6b6;
+}
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent .inputRow select:focus {
+  padding: 8px;
+  border-color: var(--primary);
+  outline-color: #004c97;
+  box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+}
+#immigration_form .pro_container .pro_form #phase1 .phaseOneContent #nextBtn1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
 }
 #immigration_form .pro_container .pro_form #phase2 h2 {
   text-align: center;
@@ -309,30 +334,37 @@ input {
   -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
   -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
 }
-#immigration_form .pro_container .pro_form #phase3 {
-  padding: 60px 0;
+#immigration_form .pro_container .pro_form #phase2 .pahase2btnBox {
+  display: flex;
+  justify-content: center;
+}
+#immigration_form .pro_container .pro_form #phase2 .pahase2btnBox button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
 }
 #immigration_form .pro_container .pro_form #phase3 h2 {
   margin-bottom: 40px;
   text-align: center;
-  position: relative;
-}
-#immigration_form .pro_container .pro_form #phase3 h2::after {
-  position: absolute;
-  content: "";
-  top: 40px;
-  left: 50%;
-  width: 70%;
-  height: 2px;
-  background-color: #000;
-  transform: translateX(-50%);
 }
 #immigration_form .pro_container .pro_form #phase3 #residences {
+  text-align: center;
+}
+#immigration_form .pro_container .pro_form #phase3 #residences p {
+  margin-bottom: 8px;
+}
+#immigration_form .pro_container .pro_form #phase3 #residences table {
   width: 100%;
   max-width: 600px;
   border-collapse: collapse;
   margin: 0 auto;
-  margin-top: 20px;
   border: 1px solid #000;
   border-radius: 5px;
 }
@@ -396,8 +428,21 @@ input {
   -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
   -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
 }
-#immigration_form .pro_container .pro_form #phase3 #leftUS {
-  background: #000;
+#immigration_form .pro_container .pro_form #phase3 .pahase3btnBox {
+  display: flex;
+  justify-content: center;
+}
+#immigration_form .pro_container .pro_form #phase3 .pahase3btnBox button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
 }
 #immigration_form .pro_container .pro_form #phase4 {
   padding: 20px 0;
@@ -441,6 +486,145 @@ input {
 #immigration_form .pro_container .pro_form #phase4 .employmentAuth .inputRow textarea {
   width: 65%;
 }
+#immigration_form .pro_container .pro_form #phase4 .pahase4btnBox {
+  display: flex;
+  justify-content: center;
+}
+#immigration_form .pro_container .pro_form #phase4 .pahase4btnBox button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase5 {
+  width: 100%;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse {
+  width: 100%;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table {
+  width: 100%;
+  border: 1px solid gray;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr {
+  width: 100%;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr th {
+  width: 25%;
+  border: 1px solid gray;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr td {
+  width: 25%;
+  border: 1px solid gray;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr td input {
+  width: 100%;
+  padding: 8px;
+  border: transparent;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr td textarea {
+  width: 100%;
+  border: none;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible .tdInputRow {
+  display: flex;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible .tdInputRow label {
+  width: 40%;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible .tdInputRow input {
+  width: 70%;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible2 .tdInputRow2 {
+  width: 100%;
+  display: flex !important;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible2 .tdInputRow2 label {
+  width: 100%;
+  background: #000;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible2 .tdInputRow2 input {
+  width: 100%;
+}
+#immigration_form .pro_container .pro_form #phase5 #informationSpouseEmployment {
+  width: 100%;
+}
+#immigration_form .pro_container .pro_form #phase5 #informationSpouseEmployment input {
+  width: 100%;
+  padding: 5px 0;
+}
+#immigration_form .pro_container .pro_form #phase5 .pahase5btnBox {
+  display: flex;
+  justify-content: center;
+}
+#immigration_form .pro_container .pro_form #phase5 .pahase5btnBox button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase6 .pahase6btnBox {
+  display: flex;
+  justify-content: center;
+}
+#immigration_form .pro_container .pro_form #phase6 .pahase6btnBox button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase7 .pahase7btnBox {
+  display: flex;
+  justify-content: center;
+}
+#immigration_form .pro_container .pro_form #phase7 .pahase7btnBox button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase8 .pahase8btnBox {
+  display: flex;
+  justify-content: center;
+}
+#immigration_form .pro_container .pro_form #phase8 .pahase8btnBox button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
+}
 
 @media screen and (max-width: 768px) {
   #immigration_form header .mainHeader {
@@ -477,4 +661,21 @@ input {
     flex-direction: column;
     gap: 12px;
   }
+}
+.pahasebtnBox {
+  width: 100%;
+  padding-top: 30px !important;
+  display: flex;
+  justify-content: center;
+}
+.pahasebtnBox button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px !important;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
