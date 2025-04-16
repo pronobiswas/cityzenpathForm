@@ -12,7 +12,15 @@
 .warnInput {
   border-color: red !important;
 }
-
+#immigration_form input[type='radio']{
+  accent-color: var(--primary) !important;
+  border: 1px solid red;
+  color: rebeccapurple;
+  background-color: #000;
+}
+input[type='radio'] {
+  accent-color: red;
+}
 #immigration_form * {
   margin: 0;
   padding: 0;
@@ -65,6 +73,7 @@
     align-items: center;
     gap: 20px;
     margin: 25px 0;
+    input[type='radio']{cursor: pointer;}
   }
 
   // ===common css===
@@ -347,34 +356,39 @@
         }
         .ReasonforLeavingTable {
           width: 100%;
+          margin-top: 50px;
+          h4 {
+            margin-bottom: 10px;
+          }
           table {
             width: 100%;
             border: 1px solid rgb(235, 3, 3);
             border-spacing: 0px;
             border-collapse: collapse;
-            tbody {
-              border: 1px solid gray;
-              tr {
-                th {
-                  border: 1px solid gray;
-                  border-collapse: collapse;
+            tr {
+              th {
+                border: 1px solid gray;
+                border-collapse: collapse;
+                padding: 5px 0;
+              }
+              td {
+                border: 1px solid gray;
+                label {
+                  color: var(--primary) !important;
                 }
-                td {
-                  border: 1px solid gray;
-                  input {
-                    width: 100%;
+                input {
+                  width: 100%;
+                  padding: 8px;
+                  outline: 1px solid transparent;
+                  border: 1px solid transparent;
+                  border-radius: 5px;
+                  &:focus {
                     padding: 8px;
-                    outline: 1px solid transparent;
-                    border: 1px solid gray;
-                    border-radius: 5px;
-                    &:focus {
-                      padding: 8px;
-                      border-color: var(--primary);
-                      outline-color: #004c97;
-                      box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
-                      -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
-                      -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
-                    }
+                    border-color: var(--primary);
+                    outline-color: #004c97;
+                    box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+                    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+                    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
                   }
                 }
               }
@@ -454,7 +468,7 @@
           }
         }
         .educationORmilitary {
-          margin-top: 50px;
+          margin-top: 20px;
           display: flex;
           flex-direction: column;
           gap: 20px;

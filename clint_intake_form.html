@@ -55,7 +55,7 @@
         <div class="pro_container">
             <div class="pro_form">
                 <!-- =========PERSONAL INFORMATION========= -->
-                <section id="phase1" class="">
+                <section id="phase1" class="hidden">
                     <h2 class="sectionHeading">PERSONAL INFORMATION </h2>
                     <div class="phaseOneContent">
                         <!-- $$$$$$$$$genaralInfo$$$$$$$$$$$ -->
@@ -143,8 +143,9 @@
                         </div>
                     </div>
                 </section>
-                <!-- =====ENTRY INTO UNITED STATES ======== -->
+                <!-- =====ENTRY INTO UNITED STATES phase2 ======== -->
                 <section id="phase2" class="hidden">
+                    <h3>phase 2</h3>
                     <h2>ENTRY INTO UNITED STATES</h2>
                     <!-- date_of_entry -->
                     <div class="inputRow">
@@ -173,25 +174,28 @@
                     </div>
                     <!-- If yes, please provide the following information -->
                     <!-- Reason for Leaving table -->
-                    <div class="ReasonforLeavingTable ">
-                        <thead><b>If yes, please provide the following information:</b></thead>
+                    <div class="ReasonforLeavingTable hidden">
+                        <h4>If yes, please provide the following information:</h4>
                         <table id="reason_for_leaving">
                             <tr>
                                 <th><label for="Reason_for_Leaving">Reason for Leaving</label></th>
                                 <th>
-                                    <p>Address</p>
-                                    <p>Date You Left</p>
-                                    <p>(month/year)</p>
+                                    <label for="departure_date1">
+                                        <p>Date You Left</p>
+                                        <p>(month/year)</p>
+                                    </label>
                                 </th>
                                 <th>
-                                    <p>Date of Return </p>
-                                    <p>(month/year)</p>
+                                    <label for="return_date1">
+                                        <p>Date of Return </p>
+                                        <p>(month/year)</p>
+                                    </label>
                                 </th>
                             </tr>
                             <tr>
-                                <td><input type="text" name="reason1" /></td>
-                                <td><input type="date" name="departure_date1" /></td>
-                                <td><input type="date" name="return_date1" /></td>
+                                <td><input type="text" name="reason1" id="Reason_for_Leaving"/></td>
+                                <td><input type="date" name="departure_date1" id="departure_date1" /></td>
+                                <td><input type="date" name="return_date1" id="return_date1" /></td>
                             </tr>
                             <tr>
                                 <td><input type="text" name="reason2" /></td>
@@ -206,15 +210,16 @@
                 </section>
                 <!-- ======CONTINUOUS RESIDENCE IN THE UNITED STATES ======= -->
                 <section id="phase3" class="hidden">
+                    <h3>phase3</h3>
                     <h2>CONTINUOUS RESIDENCE IN THE UNITED STATES</h2>
                     <div class="radioRow">
                         <h4>Are you continuous Residence in the United State</h4>
                         <div>
-                            <label for="notContinuousResidence">no</label>
-                            <input type="radio" id="notContinuousResidence" name="isContinuousResidence" value="no">
+                            <label for="notContinuousResidence">No</label>
+                            <input type="radio" id="notContinuousResidence" name="isContinuousResidence" value="no" checked>
                         </div>
                         <div>
-                            <label for="continuousResidence">yes</label>
+                            <label for="continuousResidence">Yes</label>
                             <input type="radio" id="continuousResidence" name="isContinuousResidence" value="yes">
                         </div>
                     </div>
@@ -288,32 +293,33 @@
                             </select>
                         </div>
                     </div>
-                    <div id="" class="">
+                    
                         <!-- -----left US---- -->
                         <div class="radioRow">
                             <h4>Have you left the United States at any time between June 15, 2007 to present?</h4>
                             <div>
-                                <input type="radio" id="yes" name="left_US" value="yes" required />
-                                <label for="yes">Yes</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="no" name="left_US" value="no" required />
+                                <input type="radio" id="no" name="left_US" value="no" checked required />
                                 <label for="no">No</label>
                             </div>
+                            <div>
+                                <input type="radio" id="yes" name="left_US" value="yes"   required />
+                                <label for="yes">Yes</label>
+                            </div>
                         </div>
-                        <p>If so,</p>
-                        <p><label for="why_left_us">Please Explain</label></p>
-                        <textarea name="why_left_us" id="why_left_us" style="width: 100%;" rows="10"></textarea>
-                    </div>
+                        
+                        <div id="explainLeftReason" class="hidden">
+                            <p>If so,</p>
+                            <p><label for="why_left_us">Please Explain</label></p>
+                            <textarea name="why_left_us" id="why_left_us" style="width: 100%;" rows="10"></textarea>
+                        </div>
                     <div class="pahase3btnBox">
                         <button class="nextbutton" onclick="handlePhase3btn()">next</button>
                     </div>
                     
                 </section>
-                <!-- ====left us===== -->
-
                 <!-- =======Employment Authorization =========== -->
-                <section id="phase4" class="hidden">
+                <section id="phase4" class="">
+                    <h3>phase4</h3>
                     <h4>EMPLOYMENT AUTHORIZATION</h4>
                     <div class="employmentAuth">
                         <!-- current_annual_income -->
@@ -321,15 +327,15 @@
                             <label for="current_annual_income">Current Annual Income</label>
                             <input type="number" id="current_annual_income" name="current_annual_income" required />
                         </div>
-                        <!-- current_annual_expenses -->
+                        <!-- current_emloyer_name -->
                         <div class="inputRow">
-                            <label for="current_annual_expenses">Employer Name</label>
-                            <input type="text" id="current_annual_expenses" name="current_annual_expenses" required />
+                            <label for="current_emloyer_name">Employer Name</label>
+                            <input type="text" id="current_emloyer_name" name="current_emloyer_name" required />
                         </div>
-                        <!-- current_value_of_assets -->
+                        <!-- current_emloyer_address -->
                         <div class="inputRow">
-                            <label for="current_value_of_assets">Employer Address</label>
-                            <input type="text" id="current_value_of_assets" name="current_value_of_assets" required />
+                            <label for="current_emloyer_address">Employer Address</label>
+                            <input type="text" id="current_emloyer_address" name="current_emloyer_address" required />
                         </div>
                         <!-- Why do you want your Work Authorization -->
                         <div class="inputRow">

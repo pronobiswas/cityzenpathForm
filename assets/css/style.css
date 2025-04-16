@@ -15,6 +15,17 @@
   border-color: red !important;
 }
 
+#immigration_form input[type=radio] {
+  accent-color: var(--primary) !important;
+  border: 1px solid red;
+  color: rebeccapurple;
+  background-color: #000;
+}
+
+input[type=radio] {
+  accent-color: red;
+}
+
 #immigration_form * {
   margin: 0;
   padding: 0;
@@ -52,6 +63,9 @@
   align-items: center;
   gap: 20px;
   margin: 25px 0;
+}
+#immigration_form .radioRow input[type=radio] {
+  cursor: pointer;
 }
 #immigration_form header {
   background-color: rgba(238, 238, 238, 0.9333333333);
@@ -302,6 +316,10 @@
 }
 #immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable {
   width: 100%;
+  margin-top: 50px;
+}
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable h4 {
+  margin-bottom: 10px;
 }
 #immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table {
   width: 100%;
@@ -309,24 +327,25 @@
   border-spacing: 0px;
   border-collapse: collapse;
 }
-#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody {
-  border: 1px solid gray;
-}
-#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody tr th {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tr th {
   border: 1px solid gray;
   border-collapse: collapse;
+  padding: 5px 0;
 }
-#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody tr td {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tr td {
   border: 1px solid gray;
 }
-#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody tr td input {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tr td label {
+  color: var(--primary) !important;
+}
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tr td input {
   width: 100%;
   padding: 8px;
   outline: 1px solid transparent;
-  border: 1px solid gray;
+  border: 1px solid transparent;
   border-radius: 5px;
 }
-#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tbody tr td input:focus {
+#immigration_form .pro_container .pro_form #phase2 .ReasonforLeavingTable table tr td input:focus {
   padding: 8px;
   border-color: var(--primary);
   outline-color: #004c97;
@@ -392,7 +411,7 @@
   outline: none;
 }
 #immigration_form .pro_container .pro_form #phase3 .educationORmilitary {
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;

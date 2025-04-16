@@ -26,7 +26,7 @@ let applicantInfo = {
     have_you_ever_left_the_US:"no",
     reason1:"",
     reason2:"",
-    isContinuousResidence:"",
+    isContinuousResidence:"no",
     address1:"",
     from_date1:"",
     to_date1:"",
@@ -35,11 +35,11 @@ let applicantInfo = {
     to_date2:"",
     current_education_status:"",
     where_education_received:"",
-    left_US:"",
+    left_US:"no",
     why_left_us:"",
     current_annual_income:"",
-    current_annual_expenses:"",
-    current_value_of_assets:"",
+    current_emloyer_name:"",
+    current_emloyer_address:"",
     why_work_auth:"",
 }
 let applicationInfoWarnning = {
@@ -180,6 +180,7 @@ function handlePhase2btn(){
 // @@@@@@@@@@ END OF PHASE 2 TWO @@@@@@@@@@@@@@@@@
 // %%%%%%%%%% phase three 3 start here %%%%%%%%%%%
 const isContinuousResidence = document.querySelectorAll('#phase3 input[name="isContinuousResidence"]');
+const left_US = document.querySelectorAll('#phase3 input[name="left_US"]');
 const phase3Input = document.querySelectorAll('#phase3 input');
 const phase3select = document.querySelectorAll('#phase3 select');
 let isValidatePhase3 = 'false';
@@ -222,6 +223,18 @@ phase3select.forEach((select)=>{
         }
     });
 })
+// ---collect data from left_US---
+left_US.forEach((radio)=>{
+    radio.addEventListener('click',(e)=>{
+        applicantInfo={
+            ...applicantInfo,
+            [e.target.name]: e.target.value.trim(),
+        }
+        if(e.target.value == 'yes'){
+            document.getElementById('explainLeftReason').classList.remove('hidden');
+        }else{document.getElementById('explainLeftReason').classList.add('hidden')};
+    });
+});
 // ---validate phase3 three----
 function validatePhase3 (){
     phase3Input.forEach((input)=>{
@@ -247,10 +260,54 @@ function handlePhase3btn(){
     
 }
 // %%%%%%%%%% phase three 3 end here %%%%%%%%%%%
-// ###########phase four start here############
+// ########### PHASE4 FOUR START HERE ############
+const phase4Input = document.querySelectorAll('#phase4 input');
+let isValidatePhase4 = 'false';
+// --collect data from phase four input---
+phase4Input.forEach((input)=>{
+    input.addEventListener("click", (e) => {
+        input.classList.remove('warnInput');
+    });
+    input.addEventListener("input", (e) => {
+        console.log(e.target);
+        applicantInfo={
+            ...applicantInfo,
+            [e.target.name]: e.target.value.trim(),
+        }
+    });
+});
+// --collect data from phase four textarea---
+document.querySelector('#phase4 textarea').addEventListener('input',(e)=>{
+    applicantInfo={
+        ...applicantInfo,
+        [e.target.name]: e.target.value.trim(),
+    }
+})
+// ----validate phase4 four-------
+function validatePhase4 (){
+    // ---check empty fild and mark it---
+    phase4Input.forEach((input)=>{
+        if(input.value==""){
+            input.classList.add('warnInput')
+        }else{
+            input.classList.remove('warnInput');
+        }
+    })
+    if(document.querySelector('#phase4 textarea').value.trim()==""){
+        document.querySelector('#phase4 textarea').classList.add('warnInput')
+    }else{document.querySelector('#phase4 textarea').classList.remove('warnInput')};
+    // ----check isEligable for next phase-----
+    if(!applicantInfo.current_annual_income || !applicantInfo.current_emloyer_name || !applicantInfo.current_emloyer_address || !applicantInfo.why_work_auth){
+        isValidatePhase4 = "false";
+    }else{isValidatePhase4="true"};
+};
 function handlePhaseFourBtn(){
-    document.getElementById('phase4').classList.add('hidden');
-    document.getElementById('phase5').classList.remove('hidden');
+    validatePhase4();
+    if(isValidatePhase4 == "true"){
+        document.getElementById('phase4').classList.add('hidden');
+        document.getElementById('phase5').classList.remove('hidden');
+    }
+    console.log(applicantInfo.current_annual_income,applicantInfo.current_emloyer_name,applicantInfo.current_emloyer_address,applicantInfo.why_work_auth);
 }
 // ###########phase four end here############
 // %%%%%%%%%%%%%%phase five start here%%%%%%%%%%%%%%
