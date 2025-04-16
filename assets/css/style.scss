@@ -5,6 +5,7 @@
   --gray: gray;
   --textPrimery: 0072bc;
   --white: #fff;
+  --bgPrimary:#0b7ce623;
 }
 .pro-hidden {
   display: none;
@@ -46,21 +47,6 @@ input[type='radio'] {
     border: none;
     outline: none;
   }
-  //   .sectionHeading {
-  //     margin-bottom: 40px;
-  //     text-align: center;
-  //     position: relative;
-  //     &::after {
-  //       position: absolute;
-  //       content: "";
-  //       top: 40px;
-  //       left: 50%;
-  //       width: 70%;
-  //       height: 2px;
-  //       background-color: #000;
-  //       transform: translateX(-50%);
-  //     }
-  //   }
   h2 {
     background-color: var(--primary);
     text-align: center;
@@ -245,6 +231,7 @@ input[type='radio'] {
       box-shadow: 0px 4px 11px 0px rgba(112, 112, 112, 1);
 
       #phase1 {
+        padding-bottom: 40px;
         .phaseOneContent {
           width: 100%;
           display: flex;
@@ -253,7 +240,7 @@ input[type='radio'] {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 22px;
           }
           .personalInfo {
             width: 100%;
@@ -272,7 +259,7 @@ input[type='radio'] {
               max-width: 210px;
               width: 35%;
               color: #0072bc;
-              font-weight: 600;
+              font-weight: 400;
             }
             input {
               width: 65%;
@@ -580,6 +567,8 @@ input[type='radio'] {
       // ===phase5====
       #phase5 {
         width: 100%;
+       h2{margin-bottom: 0 ;}
+       
         #currentSpouse {
           width: 100%;
           table {
@@ -592,19 +581,31 @@ input[type='radio'] {
               th {
                 width: 25%;
                 border: 1px solid gray;
+                padding: 10px 0;
               }
               td {
                 width: 25%;
                 border: 1px solid gray;
                 input {
                   width: 100%;
-                  // min-width: 300px;
                   padding: 8px;
-                  border: transparent;
+                  border: 1px solid transparent;
+                  &:focus {
+                    padding: 8px;
+                    border-color: var(--primary);
+                    outline-color: #004c97;
+                    box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+                    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+                    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+                  }
                 }
                 textarea {
                   width: 100%;
                   border: none;
+                }
+                label{
+                  display: inline-block;
+                  margin: 5px;
                 }
               }
               .flexible {
@@ -618,24 +619,12 @@ input[type='radio'] {
                   }
                 }
               }
-              .flexible2 {
-                .tdInputRow2 {
-                  width: 100%;
-                  display: flex !important;
-                  label {
-                    width: 100%;
-                    background: #000;
-                  }
-                  input {
-                    width: 100%;
-                  }
-                }
-              }
             }
           }
         }
         #informationSpouseEmployment {
           width: 100%;
+          margin-top: 50px;
           // overflow-x: scroll;
           input {
             width: 100%;
@@ -660,6 +649,63 @@ input[type='radio'] {
       }
       // ===phase6===
       #phase6 {
+        #phase6wraper{
+          .part1{
+            width: 100%;
+            padding-bottom: 30px;
+            background-color: #0b7ce623;
+            .formWraper{
+              width: 100%;
+              // max-width: 900px;
+              padding: 10px;
+              margin: 0 auto;
+              display: flex;
+              flex-direction: column;
+              gap: 30px;
+              .inputRow{
+                width: 100%;
+                display: flex;
+                gap: 20px;
+                label{
+                  width:100%;
+                  max-width: 300px;
+                  font-weight: 600;
+                  color: var(--primary);
+                }
+                input{
+                  width:100%;
+                  max-width: 500px;
+                  padding: 8px;
+                }
+              }
+              .addMore{
+                width: fit-content;
+                background-color: var(--primary);
+                color: var(--white);
+                padding: 4px 28px;
+                border-radius: 4px;
+              }
+            }
+          }
+          .part2{
+            width: 100%;
+            table{
+              width: 100%;
+              border: 1px solid gray;
+              border-collapse: collapse;
+              border-spacing: 0;
+
+              td{
+                border: 1px solid gray;
+                width: 20%;
+                input{
+                  padding: 8px;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
         .pahase6btnBox {
           display: flex;
           justify-content: center;
@@ -674,6 +720,7 @@ input[type='radio'] {
             font-size: 22px;
             border-radius: 5px;
           }
+          
         }
       }
       // ===phase7====

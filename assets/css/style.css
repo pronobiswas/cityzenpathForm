@@ -5,6 +5,7 @@
   --gray: gray;
   --textPrimery: 0072bc;
   --white: #fff;
+  --bgPrimary:#0b7ce623;
 }
 
 .pro-hidden {
@@ -208,6 +209,9 @@ input[type=radio] {
   padding: 20px 30px;
   box-shadow: 0px 4px 11px 0px rgb(112, 112, 112);
 }
+#immigration_form .pro_container .pro_form #phase1 {
+  padding-bottom: 40px;
+}
 #immigration_form .pro_container .pro_form #phase1 .phaseOneContent {
   width: 100%;
   display: flex;
@@ -217,7 +221,7 @@ input[type=radio] {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 22px;
 }
 #immigration_form .pro_container .pro_form #phase1 .phaseOneContent .personalInfo {
   width: 100%;
@@ -236,7 +240,7 @@ input[type=radio] {
   max-width: 210px;
   width: 35%;
   color: #0072bc;
-  font-weight: 600;
+  font-weight: 400;
 }
 #immigration_form .pro_container .pro_form #phase1 .phaseOneContent .inputRow input {
   width: 65%;
@@ -524,6 +528,9 @@ input[type=radio] {
 #immigration_form .pro_container .pro_form #phase5 {
   width: 100%;
 }
+#immigration_form .pro_container .pro_form #phase5 h2 {
+  margin-bottom: 0;
+}
 #immigration_form .pro_container .pro_form #phase5 #currentSpouse {
   width: 100%;
 }
@@ -539,6 +546,7 @@ input[type=radio] {
 #immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr th {
   width: 25%;
   border: 1px solid gray;
+  padding: 10px 0;
 }
 #immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr td {
   width: 25%;
@@ -547,11 +555,23 @@ input[type=radio] {
 #immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr td input {
   width: 100%;
   padding: 8px;
-  border: transparent;
+  border: 1px solid transparent;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr td input:focus {
+  padding: 8px;
+  border-color: var(--primary);
+  outline-color: #004c97;
+  box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
 }
 #immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr td textarea {
   width: 100%;
   border: none;
+}
+#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr td label {
+  display: inline-block;
+  margin: 5px;
 }
 #immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible .tdInputRow {
   display: flex;
@@ -562,19 +582,9 @@ input[type=radio] {
 #immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible .tdInputRow input {
   width: 70%;
 }
-#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible2 .tdInputRow2 {
-  width: 100%;
-  display: flex !important;
-}
-#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible2 .tdInputRow2 label {
-  width: 100%;
-  background: #000;
-}
-#immigration_form .pro_container .pro_form #phase5 #currentSpouse table tr .flexible2 .tdInputRow2 input {
-  width: 100%;
-}
 #immigration_form .pro_container .pro_form #phase5 #informationSpouseEmployment {
   width: 100%;
+  margin-top: 50px;
 }
 #immigration_form .pro_container .pro_form #phase5 #informationSpouseEmployment input {
   width: 100%;
@@ -595,6 +605,60 @@ input[type=radio] {
   cursor: pointer;
   font-size: 22px;
   border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part1 {
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: rgba(11, 124, 230, 0.137254902);
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part1 .formWraper {
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part1 .formWraper .inputRow {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part1 .formWraper .inputRow label {
+  width: 100%;
+  max-width: 300px;
+  font-weight: 600;
+  color: var(--primary);
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part1 .formWraper .inputRow input {
+  width: 100%;
+  max-width: 500px;
+  padding: 8px;
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part1 .formWraper .addMore {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 4px 28px;
+  border-radius: 4px;
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part2 {
+  width: 100%;
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part2 table {
+  width: 100%;
+  border: 1px solid gray;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part2 table td {
+  border: 1px solid gray;
+  width: 20%;
+}
+#immigration_form .pro_container .pro_form #phase6 #phase6wraper .part2 table td input {
+  padding: 8px;
+  width: 100%;
 }
 #immigration_form .pro_container .pro_form #phase6 .pahase6btnBox {
   display: flex;

@@ -269,7 +269,6 @@ phase4Input.forEach((input)=>{
         input.classList.remove('warnInput');
     });
     input.addEventListener("input", (e) => {
-        console.log(e.target);
         applicantInfo={
             ...applicantInfo,
             [e.target.name]: e.target.value.trim(),
@@ -307,15 +306,109 @@ function handlePhaseFourBtn(){
         document.getElementById('phase4').classList.add('hidden');
         document.getElementById('phase5').classList.remove('hidden');
     }
-    console.log(applicantInfo.current_annual_income,applicantInfo.current_emloyer_name,applicantInfo.current_emloyer_address,applicantInfo.why_work_auth);
 }
 // ###########phase four end here############
 // %%%%%%%%%%%%%%phase five start here%%%%%%%%%%%%%%
+const phase5 = document.getElementById('phase5');
+const phase5Input = phase5.querySelectorAll('textarea , input');
+let isValidatePhase5 = "false";
+// ---phase5 all input event---
+phase5Input.forEach((input)=>{
+    input.addEventListener('click',(e)=>{
+        input.classList.remove('warnInput');
+    });
+});
+// ---collect phase5 input data---
+phase5Input.forEach((input)=>{
+    input.addEventListener('input',(e)=>{
+        applicantInfo={
+            ...applicantInfo,
+            [e.target.name]: e.target.value.trim()
+        }
+    });
+});
+// ----validate phase5 input----
+function validatePhase5(){
+    phase5Input.forEach((input)=>{
+            if(input.value==""){
+                input.classList.add('warnInput')
+            }else{
+                input.classList.remove('warnInput');
+            }
+    });
+     // ----check isEligable for next phase-----
+     if (
+        !applicantInfo.spouse_name ||
+        !applicantInfo.cityzenship_of_spouse ||
+        !applicantInfo.current_address_of_spouse ||
+        !applicantInfo.spouseImmigration ||
+        !applicantInfo.spouse_aline_registration_number ||
+        !applicantInfo.spouse_birth_date ||
+        !applicantInfo.spouse_country_of_birth ||
+        !applicantInfo.spouse_earn_per_week ||
+        !applicantInfo.spouse_social_security_number ||
+        !applicantInfo.date_of_marriage ||
+        !applicantInfo.place_of_marriage ||
+        !applicantInfo.spouse_maiden_name ||
+
+        !applicantInfo.place_spouse_first_entered_us ||
+        !applicantInfo.date_spouse_first_entered_us || 
+        !applicantInfo.date_spouse_become_us_citizen ||
+
+        !applicantInfo.full_name_of_spouse_employer ||
+        !applicantInfo.full_address_of_spouse_employer ||
+        !applicantInfo.earning_per_week_of_spouse ||
+        !applicantInfo.type_of_work_preformed_by_spouse ||
+        !applicantInfo.start_of_employment ||
+        !applicantInfo.end_of_employment
+      ) {
+        isValidatePhase5 = "false";
+        console.log("validate fail");
+        
+      } else {
+        isValidatePhase5 = "true";
+        console.log("validate");
+        
+      }
+      
+    
+}
+
 function handlePhaseFiveBtn(){
-    document.getElementById('phase5').classList.add('hidden');
-    document.getElementById('phase6').classList.remove('hidden');
+    validatePhase5();
+    console.log(applicantInfo);
+    console.log(phase5);
+    console.log(isValidatePhase5);
+    if(isValidatePhase5 == "true"){
+        document.getElementById('phase5').classList.add('hidden');
+        document.getElementById('phase6').classList.remove('hidden');
+    }
 }
 // %%%%%%%%%%%%%%phase five end here%%%%%%%%%%%%%%
+// $$$$$$$$$ PHASE 6 START HERE $$$$$$$$$$$$
+const phase6 = document.getElementById('phase6');
+const phase6btn = document.getElementById('phase6btn');
+
+function handleAddmore1(){
+    document.querySelector('#phase6 .part2').classList.remove('hidden');
+}
+phase6btn.addEventListener('click',()=>{
+    phase6.classList.add('hidden');
+    document.getElementById('phase7').classList.remove('hidden');
+})
+// $$$$$$$$$ PHASE 6 end HERE $$$$$$$$$$$$
+// %%%%%%%%%%%% PHASE7 START HERE %%%%%%%%%%%%%
+document.getElementById('pahase7btn').addEventListener('click',()=>{
+    document.getElementById('phase7').classList.add('hidden');
+    document.getElementById('phase8').classList.remove('hidden');
+});
+// %%%%%%%%%%%% PHASE7 END HERE %%%%%%%%%%%%%
+// %%%%%%%%%%%% PHASE8 START HERE %%%%%%%%%%%%%
+document.getElementById('pahase8btn').addEventListener('click',()=>{
+    document.getElementById('phase8').classList.add('hidden');
+    document.getElementById('phase9').classList.remove('hidden');
+});
+// %%%%%%%%%%%% PHASE8 END HERE %%%%%%%%%%%%%
 
 
 // ReasonforLeavingTable
