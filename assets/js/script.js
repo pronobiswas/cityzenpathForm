@@ -1,4 +1,4 @@
-let ReasonforLeavingTable = document.querySelector('.ReasonforLeavingTable')
+let ReasonforLeavingTable = document.querySelector('#ReasonforLeavingTable')
 
 let allSelectOption = document.querySelectorAll("select")
 
@@ -61,7 +61,7 @@ let applicationInfoWarnning = {
   // %%%%%%%phase1%%%%%%%%
   // &&&&&&&&&&&collect data&&&&&&&&&&&&&
 const phase1 = document.getElementById("phase1");
-let phase1input = document.querySelectorAll("#phase1 .inputRow input");
+let phase1input = document.querySelectorAll("#phase1 .pro_input_Row input");
 let isValidatePhase1 = 'false';
 // ----collect phase1 input value----
 phase1input.forEach((input) => {
@@ -110,6 +110,9 @@ function validatePhaseOne (){
     }
 }
 function checkChanges(){
+    console.log(isValidatePhase1);
+    console.log(applicantInfo.full_name, applicantInfo.other_name,applicantInfo.mailing_address , applicantInfo.city ,applicantInfo.zip_code ,applicantInfo.phone_number, applicantInfo.email_address, applicantInfo.Height, applicantInfo.Weight, applicantInfo.date_of_birth, applicantInfo.place_of_birth, applicantInfo.Country_of_Citizenship,applicantInfo.Marital_Status );
+    
     validatePhaseOne();
 }
 // %%%%%%%%%%%END OF PHASE ONE%%%%%%%%%%%%%%
@@ -131,12 +134,14 @@ phase2Inputs.forEach((input) => {
     });
 })
 // -----collect phase two select data-----
-allSelectOption[1].addEventListener('input',(e)=>{
+document.getElementById('have_you_ever_left_the_US').addEventListener('input',(e)=>{
+    console.log(document.getElementById('have_you_ever_left_the_US').value);
+    
     applicantInfo={
         ...applicantInfo,
         [e.target.name]: e.target.value.trim(),
     }
-    if(applicantInfo.have_you_ever_left_the_US == "yes"){
+    if(document.getElementById('have_you_ever_left_the_US').value == "yes"){
         ReasonforLeavingTable.classList.remove('hidden');
 
     }else{
@@ -315,6 +320,8 @@ let isValidatePhase5 = "false";
 // ---phase5 all input event---
 phase5Input.forEach((input)=>{
     input.addEventListener('click',(e)=>{
+        console.log(e.target);
+        
         input.classList.remove('warnInput');
     });
 });
@@ -377,7 +384,6 @@ function validatePhase5(){
 function handlePhaseFiveBtn(){
     validatePhase5();
     console.log(applicantInfo);
-    console.log(phase5);
     console.log(isValidatePhase5);
     if(isValidatePhase5 == "true"){
         document.getElementById('phase5').classList.add('hidden');
@@ -390,7 +396,7 @@ const phase6 = document.getElementById('phase6');
 const phase6btn = document.getElementById('phase6btn');
 
 function handleAddmore1(){
-    document.querySelector('#phase6 .part2').classList.remove('hidden');
+    document.querySelector('#phase6 .part2').classList.toggle('hidden');
 }
 phase6btn.addEventListener('click',()=>{
     phase6.classList.add('hidden');
@@ -409,6 +415,12 @@ document.getElementById('pahase8btn').addEventListener('click',()=>{
     document.getElementById('phase9').classList.remove('hidden');
 });
 // %%%%%%%%%%%% PHASE8 END HERE %%%%%%%%%%%%%
+// $$$$$$$$$$$ PHASE9 START HERE $$$$$$$$$$$$$$ 
+document.getElementById('pahase9btn').addEventListener('click',()=>{
+    document.getElementById('phase9').classList.add('hidden');
+    document.getElementById('phase10').classList.remove('hidden');
+});
+// $$$$$$$$$$$ PHASE9 end HERE $$$$$$$$$$$$$$ 
 
 
 // ReasonforLeavingTable
