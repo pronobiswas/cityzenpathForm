@@ -861,17 +861,24 @@ input[type=radio] {
   border-radius: 5px;
   background-color: red !important;
 }
-#immigration_form .pro_container .pro_form #phase9 .pro_table table#imployment_information_table {
-  border: 1px solid var(--borderColor);
-  border-collapse: collapse;
+#immigration_form .pro_container .pro_form #phase9 h2 {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 20px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
-#immigration_form .pro_container .pro_form #phase9 .pro_table table#imployment_information_table tr td {
-  border: 1px solid var(--borderColor);
-}
-#immigration_form .pro_container .pro_form #phase9 .pro_table table#imployment_information_table tr td input {
+#immigration_form .pro_container .pro_form #phase9 .phaseNineContent {
   width: 100%;
-  padding: 5px;
   border: 1px solid var(--borderColor);
+  border-top: 0;
+  padding: 0px 20px 40px 20px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#immigration_form .pro_container .pro_form #phase9 fieldset {
+  padding: 20px;
 }
 
 .footnote {
