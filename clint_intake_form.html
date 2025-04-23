@@ -2308,7 +2308,7 @@
             </div>
           </section>
           <!-- =======EMPLOYMENT INFORMATION FOR LAST 10 YEARS======== -->
-          <section id="phase9" class="">
+          <section id="phase9" class="hidden">
             <h2>EMPLOYMENT INFORMATION FOR LAST 10 YEARS</h2>
             <!-- <div class="hidden">
               <div class="pro_table">
@@ -2519,13 +2519,295 @@
             </div>
           </section>
           <!-- ======INFORMATION ABOUT YOUR FAMILY :========== -->
-          <section id="phase10" class="hidden">
+          <section id="phase10" class="">
             <h2>INFORMATION ABOUT YOUR FAMILY :</h2>
-            <hr />
-            <p>
-              Information on your father, mother, brother , sister, aunt, uncle,
-              grandfather, grandmother:
-            </p>
+            <div class="phaseTenContent">
+              <p>
+                Information on your father, mother, brother , sister, aunt, uncle,
+                grandfather, grandmother:
+              </p>
+              <div class="pro_from_group_wraper">
+                <h3>FATHER</h3>
+                <div class="pro_form_group">
+                  <!-- --father_name-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="father_name">father_name</label></div>
+                    <div class="pro_input"><input type="text" id="father_name" name="father_name" required /></div>
+                  </div>
+                  <!-- --father_cityzen_of_what_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="father_cityzen_of_what_country">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="father_cityzen_of_what_country" name="father_cityzen_of_what_country" required /></div>
+                  </div>
+                  <!-- --father_relationship_to_me-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="father_relationship_to_me">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="father_relationship_to_me" name="father_relationship_to_me" required /></div>
+                  </div>
+                  <!-- --father_imigration_status-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="father_imigration_status">imigration status</label></div>
+                    <div class="pro_input"><input type="text" id="father_imigration_status" name="father_imigration_status" required /></div>
+                  </div>
+                  <!-- --father_alien_registration_number-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="father_alien_registration_number">Father's Alien Registration Number</label></div>
+                    <div class="pro_input"><input type="text" id="father_alien_registration_number" name="father_alien_registration_number" required /></div>
+                  </div>
+                  <!-- --father_birth_date-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="father_birth_date">Father's Birth Date:(Month,Day,Year)</label></div>
+                    <div class="pro_input"><input type="text" id="father_birth_date" name="father_birth_date" required /></div>
+                  </div>
+                  <!-- --father_birth_date-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="father_birth_country">Father's Birth Country</label></div>
+                    <div class="pro_input"><input type="text" id="father_birth_country" name="father_birth_country" required /></div>
+                  </div>
+  
+  
+                </div>
+                <h3>MOTHER</h3>
+                <div class="pro_form_group">
+                  <!-- --mother_name-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="mother_name">Name</label></div>
+                    <div class="pro_input"><input type="text" id="mother_name" name="mother_name" required /></div>
+                  </div>
+                  <!-- --mother_cityzen_of_what_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="mother_cityzen_of_what_country">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="mother_cityzen_of_what_country" name="mother_cityzen_of_what_country" required /></div>
+                  </div>
+                  <!-- --mother_relationship_to_me-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="mother_relationship_to_me">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="mother_relationship_to_me" name="mother_relationship_to_me" required /></div>
+                  </div>
+                  <!-- --mother_imigration_status-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="mother_imigration_status">imigration status</label></div>
+                    <div class="pro_input"><input type="text" id="mother_imigration_status" name="mother_imigration_status" required /></div>
+                  </div>
+                  <!-- --mother_alien_registration_number-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="mother_alien_registration_number">Mother's Alien Registration Number</label></div>
+                    <div class="pro_input"><input type="text" id="mother_alien_registration_number" name="mother_alien_registration_number" required /></div>
+                  </div>
+                  <!-- --mother_birth_date-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="mother_birth_date">Mother's Birth Date:(Month,Day,Year)</label></div>
+                    <div class="pro_input"><input type="text" id="mother_birth_date" name="mother_birth_date" required /></div>
+                  </div>
+                  <!-- --mother_birth_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="mother_birth_country">Mother's Birth Country</label></div>
+                    <div class="pro_input"><input type="text" id="mother_birth_country" name="mother_birth_country" required /></div>
+                  </div>
+  
+  
+                </div>
+                <h3>GRANDFATHER ON FATHER'S SIDE:</h3>
+                <div class="pro_form_group">
+                  <!-- --grandfather_name-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_name">Name</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_name" name="grandfather_name" required /></div>
+                  </div>
+                  <!-- --grandfather_cityzen_of_what_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_cityzen_of_what_country">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_cityzen_of_what_country" name="grandfather_cityzen_of_what_country" required /></div>
+                  </div>
+                  <!-- --grandfather_relationship_to_me-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_relationship_to_me">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_relationship_to_me" name="grandfather_relationship_to_me" required /></div>
+                  </div>
+                  <!-- --grandfather_imigration_status-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_imigration_status">imigration status</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_imigration_status" name="grandfather_imigration_status" required /></div>
+                  </div>
+                  <!-- --grandfather_alien_registration_number-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_alien_registration_number">Grandfather's Alien Registration Number</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_alien_registration_number" name="grandfather_alien_registration_number" required /></div>
+                  </div>
+                  <!-- --grandfather_birth_date-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_birth_date">Grandfather's Birth Date:(Month,Day,Year)</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_birth_date" name="grandfather_birth_date" required /></div>
+                  </div>
+                  <!-- --grandfather_birth_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_birth_country">Grandfather's Birth Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_birth_country" name="grandfather_birth_country" required /></div>
+                  </div>
+  
+  
+                </div>
+                <h3>GRANDMOTHER ON FATHER'S SIDE</h3>
+                <div class="pro_form_group">
+                  <!-- --grandmother_name-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_name">Name</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_name" name="grandmother_name" required /></div>
+                  </div>
+                  <!-- --grandmother_cityzen_of_what_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_cityzen_of_what_country">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_cityzen_of_what_country" name="grandmother_cityzen_of_what_country" required /></div>
+                  </div>
+                  <!-- --grandmother_relationship_to_me-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_relationship_to_me">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_relationship_to_me" name="grandmother_relationship_to_me" required /></div>
+                  </div>
+                  <!-- --grandmother_imigration_status-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_imigration_status">imigration status</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_imigration_status" name="grandmother_imigration_status" required /></div>
+                  </div>
+                  <!-- --grandmother_alien_registration_number-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_alien_registration_number">Grandmother's Alien Registration Number</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_alien_registration_number" name="grandmother_alien_registration_number" required /></div>
+                  </div>
+                  <!-- --grandmother_birth_date-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_birth_date">Grandmother's Birth Date:(Month,Day,Year)</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_birth_date" name="grandmother_birth_date" required /></div>
+                  </div>
+                  <!-- --grandmother_birth_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_birth_country">Grandmother's Birth Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_birth_country" name="grandmother_birth_country" required /></div>
+                  </div>
+  
+                </div>
+                <h3>GRANDFATHER ON MOTHER'S SIDE:</h3>
+                <div class="pro_form_group">
+                  <!-- --grandfather_name_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_name_mother_side">Name</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_name_mother_side" name="grandfather_name_mother_side" required /></div>
+                  </div>
+                  <!-- --grandfather_cityzen_of_what_country_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_cityzen_of_what_country_mother_side">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_cityzen_of_what_country_mother_side" name="grandfather_cityzen_of_what_country_mother_side" required /></div>
+                  </div>
+                  <!-- --grandfather_relationship_to_me_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_relationship_to_me_mother_side">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_relationship_to_me_mother_side" name="grandfather_relationship_to_me_mother_side" required /></div>
+                  </div>
+                  <!-- --grandfather_imigration_status_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_imigration_status_mother_side">imigration status</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_imigration_status_mother_side" name="grandfather_imigration_status_mother_side" required /></div>
+                  </div>
+                  <!-- --grandfather_alien_registration_number_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_alien_registration_number_mother_side">Grandfather's Alien Registration Number</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_alien_registration_number_mother_side" name="grandfather_alien_registration_number_mother_side" required /></div>
+                  </div>
+                  <!-- --grandfather_birth_date_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_birth_date_mother_side">Grandfather's Birth Date:(Month,Day,Year)</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_birth_date_mother_side" name="grandfather_birth_date_mother_side" required /></div>
+                  </div>
+                  <!-- --grandfather_birth_country_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandfather_birth_country_mother_side">Grandfather's Birth Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandfather_birth_country_mother_side" name="grandfather_birth_country_mother_side" required /></div>
+                  </div>
+  
+                </div>
+                <h3>GRANDMOTHER ON MOTHER'S SIDE</h3>
+                <div class="pro_form_group">
+                  <!-- --grandmother_name_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_name_mother_side">Name</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_name_mother_side" name="grandmother_name_mother_side" required /></div>
+                  </div>
+                  <!-- --grandmother_cityzen_of_what_country_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_cityzen_of_what_country_mother_side">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_cityzen_of_what_country_mother_side" name="grandmother_cityzen_of_what_country_mother_side" required /></div>
+                  </div>
+                  <!-- --grandmother_relationship_to_me_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_relationship_to_me_mother_side">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_relationship_to_me_mother_side" name="grandmother_relationship_to_me_mother_side" required /></div>
+                  </div>
+                  <!-- --grandmother_imigration_status_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_imigration_status_mother_side">imigration status</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_imigration_status_mother_side" name="grandmother_imigration_status_mother_side" required /></div>
+                  </div>
+                  <!-- --grandmother_alien_registration_number_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_alien_registration_number_mother_side">Grandmother's Alien Registration Number</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_alien_registration_number_mother_side" name="grandmother_alien_registration_number_mother_side" required /></div>
+                  </div>
+                  <!-- --grandmother_birth_date_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_birth_date_mother_side">Grandmother's Birth Date:(Month,Day,Year)</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_birth_date_mother_side" name="grandmother_birth_date_mother_side" required /></div>
+                  </div>
+                  <!-- --grandmother_birth_country_mother_side-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="grandmother_birth_country_mother_side">Grandmother's Birth Country</label></div>
+                    <div class="pro_input"><input type="text" id="grandmother_birth_country_mother_side" name="grandmother_birth_country_mother_side" required /></div>
+                  </div>
+  
+                </div>
+                <h3>BROTHERS</h3>
+                <div class="pro_form_group">
+                  <!-- --brother_name-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="brother_name">Name</label></div>
+                    <div class="pro_input"><input type="text" id="brother_name" name="brother_name" required /></div>
+                  </div>
+                  <!-- --brother_cityzen_of_what_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="brother_cityzen_of_what_country">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="brother_cityzen_of_what_country" name="brother_cityzen_of_what_country" required /></div>
+                  </div>
+                  <!-- --brother_relationship_to_me-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="brother_relationship_to_me">Cityzen of what Country</label></div>
+                    <div class="pro_input"><input type="text" id="brother_relationship_to_me" name="brother_relationship_to_me" required /></div>
+                  </div>
+                  <!-- --brother_imigration_status-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="brother_imigration_status">imigration status</label></div>
+                    <div class="pro_input"><input type="text" id="brother_imigration_status" name="brother_imigration_status" required /></div>
+                  </div>
+                  <!-- --brother_alien_registration_number-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="brother_alien_registration_number">Brother's Alien Registration Number</label></div>
+                    <div class="pro_input"><input type="text" id="brother_alien_registration_number" name="brother_alien_registration_number" required /></div>
+                  </div>
+                  <!-- --brother_birth_date-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="brother_birth_date">Grandmother's Birth Date:(Month,Day,Year)</label></div>
+                    <div class="pro_input"><input type="text" id="brother_birth_date" name="brother_birth_date" required /></div>
+                  </div>
+                  <!-- --brother_birth_country-- -->
+                  <div class="pro_input_Row">
+                    <div class="pro_label"><label for="brother_birth_country">Brother's Birth Country</label></div>
+                    <div class="pro_input"><input type="text" id="brother_birth_country" name="brother_birth_country" required /></div>
+                  </div>
+  
+                </div>
+  
+  
+  
+              </div>
+            </div>
             <!-- <div class="hidden">
               <h2>FATHER</h2>
               <table>
@@ -2818,287 +3100,7 @@
                 </td>
               </tr>
             </div> -->
-            <div class="pro_from_group_wraper">
-              <h2>FATHER</h2>
-              <div class="pro_form_group">
-                <!-- --father_name-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="father_name">father_name</label></div>
-                  <div class="pro_input"><input type="text" id="father_name" name="father_name" required /></div>
-                </div>
-                <!-- --father_cityzen_of_what_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="father_cityzen_of_what_country">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="father_cityzen_of_what_country" name="father_cityzen_of_what_country" required /></div>
-                </div>
-                <!-- --father_relationship_to_me-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="father_relationship_to_me">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="father_relationship_to_me" name="father_relationship_to_me" required /></div>
-                </div>
-                <!-- --father_imigration_status-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="father_imigration_status">imigration status</label></div>
-                  <div class="pro_input"><input type="text" id="father_imigration_status" name="father_imigration_status" required /></div>
-                </div>
-                <!-- --father_alien_registration_number-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="father_alien_registration_number">Father's Alien Registration Number</label></div>
-                  <div class="pro_input"><input type="text" id="father_alien_registration_number" name="father_alien_registration_number" required /></div>
-                </div>
-                <!-- --father_birth_date-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="father_birth_date">Father's Birth Date:(Month,Day,Year)</label></div>
-                  <div class="pro_input"><input type="text" id="father_birth_date" name="father_birth_date" required /></div>
-                </div>
-                <!-- --father_birth_date-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="father_birth_country">Father's Birth Country</label></div>
-                  <div class="pro_input"><input type="text" id="father_birth_country" name="father_birth_country" required /></div>
-                </div>
-
-
-              </div>
-              <h2>MOTHER</h2>
-              <div class="pro_form_group">
-                <!-- --mother_name-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="mother_name">Name</label></div>
-                  <div class="pro_input"><input type="text" id="mother_name" name="mother_name" required /></div>
-                </div>
-                <!-- --mother_cityzen_of_what_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="mother_cityzen_of_what_country">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="mother_cityzen_of_what_country" name="mother_cityzen_of_what_country" required /></div>
-                </div>
-                <!-- --mother_relationship_to_me-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="mother_relationship_to_me">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="mother_relationship_to_me" name="mother_relationship_to_me" required /></div>
-                </div>
-                <!-- --mother_imigration_status-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="mother_imigration_status">imigration status</label></div>
-                  <div class="pro_input"><input type="text" id="mother_imigration_status" name="mother_imigration_status" required /></div>
-                </div>
-                <!-- --mother_alien_registration_number-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="mother_alien_registration_number">Mother's Alien Registration Number</label></div>
-                  <div class="pro_input"><input type="text" id="mother_alien_registration_number" name="mother_alien_registration_number" required /></div>
-                </div>
-                <!-- --mother_birth_date-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="mother_birth_date">Mother's Birth Date:(Month,Day,Year)</label></div>
-                  <div class="pro_input"><input type="text" id="mother_birth_date" name="mother_birth_date" required /></div>
-                </div>
-                <!-- --mother_birth_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="mother_birth_country">Mother's Birth Country</label></div>
-                  <div class="pro_input"><input type="text" id="mother_birth_country" name="mother_birth_country" required /></div>
-                </div>
-
-
-              </div>
-              <h2>GRANDFATHER ON FATHER'S SIDE:</h2>
-              <div class="pro_form_group">
-                <!-- --grandfather_name-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_name">Name</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_name" name="grandfather_name" required /></div>
-                </div>
-                <!-- --grandfather_cityzen_of_what_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_cityzen_of_what_country">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_cityzen_of_what_country" name="grandfather_cityzen_of_what_country" required /></div>
-                </div>
-                <!-- --grandfather_relationship_to_me-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_relationship_to_me">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_relationship_to_me" name="grandfather_relationship_to_me" required /></div>
-                </div>
-                <!-- --grandfather_imigration_status-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_imigration_status">imigration status</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_imigration_status" name="grandfather_imigration_status" required /></div>
-                </div>
-                <!-- --grandfather_alien_registration_number-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_alien_registration_number">Grandfather's Alien Registration Number</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_alien_registration_number" name="grandfather_alien_registration_number" required /></div>
-                </div>
-                <!-- --grandfather_birth_date-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_birth_date">Grandfather's Birth Date:(Month,Day,Year)</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_birth_date" name="grandfather_birth_date" required /></div>
-                </div>
-                <!-- --grandfather_birth_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_birth_country">Grandfather's Birth Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_birth_country" name="grandfather_birth_country" required /></div>
-                </div>
-
-
-              </div>
-              <h2>GRANDMOTHER ON FATHER'S SIDE</h2>
-              <div class="pro_form_group">
-                <!-- --grandmother_name-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_name">Name</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_name" name="grandmother_name" required /></div>
-                </div>
-                <!-- --grandmother_cityzen_of_what_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_cityzen_of_what_country">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_cityzen_of_what_country" name="grandmother_cityzen_of_what_country" required /></div>
-                </div>
-                <!-- --grandmother_relationship_to_me-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_relationship_to_me">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_relationship_to_me" name="grandmother_relationship_to_me" required /></div>
-                </div>
-                <!-- --grandmother_imigration_status-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_imigration_status">imigration status</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_imigration_status" name="grandmother_imigration_status" required /></div>
-                </div>
-                <!-- --grandmother_alien_registration_number-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_alien_registration_number">Grandmother's Alien Registration Number</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_alien_registration_number" name="grandmother_alien_registration_number" required /></div>
-                </div>
-                <!-- --grandmother_birth_date-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_birth_date">Grandmother's Birth Date:(Month,Day,Year)</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_birth_date" name="grandmother_birth_date" required /></div>
-                </div>
-                <!-- --grandmother_birth_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_birth_country">Grandmother's Birth Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_birth_country" name="grandmother_birth_country" required /></div>
-                </div>
-
-              </div>
-              <h2>GRANDFATHER ON MOTHER'S SIDE:</h2>
-              <div class="pro_form_group">
-                <!-- --grandfather_name_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_name_mother_side">Name</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_name_mother_side" name="grandfather_name_mother_side" required /></div>
-                </div>
-                <!-- --grandfather_cityzen_of_what_country_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_cityzen_of_what_country_mother_side">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_cityzen_of_what_country_mother_side" name="grandfather_cityzen_of_what_country_mother_side" required /></div>
-                </div>
-                <!-- --grandfather_relationship_to_me_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_relationship_to_me_mother_side">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_relationship_to_me_mother_side" name="grandfather_relationship_to_me_mother_side" required /></div>
-                </div>
-                <!-- --grandfather_imigration_status_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_imigration_status_mother_side">imigration status</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_imigration_status_mother_side" name="grandfather_imigration_status_mother_side" required /></div>
-                </div>
-                <!-- --grandfather_alien_registration_number_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_alien_registration_number_mother_side">Grandfather's Alien Registration Number</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_alien_registration_number_mother_side" name="grandfather_alien_registration_number_mother_side" required /></div>
-                </div>
-                <!-- --grandfather_birth_date_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_birth_date_mother_side">Grandfather's Birth Date:(Month,Day,Year)</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_birth_date_mother_side" name="grandfather_birth_date_mother_side" required /></div>
-                </div>
-                <!-- --grandfather_birth_country_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandfather_birth_country_mother_side">Grandfather's Birth Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandfather_birth_country_mother_side" name="grandfather_birth_country_mother_side" required /></div>
-                </div>
-
-              </div>
-              <h2>GRANDMOTHER ON MOTHER'S SIDE</h2>
-              <div class="pro_form_group">
-                <!-- --grandmother_name_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_name_mother_side">Name</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_name_mother_side" name="grandmother_name_mother_side" required /></div>
-                </div>
-                <!-- --grandmother_cityzen_of_what_country_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_cityzen_of_what_country_mother_side">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_cityzen_of_what_country_mother_side" name="grandmother_cityzen_of_what_country_mother_side" required /></div>
-                </div>
-                <!-- --grandmother_relationship_to_me_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_relationship_to_me_mother_side">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_relationship_to_me_mother_side" name="grandmother_relationship_to_me_mother_side" required /></div>
-                </div>
-                <!-- --grandmother_imigration_status_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_imigration_status_mother_side">imigration status</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_imigration_status_mother_side" name="grandmother_imigration_status_mother_side" required /></div>
-                </div>
-                <!-- --grandmother_alien_registration_number_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_alien_registration_number_mother_side">Grandmother's Alien Registration Number</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_alien_registration_number_mother_side" name="grandmother_alien_registration_number_mother_side" required /></div>
-                </div>
-                <!-- --grandmother_birth_date_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_birth_date_mother_side">Grandmother's Birth Date:(Month,Day,Year)</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_birth_date_mother_side" name="grandmother_birth_date_mother_side" required /></div>
-                </div>
-                <!-- --grandmother_birth_country_mother_side-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="grandmother_birth_country_mother_side">Grandmother's Birth Country</label></div>
-                  <div class="pro_input"><input type="text" id="grandmother_birth_country_mother_side" name="grandmother_birth_country_mother_side" required /></div>
-                </div>
-
-              </div>
-              <h2>BROTHERS</h2>
-              <div class="pro_form_group">
-                <!-- --brother_name-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="brother_name">Name</label></div>
-                  <div class="pro_input"><input type="text" id="brother_name" name="brother_name" required /></div>
-                </div>
-                <!-- --brother_cityzen_of_what_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="brother_cityzen_of_what_country">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="brother_cityzen_of_what_country" name="brother_cityzen_of_what_country" required /></div>
-                </div>
-                <!-- --brother_relationship_to_me-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="brother_relationship_to_me">Cityzen of what Country</label></div>
-                  <div class="pro_input"><input type="text" id="brother_relationship_to_me" name="brother_relationship_to_me" required /></div>
-                </div>
-                <!-- --brother_imigration_status-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="brother_imigration_status">imigration status</label></div>
-                  <div class="pro_input"><input type="text" id="brother_imigration_status" name="brother_imigration_status" required /></div>
-                </div>
-                <!-- --brother_alien_registration_number-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="brother_alien_registration_number">Brother's Alien Registration Number</label></div>
-                  <div class="pro_input"><input type="text" id="brother_alien_registration_number" name="brother_alien_registration_number" required /></div>
-                </div>
-                <!-- --brother_birth_date-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="brother_birth_date">Grandmother's Birth Date:(Month,Day,Year)</label></div>
-                  <div class="pro_input"><input type="text" id="brother_birth_date" name="brother_birth_date" required /></div>
-                </div>
-                <!-- --brother_birth_country-- -->
-                <div class="pro_input_Row">
-                  <div class="pro_label"><label for="brother_birth_country">Brother's Birth Country</label></div>
-                  <div class="pro_input"><input type="text" id="brother_birth_country" name="brother_birth_country" required /></div>
-                </div>
-
-              </div>
-
-
-
-            </div>
+            
 
           </section>
         </div>

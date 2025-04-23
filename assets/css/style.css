@@ -880,6 +880,26 @@ input[type=radio] {
 #immigration_form .pro_container .pro_form #phase9 fieldset {
   padding: 20px;
 }
+#immigration_form .pro_container .pro_form #phase10 h2 {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 20px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+#immigration_form .pro_container .pro_form #phase10 .phaseTenContent {
+  width: 100%;
+  border: 1px solid var(--borderColor);
+  border-top: 0;
+  padding: 0px 20px 40px 20px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#immigration_form .pro_container .pro_form #phase10 .phaseTenContent h3 {
+  padding: 10px 0 15px 0;
+  background-color: #004c97;
+}
 
 .footnote {
   width: 100%;
