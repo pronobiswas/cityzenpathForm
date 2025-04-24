@@ -94,6 +94,30 @@ input[type=radio] {
   accent-color: red;
 }
 
+.pahaseBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px !important;
+}
+.pahaseBtnBox button {
+  display: inline-block;
+  border: none;
+  outline: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 105px !important;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.2s all linear;
+}
+.pahaseBtnBox button:hover {
+  background-color: var(--secondery);
+}
+
 .addMore {
   width: -moz-fit-content;
   width: fit-content;
@@ -387,6 +411,9 @@ input[type=radio] {
   padding: 20px;
   margin-bottom: 20px;
 }
+#immigration_form .pro_container .pro_form #phase2 .phaseTwoContent #ReasonforLeavingTable fieldset legend {
+  color: var(--primary);
+}
 #immigration_form .pro_container .pro_form #phase2 .phaseTwoContent #ReasonforLeavingTable fieldset .resone_of_liveing {
   display: flex;
   flex-direction: column;
@@ -394,21 +421,25 @@ input[type=radio] {
 }
 #immigration_form .pro_container .pro_form #phase2 .pahase2btnBox {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 #immigration_form .pro_container .pro_form #phase2 .pahase2btnBox button {
   width: -moz-fit-content;
   width: fit-content;
-  margin: 0 auto;
   margin-top: 20px;
   border: none;
   outline: none;
   background-color: var(--primary);
   color: var(--white);
-  padding: 5px 105px;
+  padding: 5px 85px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+  transition: 0.2s all linear;
+}
+#immigration_form .pro_container .pro_form #phase2 .pahase2btnBox button:hover {
+  background-color: var(--secondery);
 }
 #immigration_form .pro_container .pro_form #phase3 h2 {
   padding: 10px 20px;
@@ -425,6 +456,25 @@ input[type=radio] {
   padding: 0px 20px 40px 20px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+#immigration_form .pro_container .pro_form #phase3 .phaseThreeContent #explainLeftReason textarea {
+  width: 100%;
+  padding: 8px;
+  outline: 1px solid transparent;
+  border: 1px solid #b6b6b6;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase3 .phaseThreeContent #explainLeftReason textarea:hover {
+  border: 1px solid var(--primary);
+  outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+}
+#immigration_form .pro_container .pro_form #phase3 .phaseThreeContent #explainLeftReason textarea:focus {
+  padding: 8px;
+  border-color: var(--primary);
+  outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+  -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+  -moz-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
 }
 #immigration_form .pro_container .pro_form #phase3 #residences {
   text-align: center;
@@ -514,14 +564,14 @@ input[type=radio] {
 }
 #immigration_form .pro_container .pro_form #phase3 .pahase3btnBox {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 #immigration_form .pro_container .pro_form #phase3 .pahase3btnBox button {
   border: none;
   outline: none;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 0 auto;
   margin-top: 20px;
   background-color: var(--primary);
   color: var(--white);
@@ -554,52 +604,37 @@ input[type=radio] {
   flex-direction: column;
   gap: 20px;
 }
-#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .inputRow {
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
+#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .pro_input_Row .pro_label {
+  width: 40%;
 }
-#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .inputRow label {
+#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion {
+  width: 100%;
+}
+#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion label {
   display: inline-block;
   white-space: wrap;
-  max-width: 210px;
-  width: 35%;
+  max-width: 100%;
+  width: 100%;
   color: #0072bc;
-  font-weight: 600;
+  font-weight: 400;
 }
-#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .inputRow input {
-  width: 65%;
+#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion textarea {
+  width: 100%;
   padding: 8px;
-  outline: 1px solid transparent;
-  border: 1px solid gray;
+  margin-top: 15px;
   border-radius: 5px;
+  outline: 1px solid #e2e2e2;
+  border: 1px solid #b6b6b6;
 }
-#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .inputRow input:focus {
+#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion textarea:focus {
   padding: 8px;
   border-color: var(--primary);
-  outline-color: #004c97;
-  box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
-  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
-  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  outline: #004c97;
+  outline: 2px solid rgba(3, 123, 243, 0.5568627451);
 }
-#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .inputRow textarea {
-  width: 65%;
-}
-#immigration_form .pro_container .pro_form #phase4 .pahase4btnBox {
-  display: flex;
-  justify-content: center;
-}
-#immigration_form .pro_container .pro_form #phase4 .pahase4btnBox button {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  margin-top: 20px;
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 8px 105px;
-  cursor: pointer;
-  font-size: 22px;
-  border-radius: 5px;
+#immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion textarea:hover {
+  border: 1px solid var(--primary);
+  outline: 2px solid rgba(3, 123, 243, 0.5568627451);
 }
 #immigration_form .pro_container .pro_form #phase5 {
   width: 100%;
@@ -896,9 +931,19 @@ input[type=radio] {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
-#immigration_form .pro_container .pro_form #phase10 .phaseTenContent h3 {
+#immigration_form .pro_container .pro_form #phase10 .phaseTenContent .pro_from_group_wraper h3 {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 10px;
+  margin: 20px 0 15px 0;
+  border-radius: 8px 8px 0 0;
+}
+#immigration_form .pro_container .pro_form #phase10 .phaseTenContent .pro_from_group_wraper .family_title {
   padding: 10px 0 15px 0;
-  background-color: #004c97;
+  margin: 10px 0 22px 0;
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 .footnote {
@@ -971,4 +1016,8 @@ input[type=radio] {
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+  transition: 0.2s all linear;
+}
+.pahasebtnBox button:hover {
+  background-color: var(--primary);
 }/*# sourceMappingURL=style.css.map */

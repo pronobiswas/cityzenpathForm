@@ -69,7 +69,6 @@ phase1input.forEach((input) => {
         input.classList.remove('warnInput');
     });
     input.addEventListener("input", (e) => {
-        console.log(e.target);
         applicantInfo={
             ...applicantInfo,
             [e.target.name]: e.target.value.trim(),
@@ -424,3 +423,12 @@ document.getElementById('pahase9btn').addEventListener('click',()=>{
 
 
 // ReasonforLeavingTable
+
+// @@@@@@@@@@@@@@ handle previous button @@@@@@@@@@@@@ 
+function handlePreviousBtn(previousSection,currentSection){
+    console.log("previousSection:" ,previousSection);
+    console.log("currentSection:" ,currentSection);
+    previousSection.classList.remove("hidden");
+    currentSection.classList.add("hidden");
+    
+}

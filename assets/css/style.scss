@@ -90,6 +90,28 @@
 input[type="radio"] {
   accent-color: red;
 }
+.pahaseBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px !important;
+  button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    width: fit-content;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 105px !important;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: .2s all linear;
+    &:hover{
+      background-color: var(--secondery);
+    }
+  }
+}
 .addMore{
   width: fit-content;
   padding: 5px 24px !important;
@@ -116,8 +138,6 @@ input[type="radio"] {
   margin: 0 auto !important;
   padding: 0 20px;
 }
-
-
 #immigration_form {
   width: 100%;
 
@@ -125,8 +145,6 @@ input[type="radio"] {
   .hidden {
     display: none;
   }
-  
-
   .nextBtn {
     display: inline-block;
     border: none;
@@ -141,12 +159,6 @@ input[type="radio"] {
     font-size: 22px;
     border-radius: 5px;
   }
-  // h2 {
-  //   background-color: var(--primary);
-  //   text-align: center;
-  //   padding: 8px 0;
-  //   color: var(--white);
-  // }
   .radioRow {
     display: flex;
     align-items: center;
@@ -418,6 +430,7 @@ input[type="radio"] {
             fieldset{
               padding: 20px;
               margin-bottom: 20px;
+              legend{color: var(--primary);}
               
                 .resone_of_liveing{
                   display: flex;
@@ -464,19 +477,23 @@ input[type="radio"] {
         }
         .pahase2btnBox {
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
+          margin: 0 auto;
           button {
             width: fit-content;
-            margin: 0 auto;
             margin-top: 20px;
             border: none;
             outline: none;
             background-color: var(--primary);
             color: var(--white);
-            padding: 5px 105px;
+            padding: 5px 85px;
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
+            transition: .2s all linear;
+            &:hover{
+              background-color: var(--secondery);
+            }
           }
         }
       }
@@ -497,6 +514,27 @@ input[type="radio"] {
           padding: 0px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
+          #explainLeftReason{
+            textarea{
+              width: 100%;
+              padding: 8px;
+              outline: 1px solid transparent;
+              border: 1px solid #b6b6b6;
+              border-radius: 5px;
+              &:hover {
+                border: 1px solid var(--primary);
+                outline: 2px solid #037bf38e;
+              }
+              &:focus {
+                padding: 8px;
+                border-color: var(--primary);
+                outline: 2px solid #037bf38e;
+                box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+                -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+                -moz-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+              }
+            }
+          }
         }
 
         #residences {
@@ -521,7 +559,9 @@ input[type="radio"] {
                 .pro_input{
                   width: 65%;
                 }
+                
               }
+              
             }
           }
           table {
@@ -590,12 +630,12 @@ input[type="radio"] {
         }
         .pahase3btnBox {
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
+          margin: 0 auto;
           button {
             border: none;
             outline: none;
             width: fit-content;
-            margin: 0 auto;
             margin-top: 20px;
             background-color: var(--primary);
             color: var(--white);
@@ -628,54 +668,56 @@ input[type="radio"] {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            .inputRow {
+            .pro_input_Row{
+              .pro_label{width: 40%;}
+            }
+            .explain_work_authoraizetion{
               width: 100%;
-              display: flex;
-              flex-wrap: nowrap;
-              label {
+              label{
                 display: inline-block;
                 white-space: wrap;
-                max-width: 210px;
-                width: 35%;
+                max-width: 100%;
+                width: 100%;
                 color: #0072bc;
-                font-weight: 600;
+                font-weight: 400;
               }
-              input {
-                width: 65%;
+              textarea{
+                width: 100%;
                 padding: 8px;
-                outline: 1px solid transparent;
-                border: 1px solid gray;
+                margin-top: 15px;
                 border-radius: 5px;
+                outline: 1px solid #e2e2e2;
+                border: 1px solid #b6b6b6;
                 &:focus {
                   padding: 8px;
                   border-color: var(--primary);
-                  outline-color: #004c97;
-                  box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
-                  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
-                  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+                  outline: #004c97;
+                  outline: 2px solid #037bf38e;
                 }
-              }
-              textarea {
-                width: 65%;
+                &:hover {
+                  border: 1px solid var(--primary);
+                  outline: 2px solid #037bf38e;
+                }
               }
             }
           }
         }
-        .pahase4btnBox {
-          display: flex;
-          justify-content: center;
-          button {
-            width: fit-content;
-            margin: 0 auto;
-            margin-top: 20px;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 8px 105px;
-            cursor: pointer;
-            font-size: 22px;
-            border-radius: 5px;
-          }
-        }
+        // .pahase4btnBox {
+        //   width: 100%;
+        //   margin-top: 20px;
+        //   display: flex;
+        //   justify-content: space-between;
+        //   button {
+        //     width: fit-content;
+        //     margin: 0 auto;
+        //     background-color: var(--primary);
+        //     color: var(--white);
+        //     padding: 8px 105px;
+        //     cursor: pointer;
+        //     font-size: 22px;
+        //     border-radius: 5px;
+        //   }
+        // }
       }
       // ===phase5====
       #phase5 {
@@ -977,23 +1019,6 @@ input[type="radio"] {
         fieldset{
           padding: 20px;
         }
-
-        // .pro_table{
-        //   table#imployment_information_table{
-        //     border: 1px solid var(--borderColor);
-        //     border-collapse: collapse;
-        //     tr{
-        //       td{
-        //         border: 1px solid var(--borderColor);
-        //         input{
-        //           width: 100%;
-        //           padding: 5px;
-        //           border: 1px solid var(--borderColor);
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
       }
       // ===phase10===
       #phase10{
@@ -1012,8 +1037,22 @@ input[type="radio"] {
           padding: 0px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
-
-          
+          .pro_from_group_wraper{
+            h3{
+              background-color: var(--primary);
+              color: var(--white);
+              text-align: center;
+              padding: 10px;
+              margin: 20px 0 15px 0;
+              border-radius: 8px 8px 0 0;
+            }
+            .family_title{
+              padding: 10px 0 15px 0;
+              margin: 10px 0 22px 0;
+              background-color: var(--primary);
+              color: var(--white);
+            }
+          }
 
         }
       }
@@ -1021,9 +1060,7 @@ input[type="radio"] {
     }
   }
 }
-#immigration_form .pro_container .pro_form #phase10 .phaseTenContent h3{
-  color: red;
-}
+
 .footnote{
   width: 100%;
   max-width: 1140px;
@@ -1087,10 +1124,8 @@ input[type="radio"] {
 // @media (min-width: 768px) { }
 
 /* Medium devices (landscape tablets) */
-@media (min-width: 992px) { 
-
-}
-
+// @media (min-width: 992px) { 
+// }
 /* Large devices (desktops) */
 // @media (min-width: 1200px) { }
 
@@ -1110,4 +1145,9 @@ input[type="radio"] {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
+    transition: .2s all linear;
+    &:hover{
+      background-color: var(--primary);
+    }
   }
+}
