@@ -779,24 +779,6 @@ input[type=radio] {
   padding: 20px;
   border-radius: 5px;
 }
-#immigration_form .pro_container .pro_form #phase6 .pahase6btnBox {
-  display: flex;
-  justify-content: center;
-}
-#immigration_form .pro_container .pro_form #phase6 .pahase6btnBox button {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  border: none;
-  outline: none;
-  margin-top: 20px;
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 5px 105px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-}
 #immigration_form .pro_container .pro_form #phase7 h2 {
   padding: 10px 20px;
   background-color: var(--primary);
@@ -874,6 +856,19 @@ input[type=radio] {
 }
 #immigration_form .pro_container .pro_form #phase8 .phaseEightContent .pro_from_group_wraper .pro_form_group {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#immigration_form .pro_container .pro_form #phase8 fieldset {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 5px;
+}
+#immigration_form .pro_container .pro_form #phase8 fieldset legend {
+  color: var(--primary);
+}
+#immigration_form .pro_container .pro_form #phase8 fieldset .pro_form_group {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -961,38 +956,124 @@ input[type=radio] {
 
 @media screen and (max-width: 768px) {
   #immigration_form header .mainHeader {
-    flex-direction: column;
+    padding: 10px;
     align-items: center;
     gap: 20px;
   }
   #immigration_form header nav {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
   }
+  #immigration_form header nav h1 {
+    order: 1;
+    text-align: center;
+  }
   #immigration_form header nav .headerBTNBox {
-    width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
     justify-content: center;
   }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_label {
+    width: 100% !important;
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_label label {
+    display: inline-block;
+    white-space: wrap !important;
+    max-width: 100%;
+    width: 100% !important;
+    color: #0072bc;
+    font-weight: 400;
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input {
+    width: 100% !important;
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input input {
+    width: 100%;
+    padding: 8px;
+    outline: 1px solid transparent;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input input:hover {
+    border: 1px solid var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input input:focus {
+    padding: 8px;
+    border-color: var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+    box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+    -moz-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input select {
+    width: 65%;
+    padding: 8px;
+    border-radius: 5px;
+    outline: 1px solid #e2e2e2;
+    border: 1px solid #b6b6b6;
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input select:focus {
+    padding: 8px;
+    border-color: var(--primary);
+    outline: #004c97;
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
+  #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input select:hover {
+    border: 1px solid var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
   .pro_container .pro_form {
-    padding: 10px 20px;
+    padding: 10px;
   }
-  .pro_container .pro_form #phase1 {
+  .pro_container .pro_form #phase1 .phaseOneContent {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
-  .pro_container .pro_form #phase1 .genaralInfo {
+  .pro_container .pro_form #phase1 .phaseOneContent .genaralInfo {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-  .pro_container .pro_form #phase1 .personalInfo {
+  .pro_container .pro_form #phase1 .phaseOneContent .personalInfo {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+  .pro_container .pro_form .pahasebtnBox {
+    width: 100%;
+    padding-top: 30px !important;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pro_container .pro_form .pahasebtnBox button {
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    outline: none;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 15px !important;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.2s all linear;
+  }
+  .pro_container .pro_form .pahasebtnBox button:hover {
+    background-color: var(--primary);
   }
 }
 /* Extra small devices (phones) */

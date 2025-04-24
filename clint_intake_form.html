@@ -71,7 +71,7 @@
           <!-- =========PERSONAL INFORMATION========= -->
           <section id="phase1" class="">
             <h2 class="sectionHeading">PERSONAL INFORMATION</h2>
-            <div class="phaseOneContent">
+            <div class="phaseOneContent phaseContent">
               <!-- $$$$$$$$$genaralInfo$$$$$$$$$$$ -->
               <div class="genaralInfo">
                 <!-- full_name -->
@@ -258,7 +258,7 @@
           <!-- =====ENTRY INTO UNITED STATES phase2 ======== -->
           <section id="phase2" class="hidden">
             <h2>ENTRY INTO UNITED STATES</h2>
-            <div class="phaseTwoContent">
+            <div class="phaseTwoContent phaseContent">
               <h3>phase 2</h3>
               <div class="pro_input_wraper">
                 <!-- date_of_entry -->
@@ -483,7 +483,7 @@
                 </table> -->
               </div>
             </div>
-            <div class="pahase2btnBox">
+            <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase1,phase2)">  &lt; Previous</button>
               <button onclick="handlePhase2btn()">next &gt;</button>
             </div>
@@ -491,7 +491,7 @@
           <!-- ======CONTINUOUS RESIDENCE IN THE UNITED STATES ======= -->
           <section id="phase3" class="hidden">
             <h2>CONTINUOUS RESIDENCE IN THE UNITED STATES</h2>
-            <div class="phaseThreeContent">
+            <div class="phaseThreeContent phaseContent">
               <h3>phase3</h3>
               <div class="radioRow">
                 <h4>Are you continuous Residence in the United State</h4>
@@ -775,7 +775,7 @@
                 ></textarea>
               </div>
             </div>
-            <div class="pahase3btnBox">
+            <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase2,phase3)">  &lt; Previous</button>
               <button class="nextbutton" onclick="handlePhase3btn()">
                 next &gt;
@@ -786,7 +786,7 @@
           <section id="phase4" class="hidden">
             
             <h2>EMPLOYMENT AUTHORIZATION</h2>
-            <div class="phaseFourContent">
+            <div class="phaseFourContent phaseContent">
               <h3>phase4</h3>
               <div class="employmentAuth">
                 <!-- current_annual_income -->
@@ -845,7 +845,7 @@
                 
               </div>
             </div>
-            <div class="pahase4btnBox pahaseBtnBox">
+            <div class=" pahasebtnBox">
               <button onclick="handlePreviousBtn(phase3,phase4)">&lt; Previous</button>
               <button onclick="handlePhaseFourBtn()">next &gt; </button>
             </div>
@@ -853,7 +853,7 @@
           <!-- =======INFORMATION ABOUT YOUR CURRENT SPOUSE====== -->
           <section id="phase5" class="hidden">
             <h2>INFORMATION ABOUT YOUR CURRENT SPOUSE</h2>
-            <div class="phaseFiveContent">
+            <div class="phaseFiveContent phaseContent">
               <h3>phase5</h3>
               <!-- <p>Information about all your current spouse :</p> -->
               <div id="currentSpouse">
@@ -1457,7 +1457,7 @@
                 </div>
               </div>
             </div>
-            <div class="pahaseBtnBox">
+            <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase4,phase5)">&lt; Previous</button>
               <button onclick="handlePhaseFiveBtn()">next &gt;</button>
             </div>
@@ -1465,7 +1465,7 @@
           <!-- =====INFORMATION ABOUT YOUR CURRENT SPOUSE==== -->
           <section id="phase6" class="hidden">
             <h2>INFORMATION ABOUT YOUR PRIOR MARRIAGE</h2>
-            <div class="phaseSixContent">
+            <div class="phaseSixContent phaseContent">
               <h3>phase6</h3>
               <div id="phase6wraper">
                 <div class="part1">
@@ -1632,17 +1632,15 @@
               </div>
             </div>
 
-            <div class="pahase6btnBox">
+            <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase5,phase6)">&lt; Previous</button>
               <button id="phase6btn">Next &gt;</button>
             </div>
           </section>
           <!-- ==========INFORMATION ABOUT YOUR CHILDREN================= -->
           <section id="phase7" class="hidden">
-            
             <h2>INFORMATION ABOUT YOUR CHILDREN</h2>
             <!-- <p>Information about all your children</p> -->
-
             <!-- <div>
               <div class="pro_table">
                 <table>
@@ -1905,10 +1903,10 @@
               </div>
             </div> -->
 
-            <div class="phaseSevenContent">
+            <div class="phaseSevenContent phaseContent">
               <div class="pro_from_group_wraper">
                 <br>
-                <div class="pro_form_group">
+                <div class="pro_form_group" id="child_Info1">
                   <!-- --name_of_child-- -->
                   <div class="pro_input_Row">
                     <div class="pro_label">
@@ -1933,7 +1931,7 @@
                     </div>
                     <div class="pro_input">
                       <input
-                        type="date"
+                        type="text"
                         name="child_citizenship"
                         id="child_citizenship"
                       />
@@ -2008,7 +2006,7 @@
                     </div>
                     <div class="pro_input">
                       <input
-                        type="date"
+                        type="text"
                         name="child_country_of_birth"
                         id="child_country_of_birth"
                       />
@@ -2023,16 +2021,16 @@
                     </div>
                     <div class="pro_input">
                       <input
-                        type="date"
+                        type="number"
                         name="child_average_earnings"
                         id="child_average_earnings"
                       />
                     </div>
                   </div>
-                  <button class="addMore">Add More <b>+</b> </button>
+                  <button class="addMore" onclick="handleHiddenToogle(fildsetChidInfo)">Add More <b>+</b> </button>
                 </div>
-                <br>
-                <fieldset>
+                
+                <fieldset id="fildsetChidInfo" class="hidden">
                   <legend>Information about all your children</legend>
                   <div class="pro_form_group">
                     <!-- --name_of_child-- -->
@@ -2160,7 +2158,7 @@
               </div>
             </div>
 
-            <div class="pahaseBtnBox">
+            <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase6,phase7)">&lt; Previous</button>
               <button id="pahase7btn">next &gt;</button>
             </div>
@@ -2168,7 +2166,7 @@
           <!-- ======INFORMATION ABOUT WHERE YOU LIVED SINCE BEING IN THE US====== -->
           <section id="phase8" class="hidden">
             <h2>INFORMATION ABOUT WHERE YOU LIVED SINCE BEING IN THE US</h2>
-            <div class="phaseEightContent">
+            <div class="phaseEightContent phaseContent">
               <h3>phase8</h3>
               <p>Part 1 ,Number 16 - Place Where Lived Since Being In US</p>
               <br>
@@ -2211,9 +2209,115 @@
                       <input type="date" name="resided_to" id="resided_to" />
                     </div>
                   </div>
+                  <button class="addMore" onclick="handleHiddenToogle(fildset_about_lived_1)">Add More <b>+</b> </button>
                 </div>
               </div>
             </div>
+
+            <fieldset id="fildset_about_lived_1" class="hidden">
+              <legend>Place Where Lived Since Being In US</legend>
+              <div class="pro_form_group">
+                <!-- --street_and_number1-- -->
+                <div class="pro_input_Row">
+                  <div class="pro_label">
+                    <label for="street_and_number1"
+                        >Street and Number - Apt.or Room # - City or
+                        Town-State-Zip Code</label
+                      >
+                  </div>
+                  <div class="pro_input">
+                    <input
+                        type="text"
+                        name="street_and_number1"
+                        id="street_and_number1"
+                      />
+                  </div>
+                </div>
+                <!-- --resided_from1-- -->
+                <div class="pro_input_Row">
+                  <div class="pro_label">
+                    <label for="resided_from1"
+                      >Child's Citizenship of What Country</label
+                    >
+                  </div>
+                  <div class="pro_input">
+                    <input
+                      type="date"
+                      name="resided_from1"
+                      id="resided_from1"
+                    />
+                  </div>
+                </div>
+                <!-- --resided_to1-- -->
+                <div class="pro_input_Row">
+                  <div class="pro_label">
+                    <label for="resided_to1"
+                      >Child's Current Address:(City and Country)</label
+                    >
+                  </div>
+                  <div class="pro_input">
+                    <input
+                      type="text"
+                      name="resided_to1"
+                      id="resided_to1"
+                    />
+                  </div>
+                </div>
+                <button class="addMore" onclick="handleHiddenToogle(fildset_about_lived_2)">Add More <b>+</b> </button>
+              </div>
+            </fieldset>
+            <br>
+            <fieldset id="fildset_about_lived_2" class="hidden">
+              <legend>Place Where Lived Since Being In US</legend>
+              <div class="pro_form_group">
+                <!-- --street_and_number1-- -->
+                <div class="pro_input_Row">
+                  <div class="pro_label">
+                    <label for="street_and_number2"
+                        >Street and Number - Apt.or Room # - City or
+                        Town-State-Zip Code</label
+                      >
+                  </div>
+                  <div class="pro_input">
+                    <input
+                        type="text"
+                        name="street_and_number2"
+                        id="street_and_number2"
+                      />
+                  </div>
+                </div>
+                <!-- --resided_from1-- -->
+                <div class="pro_input_Row">
+                  <div class="pro_label">
+                    <label for="resided_from2"
+                      >Child's Citizenship of What Country</label
+                    >
+                  </div>
+                  <div class="pro_input">
+                    <input
+                      type="date"
+                      name="resided_from2"
+                      id="resided_from2"
+                    />
+                  </div>
+                </div>
+                <!-- --resided_to1-- -->
+                <div class="pro_input_Row">
+                  <div class="pro_label">
+                    <label for="resided_to2"
+                      >Child's Current Address:(City and Country)</label
+                    >
+                  </div>
+                  <div class="pro_input">
+                    <input
+                      type="text"
+                      name="resided_to2"
+                      id="resided_to2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
             <!-- <div>
               <div class="pro_table">
                 <table >
@@ -2323,7 +2427,7 @@
               </div>
               <br/>
             </div> -->
-            <div class="pahaseBtnBox">
+            <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase7,phase8)"> &lt; Previous</button>
               <button id="pahase8btn">next &gt;</button>
             </div>
@@ -2417,7 +2521,7 @@
                 </table>
               </div>
             </div> -->
-            <div class="phaseNineContent">
+            <div class="phaseNineContent phaseContent">
               <h3>phase9</h3>
               <p>
                 Information about your emplymewnt form the first time you entered
@@ -2456,11 +2560,11 @@
                     <div class="pro_label"><label for="end_of_employment_last_10_years">End of Employment:(Month,Day,Year)</label></div>
                     <div class="pro_input"> <input type="text" name="end_of_employment_last_10_years" id="end_of_employment_last_10_years"/></div>
                   </div>
-                  <button class="addMore">Add More <b>+</b></button>
+                  <button class="addMore" onclick="handleHiddenToogle(fildset1)">Add More <b>+</b></button>
                 </div>
                 <br>
-                <fieldset>
-                  <legend>Reason for Leaving 2</legend>
+                <fieldset id="fildset1" class="hidden"> 
+                  <legend>Reason for Leaving 1</legend>
                   <div class="pro_form_group">
                     <!-- --full_name_of_employer1-- -->
                     <div class="pro_input_Row">
@@ -2492,11 +2596,11 @@
                      <div class="pro_label"><label for="end_of_employment_last_10_years1">End of Employment:(Month,Day,Year)</label></div>
                      <div class="pro_input"> <input type="text" name="end_of_employment_last_10_years1" id="end_of_employment_last_10_years1"/></div>
                    </div>
-                   <button class="addMore">Add More <b>+</b></button>
+                   <button class="addMore" onclick="handleHiddenToogle(fildset2)">Add More <b>+</b></button>
                  </div>
                 </fieldset>
                 <br>
-                <fieldset>
+                <fieldset id="fildset2" class="hidden">
                   <legend>Reason for Leaving 2</legend>
                   <div class="pro_form_group">
                     <!-- --full_name_of_employer2-- -->
@@ -2535,7 +2639,7 @@
   
               </div>
             </div>
-            <div class="pahaseBtnBox">
+            <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase8,phase9)">&lt; Previous</button>
               <button id="pahase9btn">next &gt;</button>
             </div>
@@ -2543,7 +2647,7 @@
           <!-- ======INFORMATION ABOUT YOUR FAMILY :========== -->
           <section id="phase10" class="hidden">
             <h2>INFORMATION ABOUT YOUR FAMILY :</h2>
-            <div class="phaseTenContent">
+            <div class="phaseTenContent phaseContent">
               <p>
                 Information on your father, mother, brother , sister, aunt, uncle,
                 grandfather, grandmother:
@@ -2626,7 +2730,6 @@
                     <div class="pro_label"><label for="mother_birth_country">Mother's Birth Country</label></div>
                     <div class="pro_input"><input type="text" id="mother_birth_country" name="mother_birth_country" required /></div>
                   </div>
-  
   
                 </div>
                 <h3>GRANDFATHER ON FATHER'S SIDE:</h3>
@@ -2831,7 +2934,8 @@
               </div>
             </div>
             <div class="pahasebtnBox">
-              <button class="submitBtn">Submit</button>
+              <button onclick="handlePreviousBtn(phase9,phase10)">&lt; Previous</button>
+              <button class="submitBtn" onclick="handleSubmit()">Submit</button>
             </div>
             <!-- <div class="hidden">
               <h2>FATHER</h2>
