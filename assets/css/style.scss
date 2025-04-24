@@ -412,7 +412,7 @@ input[type="radio"] {
           width: 100%;
           border: 1px solid var(--borderColor);
           border-top: 0;
-          padding: 0px 20px 40px 20px;
+          padding: 20px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
           .pro_input_wraper{
@@ -661,7 +661,7 @@ input[type="radio"] {
           width: 100%;
           border: 1px solid var(--borderColor);
           border-top: 0;
-          padding: 0px 20px 40px 20px;
+          padding: 20px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
           .employmentAuth {
@@ -718,7 +718,7 @@ input[type="radio"] {
           width: 100%;
           border: 1px solid var(--borderColor);
           border-top: 0;
-          padding: 0px 20px 40px 20px;
+          padding: 20px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
           #currentSpouse {
@@ -830,7 +830,7 @@ input[type="radio"] {
           width: 100%;
           border: 1px solid var(--borderColor);
           border-top: 0;
-          padding: 0px 20px 40px 20px;
+          padding: 20px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
           #phase6wraper {
@@ -935,7 +935,7 @@ input[type="radio"] {
           width: 100%;
           border: 1px solid var(--borderColor);
           border-top: 0;
-          padding: 0px 20px 40px 20px;
+          padding: 20px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
           .pro_from_group_wraper{
@@ -992,9 +992,10 @@ input[type="radio"] {
           width: 100%;
           border: 1px solid var(--borderColor);
           border-top: 0;
-          padding: 0px 20px 40px 20px;
+          padding: 20px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
+          p{margin-bottom: 20px;}
         }
         fieldset{
           padding: 20px;
@@ -1017,6 +1018,7 @@ input[type="radio"] {
           padding: 0px 20px 40px 20px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
+          p{margin: 20px 0;}
           .pro_from_group_wraper{
             h3{
               background-color: var(--primary);
@@ -1068,7 +1070,6 @@ input[type="radio"] {
         align-items: center;
         justify-content: space-between;
         gap: 10px;
-        .veryfiedANDscecuredBTN{}
         h1{
           order: 1;
           text-align: center;
@@ -1210,7 +1211,7 @@ input[type="radio"] {
   width: 100%;
   padding-top: 30px !important;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   button {
     width: fit-content;
     border: none;

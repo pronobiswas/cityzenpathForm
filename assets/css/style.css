@@ -390,7 +390,7 @@ input[type=radio] {
   width: 100%;
   border: 1px solid var(--borderColor);
   border-top: 0;
-  padding: 0px 20px 40px 20px;
+  padding: 20px 20px 40px 20px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -595,7 +595,7 @@ input[type=radio] {
   width: 100%;
   border: 1px solid var(--borderColor);
   border-top: 0;
-  padding: 0px 20px 40px 20px;
+  padding: 20px 20px 40px 20px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -651,7 +651,7 @@ input[type=radio] {
   width: 100%;
   border: 1px solid var(--borderColor);
   border-top: 0;
-  padding: 0px 20px 40px 20px;
+  padding: 20px 20px 40px 20px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -758,7 +758,7 @@ input[type=radio] {
   width: 100%;
   border: 1px solid var(--borderColor);
   border-top: 0;
-  padding: 0px 20px 40px 20px;
+  padding: 20px 20px 40px 20px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -847,7 +847,7 @@ input[type=radio] {
   width: 100%;
   border: 1px solid var(--borderColor);
   border-top: 0;
-  padding: 0px 20px 40px 20px;
+  padding: 20px 20px 40px 20px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -903,9 +903,12 @@ input[type=radio] {
   width: 100%;
   border: 1px solid var(--borderColor);
   border-top: 0;
-  padding: 0px 20px 40px 20px;
+  padding: 20px 20px 40px 20px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+#immigration_form .pro_container .pro_form #phase9 .phaseNineContent p {
+  margin-bottom: 20px;
 }
 #immigration_form .pro_container .pro_form #phase9 fieldset {
   padding: 20px;
@@ -925,6 +928,9 @@ input[type=radio] {
   padding: 0px 20px 40px 20px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+#immigration_form .pro_container .pro_form #phase10 .phaseTenContent p {
+  margin: 20px 0;
 }
 #immigration_form .pro_container .pro_form #phase10 .phaseTenContent .pro_from_group_wraper h3 {
   background-color: var(--primary);
@@ -1084,7 +1090,7 @@ input[type=radio] {
   width: 100%;
   padding-top: 30px !important;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .pahasebtnBox button {
   width: -moz-fit-content;
