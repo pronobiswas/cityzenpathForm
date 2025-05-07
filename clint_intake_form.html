@@ -36,7 +36,7 @@
           <button class="veryfiedANDscecuredBTN">Verified & Secured</button>
           <h1>Noncitizen Change of Address Card Preparation</h1>
           <div class="headerBTNBox">
-            <button>SAVE</button>
+            <button onclick="handleSaveBtn()">SAVE</button>
             <button>HELP</button>
           </div>
         </nav>
@@ -69,7 +69,7 @@
       <div class="pro_container">
         <div class="pro_form">
           <!-- =========PERSONAL INFORMATION========= -->
-          <section id="phase1" class="hidden">
+          <section id="phase1" class="">
             <h2 class="sectionHeading">PERSONAL INFORMATION</h2>
             <div class="phaseOneContent phaseContent">
               <!-- $$$$$$$$$genaralInfo$$$$$$$$$$$ -->
@@ -849,7 +849,7 @@
               <button onclick="handlePhaseFourBtn()">next &gt; </button>
             </div>
           </section>
-          <!-- =======INFORMATION ABOUT YOUR CURRENT SPOUSE====== -->
+          <!-- =======INFORMATION ABOUT YOUR PRIOR MARRIAGE====== -->
           <section id="phase5" class="hidden">
             <h2>INFORMATION ABOUT YOUR CURRENT SPOUSE</h2>
             <div class="phaseFiveContent phaseContent">
@@ -1633,7 +1633,7 @@
 
             <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase5,phase6)">&lt; Previous</button>
-              <button id="phase6btn">Next &gt;</button>
+              <button id="phase6btn" onclick="handlePhase6next()">Next &gt;</button>
             </div>
           </section>
           <!-- ==========INFORMATION ABOUT YOUR CHILDREN================= -->
@@ -2159,7 +2159,7 @@
 
             <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase6,phase7)">&lt; Previous</button>
-              <button id="pahase7btn">next &gt;</button>
+              <button id="pahase7btn" onclick="handlePhase7button()">next &gt;</button>
             </div>
           </section>
           <!-- ======INFORMATION ABOUT WHERE YOU LIVED SINCE BEING IN THE US====== -->
@@ -2428,7 +2428,7 @@
             </div> -->
             <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase7,phase8)"> &lt; Previous</button>
-              <button id="pahase8btn">next &gt;</button>
+              <button id="pahase8btn" onclick="handlePhase8Button()">next &gt;</button>
             </div>
           </section>
           <!-- =======EMPLOYMENT INFORMATION FOR LAST 10 YEARS======== -->
@@ -2640,11 +2640,11 @@
             </div>
             <div class="pahasebtnBox">
               <button onclick="handlePreviousBtn(phase8,phase9)">&lt; Previous</button>
-              <button id="pahase9btn">next &gt;</button>
+              <button id="pahase9btn" onclick="handlePhase9Button()">next &gt;</button>
             </div>
           </section>
           <!-- ======INFORMATION ABOUT YOUR FAMILY :========== -->
-          <section id="phase10" class="">
+          <section id="phase10" class="hidden">
             <h2>INFORMATION ABOUT YOUR FAMILY :</h2>
             <div class="phaseTenContent phaseContent">
               <p>
@@ -3231,6 +3231,13 @@
             
 
           </section>
+          <!-- ======form result========= -->
+           <section id="formOutput" class="hidden">
+            <div class="pro_input_value_container">
+              <div id="allInputValueResult"></div>
+              <button id="downloadPDF">download pdf</button>
+            </div>
+           </section>
         </div>
         <br />
         <br />
@@ -3255,7 +3262,8 @@
           site is subject to additional Terms of Use.</small></p>
       </div>
     </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
+    <script src="./assets/js/script2.js"></script>
   </body>
 </html>
