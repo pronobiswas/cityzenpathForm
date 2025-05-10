@@ -1,7 +1,11 @@
 let ReasonforLeavingTable = document.querySelector('#ReasonforLeavingTable')
 
 let allSelectOption = document.querySelectorAll("select")
-
+const pageOptions = document.getElementById('pageOptions');
+pageOptions.addEventListener('click',()=>{
+    console.log("click hocche");
+    document.getElementById('formPagenetion').classList.toggle("hidden");
+})
 
 let applicantInfo = {
     full_name:"",
